@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de ConfidentialitÃ© â VIVE</title>
+<meta name="description" content="Politique de confidentialitÃ© de l'application VIVE par Notitia Corp. Traitement des donnÃ©es personnelles conforme au RGPD.">
+<meta property="og:title" content="Politique de ConfidentialitÃ© â VIVE">
+<meta property="og:description" content="Politique de confidentialitÃ© de l'application VIVE. Conforme au RGPD et au droit franÃ§ais.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://notitiacorp-design.github.io/vive-landing/privacy.html">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://notitiacorp-design.github.io/vive-landing/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080810;
+  --surface: #111118;
+  --card: #1C1C28;
+  --border: #2A2A38;
+  --platinum: #E8E8F0;
+  --silver: #A8A8C0;
+  --blue: #3D8BFF;
+  --text: #F2F2F8;
+  --muted: #6B6B82;
+  --cta-bg: #FFFFFF;
+  --cta-text: #080810;
+  --nav-scrolled-bg: rgba(8,8,16,0.85);
+  --selection-bg: rgba(61,139,255,0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* NAV */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,232,240,0.05);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--platinum);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--platinum);
+}
+
+/* LEGAL PAGE STYLES */
+.legal-hero {
+  padding: 120px 48px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--platinum);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.legal-hero p {
+  color: var(--muted);
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 48px 80px;
+}
+
+.legal-content {
+  line-height: 1.8;
+}
+
+.legal-content p {
+  color: var(--silver);
+  font-size: 15px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.legal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--platinum);
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 60px;
+  letter-spacing: 0.5px;
+}
+
+.legal-title:first-child {
+  margin-top: 0;
+}
+
+.legal-version {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 24px;
+}
+
+.legal-separator {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.legal-toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.legal-toc .legal-article-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--platinum);
+}
+
+.toc-item {
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.toc-item:hover {
+  color: var(--platinum) !important;
+  border-color: var(--blue);
+}
+
+.legal-article-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--platinum);
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.5px;
+}
+
+.legal-subtitle {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-content li {
+  color: var(--silver);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.legal-content li::before {
+  content: 'â';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.legal-section-break {
+  height: 80px;
+  border-top: 2px solid var(--border);
+  margin-top: 60px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--surface);
+  padding: 64px 48px 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-tagline {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-title {
+  color: var(--platinum);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.footer-col a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--platinum);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 16px 24px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .legal-hero {
+    padding: 80px 24px 40px;
+  }
+  
+  .legal-container {
+    padding: 40px 24px 60px;
+  }
+  
+  .footer {
+    padding: 48px 24px 24px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<nav class="nav-bar scrolled" style="position:sticky;background:var(--nav-scrolled-bg);backdrop-filter:blur(20px);border-bottom:1px solid rgba(232,232,240,0.05);">
+  <a href="index.html" class="nav-logo font-cormorant">VIVE</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="privacy.html">ConfidentialitÃ©</a></li>
+    <li><a href="cgv.html">CGV & CGU</a></li>
+    <li><a href="mentions-legales.html">Mentions lÃ©gales</a></li>
+  </ul>
+</nav>
+
+<section class="legal-hero">
+  <h1 class="font-cormorant">Politique de ConfidentialitÃ©</h1>
+  <p class="font-mono">Version en vigueur au 1er mars 2025</p>
+</section>
+
+<main class="legal-container">
+<div class="legal-content">
+<h1 class="legal-title font-cormorant">POLITIQUE DE CONFIDENTIALITÃ â APPLICATION VIVE</h1>
+<p class="legal-version">Version en vigueur au 1er mars 2025</p>
+<hr class="legal-separator">
+<div class="legal-toc">
+<h2 class="legal-article-title">Sommaire</h2>
+<p class="toc-item">Article 1 â Introduction et engagement</p>
+<p class="toc-item">Article 2 â Responsable du traitement</p>
+<p class="toc-item">Article 3 â DonnÃ©es personnelles collectÃ©es</p>
+<p class="toc-item">Article 4 â Bases lÃ©gales des traitements</p>
+<p class="toc-item">Article 5 â FinalitÃ©s des traitements</p>
+<p class="toc-item">Article 6 â DurÃ©es de conservation</p>
+<p class="toc-item">Article 7 â Destinataires et transferts de donnÃ©es</p>
+<p class="toc-item">Article 8 â Droits des utilisateurs</p>
+<p class="toc-item">Article 9 â SÃ©curitÃ© des donnÃ©es</p>
+<p class="toc-item">Article 10 â Cookies et traceurs</p>
+<p class="toc-item">Article 11 â Protection des mineurs</p>
+<p class="toc-item">Article 12 â Modifications de la prÃ©sente politique</p>
+<p class="toc-item">Article 13 â Contact et exercice des droits</p>
+<p class="toc-item">Article 14 â RÃ©clamation auprÃ¨s de l'autoritÃ© de contrÃ´le</p>
+<hr class="legal-separator">
+</div>
+<h2 class="legal-article-title">ARTICLE 1 â INTRODUCTION ET ENGAGEMENT</h2>
+<h3 class="legal-subtitle">1.1 Objet</h3>
+<p>La prÃ©sente Politique de ConfidentialitÃ© (ci-aprÃ¨s Â« la Politique Â») a pour objet d'informer les utilisateurs de l'application mobile VIVE (ci-aprÃ¨s Â« l'Application Â») de la maniÃ¨re dont Notitia Corp collecte, traite, conserve et protÃ¨ge leurs donnÃ©es personnelles, conformÃ©ment aux dispositions :</p>
+<ul>
+<li>du RÃ¨glement (UE) 2016/679 du Parlement europÃ©en et du Conseil du 27 avril 2016 relatif Ã  la protection des personnes physiques Ã  l'Ã©gard du traitement des donnÃ©es Ã  caractÃ¨re personnel et Ã  la libre circulation de ces donnÃ©es (ci-aprÃ¨s Â« le RGPD Â») ;</li>
+<li>de la loi nÂ° 78-17 du 6 janvier 1978 relative Ã  l'informatique, aux fichiers et aux libertÃ©s, modifiÃ©e (ci-aprÃ¨s Â« la Loi Informatique et LibertÃ©s Â») ;</li>
+<li>de toute rÃ©glementation nationale ou europÃ©enne applicable en matiÃ¨re de protection des donnÃ©es Ã  caractÃ¨re personnel.</li>
+</ul>
+<h3 class="legal-subtitle">1.2 Engagement de Notitia Corp</h3>
+<p>Notitia Corp s'engage fermement Ã  protÃ©ger la vie privÃ©e de ses utilisateurs et Ã  traiter leurs donnÃ©es personnelles dans le strict respect des principes fondamentaux posÃ©s par l'article 5 du RGPD, Ã  savoir :</p>
+<ul>
+<li>la licÃ©itÃ©, la loyautÃ© et la transparence du traitement ;</li>
+<li>la limitation des finalitÃ©s : les donnÃ©es ne sont collectÃ©es qu'Ã  des fins dÃ©terminÃ©es, explicites et lÃ©gitimes ;</li>
+<li>la minimisation des donnÃ©es : seules les donnÃ©es strictement nÃ©cessaires aux finalitÃ©s poursuivies sont collectÃ©es ;</li>
+<li>l'exactitude des donnÃ©es ;</li>
+<li>la limitation de la conservation : les donnÃ©es ne sont conservÃ©es que le temps strictement nÃ©cessaire ;</li>
+<li>l'intÃ©gritÃ© et la confidentialitÃ© : des mesures techniques et organisationnelles appropriÃ©es sont mises en Åuvre pour garantir la sÃ©curitÃ© des donnÃ©es ;</li>
+<li>la responsabilitÃ© (accountability) : Notitia Corp est en mesure de dÃ©montrer Ã  tout moment sa conformitÃ© au RGPD.</li>
+</ul>
+<p>Notitia Corp dÃ©clare expressÃ©ment ne jamais vendre les donnÃ©es personnelles de ses utilisateurs Ã  des tiers, Ã  quelque fin que ce soit.</p>
+<h3 class="legal-subtitle">1.3 Champ d'application</h3>
+<p>La prÃ©sente Politique s'applique Ã  l'ensemble des traitements de donnÃ©es Ã  caractÃ¨re personnel effectuÃ©s dans le cadre de l'utilisation de l'Application VIVE, qu'il s'agisse de l'application mobile disponible sur les plateformes iOS (App Store d'Apple) et Android (Google Play Store), du site web associÃ©, ou de tout autre service proposÃ© par Notitia Corp sous la marque VIVE.</p>
+<p>Elle s'applique Ã  toute personne physique rÃ©sidant dans l'Union europÃ©enne ou hors de celle-ci qui utilise l'Application VIVE.</p>
+<h3 class="legal-subtitle">1.4 Acceptation</h3>
+<p>L'utilisation de l'Application VIVE implique la prise de connaissance et l'acceptation de la prÃ©sente Politique. Pour les donnÃ©es de santÃ© relevant de l'article 9 du RGPD, un consentement explicite, libre, Ã©clairÃ©, spÃ©cifique et non Ã©quivoque est recueilli sÃ©parÃ©ment lors de l'inscription ou de l'activation des fonctionnalitÃ©s concernÃ©es.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 2 â RESPONSABLE DU TRAITEMENT</h2>
+<h3 class="legal-subtitle">2.1 IdentitÃ© du responsable du traitement</h3>
+<p>Au sens de l'article 4, paragraphe 7 du RGPD, le responsable du traitement est :</p>
+<p>DÃ©nomination sociale : Notitia Corp</p>
+<p>Forme juridique : SociÃ©tÃ© par actions simplifiÃ©e (SAS)</p>
+<p>NumÃ©ro SIRET : 995 367 208 00015</p>
+<p>SiÃ¨ge social : 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<h3 class="legal-subtitle">2.2 DÃ©lÃ©guÃ© Ã  la Protection des DonnÃ©es (DPO)</h3>
+<p>ConformÃ©ment aux articles 37 Ã  39 du RGPD, Notitia Corp a dÃ©signÃ© un DÃ©lÃ©guÃ© Ã  la Protection des DonnÃ©es (Data Protection Officer â DPO), point de contact privilÃ©giÃ© pour toute question relative Ã  la protection des donnÃ©es personnelles.</p>
+<p>CoordonnÃ©es du DPO :</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p>Adresse postale : DPO â Notitia Corp, 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Le DPO est chargÃ©, conformÃ©ment Ã  l'article 39 du RGPD, notamment :</p>
+<ul>
+<li>d'informer et conseiller Notitia Corp sur ses obligations en matiÃ¨re de protection des donnÃ©es ;</li>
+<li>de contrÃ´ler le respect du RGPD, des lÃ©gislations nationales et des politiques internes ;</li>
+<li>de coopÃ©rer avec l'autoritÃ© de contrÃ´le compÃ©tente (CNIL) ;</li>
+<li>de faire office de point de contact avec ladite autoritÃ©.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 3 â DONNÃES PERSONNELLES COLLECTÃES</h2>
+<p>Au sens de l'article 4, paragraphe 1 du RGPD, constitue une donnÃ©e Ã  caractÃ¨re personnel toute information se rapportant Ã  une personne physique identifiÃ©e ou identifiable. Notitia Corp collecte les catÃ©gories de donnÃ©es suivantes dans le cadre de l'utilisation de l'Application VIVE.</p>
+<h3 class="legal-subtitle">3.1 DonnÃ©es d'identification et de contact</h3>
+<p>Ces donnÃ©es sont collectÃ©es lors de la crÃ©ation du compte utilisateur et permettent d'identifier l'utilisateur et de lui fournir les services de l'Application. Elles comprennent :</p>
+<ul>
+<li>Nom et prÃ©nom ;</li>
+<li>Adresse Ã©lectronique (email) ;</li>
+<li>Date de naissance (permettant notamment de vÃ©rifier l'Ã¢ge minimum requis) ;</li>
+<li>Mot de passe (stockÃ© sous forme hachÃ©e et salÃ©e, non lisible par Notitia Corp) ;</li>
+<li>Photo de profil (facultative, soumise au consentement de l'utilisateur) ;</li>
+<li>Langue et rÃ©gion de l'utilisateur.</li>
+</ul>
+<h3 class="legal-subtitle">3.2 DonnÃ©es de santÃ© et de bien-Ãªtre (catÃ©gorie spÃ©ciale â Art. 9 RGPD)</h3>
+<p>ATTENTION â CATÃGORIE SPÃCIALE DE DONNÃES : Les donnÃ©es visÃ©es Ã  la prÃ©sente section constituent des donnÃ©es de santÃ© au sens de l'article 4, paragraphe 15, et de l'article 9 du RGPD. Leur traitement est soumis Ã  des exigences de protection renforcÃ©es et nÃ©cessite le recueil d'un consentement explicite de l'utilisateur, conformÃ©ment Ã  l'article 9, paragraphe 2, point (a) du RGPD.</p>
+<p>Ces donnÃ©es sont collectÃ©es uniquement lorsque l'utilisateur les renseigne volontairement dans l'Application, dans le but de personnaliser son programme wellness, nutrition et fitness. Elles comprennent :</p>
+<ul>
+<li>DonnÃ©es morphologiques : poids, taille, indice de masse corporelle (IMC) calculÃ© ;</li>
+<li>Objectifs de santÃ© et de bien-Ãªtre dÃ©clarÃ©s par l'utilisateur (perte de poids, prise de muscle, amÃ©lioration du sommeil, gestion du stress, etc.) ;</li>
+<li>Habitudes alimentaires et prÃ©fÃ©rences ou restrictions alimentaires (allergies, rÃ©gimes, intolÃ©rances) ;</li>
+<li>ActivitÃ© physique : type d'activitÃ© pratiquÃ©e, frÃ©quence, durÃ©e, intensitÃ©, donnÃ©es de performance ;</li>
+<li>DonnÃ©es de sommeil : durÃ©e, qualitÃ© perÃ§ue, horaires ;</li>
+<li>DonnÃ©es d'humeur et de bien-Ãªtre mental : indicateurs subjectifs renseignÃ©s par l'utilisateur ;</li>
+<li>Pathologies ou conditions mÃ©dicales dÃ©clarÃ©es volontairement par l'utilisateur (ex. : diabÃ¨te, hypertension, grossesse) ;</li>
+<li>DonnÃ©es de suivi de progrÃ¨s saisies manuellement ou importÃ©es depuis des applications tierces avec le consentement de l'utilisateur (ex. : Apple Health, Google Fit).</li>
+</ul>
+<p>Notitia Corp informe expressÃ©ment les utilisateurs que :</p>
+<p>(i) la saisie de ces donnÃ©es est facultative mais nÃ©cessaire au fonctionnement optimal des fonctionnalitÃ©s de personnalisation ;</p>
+<p>(ii) ces donnÃ©es ne sont jamais utilisÃ©es Ã  des fins d'assurance, de crÃ©dit ou de profilage commercial ;</p>
+<p>(iii) ces donnÃ©es ne sont jamais vendues Ã  des tiers.</p>
+<h3 class="legal-subtitle">3.3 DonnÃ©es de paiement</h3>
+<p>Notitia Corp ne stocke en aucun cas les donnÃ©es de paiement de ses utilisateurs sur ses propres serveurs. L'ensemble des transactions financiÃ¨res est traitÃ© exclusivement par des prestataires de paiement tiers certifiÃ©s, Ã  savoir :</p>
+<ul>
+<li>Stripe, Inc. (pour les paiements par carte bancaire via l'interface web ou l'application) ;</li>
+<li>Apple, Inc. (pour les achats in-app sur iOS via l'App Store) ;</li>
+<li>Google LLC (pour les achats in-app sur Android via Google Play Store).</li>
+</ul>
+<p>Les donnÃ©es collectÃ©es par ces prestataires (numÃ©ro de carte, date d'expiration, cryptogramme, etc.) sont rÃ©gies par leurs politiques de confidentialitÃ© respectives. Notitia Corp reÃ§oit uniquement une confirmation de paiement, un identifiant de transaction anonymisÃ© et les informations nÃ©cessaires Ã  la gestion de l'abonnement (date de dÃ©but, date de renouvellement, statut).</p>
+<p>Pour la gestion des abonnements, Notitia Corp fait appel Ã  RevenueCat, Inc., qui traite les mÃ©tadonnÃ©es d'abonnement (statut, identifiant d'abonnement, plateforme d'achat) sans accÃ©der aux donnÃ©es bancaires.</p>
+<h3 class="legal-subtitle">3.4 DonnÃ©es d'utilisation et techniques</h3>
+<p>Ces donnÃ©es sont collectÃ©es automatiquement lors de l'utilisation de l'Application et permettent d'assurer le bon fonctionnement du service, de dÃ©tecter les anomalies et d'amÃ©liorer l'expÃ©rience utilisateur :</p>
+<ul>
+<li>Journaux d'activitÃ© (logs) : dates et heures de connexion, actions effectuÃ©es dans l'Application ;</li>
+<li>Informations sur l'appareil utilisÃ© : type d'appareil, systÃ¨me d'exploitation et version, identifiants techniques de l'appareil (IDFA/GAID, dans les limites autorisÃ©es par les consentements recueillis) ;</li>
+<li>DonnÃ©es de navigation et d'interaction : fonctionnalitÃ©s utilisÃ©es, durÃ©e des sessions, frÃ©quence d'utilisation, parcours dans l'Application ;</li>
+<li>PrÃ©fÃ©rences de l'utilisateur : paramÃ¨tres d'affichage, notifications, langue ;</li>
+<li>Adresse IP (utilisÃ©e pour la dÃ©tection de fraude et la sÃ©curitÃ©, non utilisÃ©e Ã  des fins de gÃ©olocalisation prÃ©cise) ;</li>
+<li>DonnÃ©es de diagnostic et de crash reports.</li>
+</ul>
+<h3 class="legal-subtitle">3.5 DonnÃ©es de livraison (box bien-Ãªtre)</h3>
+<p>Dans le cadre du service de livraison de la box bien-Ãªtre VIVE, Notitia Corp collecte les donnÃ©es nÃ©cessaires Ã  l'exÃ©cution de la livraison :</p>
+<ul>
+<li>Adresse postale complÃ¨te de livraison (numÃ©ro, rue, code postal, ville, pays) ;</li>
+<li>NumÃ©ro de tÃ©lÃ©phone (pour les notifications de livraison du transporteur) ;</li>
+<li>Instructions de livraison particuliÃ¨res (facultatif).</li>
+</ul>
+<p>Ces donnÃ©es sont transmises aux transporteurs et prestataires logistiques dans la stricte mesure nÃ©cessaire Ã  l'exÃ©cution de la livraison.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 4 â BASES LÃGALES DES TRAITEMENTS</h2>
+<p>ConformÃ©ment Ã  l'article 13, paragraphe 1, point (c) du RGPD, Notitia Corp indique ci-dessous la base lÃ©gale applicable Ã  chaque catÃ©gorie de traitement.</p>
+<h3 class="legal-subtitle">4.1 Consentement explicite â Article 6, paragraphe 1, point (a) et Article 9, paragraphe 2, point (a) du RGPD</h3>
+<p>Pour les donnÃ©es de santÃ© et de bien-Ãªtre visÃ©es Ã  l'article 3.2 de la prÃ©sente Politique, Notitia Corp recueille le consentement explicite de l'utilisateur, conformÃ©ment aux exigences renforcÃ©es de l'article 9 du RGPD applicable aux catÃ©gories spÃ©ciales de donnÃ©es.</p>
+<p>Ce consentement est :</p>
+<ul>
+<li>Libre : l'utilisateur n'est pas contraint de fournir ces donnÃ©es pour accÃ©der Ã  l'Application dans ses fonctionnalitÃ©s de base ;</li>
+<li>ÃclairÃ© : l'utilisateur est pleinement informÃ© de la nature des donnÃ©es collectÃ©es, des finalitÃ©s et des destinataires avant de donner son accord ;</li>
+<li>SpÃ©cifique : il est recueilli pour chaque finalitÃ© distincte impliquant des donnÃ©es de santÃ© ;</li>
+<li>Non Ã©quivoque et explicite : il est matÃ©rialisÃ© par une action positive et dÃ©libÃ©rÃ©e de l'utilisateur (case Ã  cocher, bouton d'acceptation) distincte de toute autre acceptation.</li>
+</ul>
+<p>L'utilisateur peut retirer son consentement Ã  tout moment, sans que ce retrait ne compromette la licÃ©itÃ© du traitement effectuÃ© avant ce retrait (Art. 7, Â§3 du RGPD). Le retrait du consentement peut Ãªtre exercÃ© depuis les paramÃ¨tres de l'Application ou en contactant le DPO.</p>
+<h3 class="legal-subtitle">4.2 ExÃ©cution d'un contrat â Article 6, paragraphe 1, point (b) du RGPD</h3>
+<p>Le traitement des donnÃ©es d'identification, des donnÃ©es de livraison et des mÃ©tadonnÃ©es d'abonnement est nÃ©cessaire Ã  l'exÃ©cution du contrat de service conclu entre l'utilisateur et Notitia Corp lors de son inscription Ã  l'Application VIVE, ainsi qu'Ã  la prise de mesures prÃ©contractuelles Ã  la demande de l'utilisateur.</p>
+<p>Cela inclut notamment :</p>
+<ul>
+<li>La crÃ©ation et la gestion du compte utilisateur ;</li>
+<li>La fourniture des services de l'Application (coaching IA, programmes personnalisÃ©s) ;</li>
+<li>La gestion et le renouvellement des abonnements ;</li>
+<li>La livraison des box bien-Ãªtre VIVE.</li>
+</ul>
+<h3 class="legal-subtitle">4.3 IntÃ©rÃªt lÃ©gitime â Article 6, paragraphe 1, point (f) du RGPD</h3>
+<p>Notitia Corp peut traiter certaines donnÃ©es d'utilisation et techniques sur la base de son intÃ©rÃªt lÃ©gitime, dans la mesure oÃ¹ cet intÃ©rÃªt ne prÃ©domine pas sur les droits et libertÃ©s fondamentaux des utilisateurs, notamment :</p>
+<ul>
+<li>L'amÃ©lioration et l'optimisation des fonctionnalitÃ©s de l'Application ;</li>
+<li>La dÃ©tection, la prÃ©vention et la gestion des incidents de sÃ©curitÃ© ;</li>
+<li>La prÃ©vention des fraudes ;</li>
+<li>La rÃ©alisation de statistiques agrÃ©gÃ©es et anonymisÃ©es sur l'utilisation de l'Application.</li>
+</ul>
+<p>ConformÃ©ment Ã  l'article 21 du RGPD, l'utilisateur dispose d'un droit d'opposition aux traitements fondÃ©s sur l'intÃ©rÃªt lÃ©gitime de Notitia Corp.</p>
+<h3 class="legal-subtitle">4.4 Obligation lÃ©gale â Article 6, paragraphe 1, point (c) du RGPD</h3>
+<p>Certains traitements sont rendus nÃ©cessaires par les obligations lÃ©gales auxquelles Notitia Corp est soumise en tant qu'entreprise franÃ§aise, notamment :</p>
+<ul>
+<li>La conservation des piÃ¨ces comptables et des factures conformÃ©ment Ã  l'article L. 123-22 du Code de commerce (10 ans) ;</li>
+<li>Les obligations fiscales et dÃ©claratives en matiÃ¨re de TVA ;</li>
+<li>La rÃ©ponse aux rÃ©quisitions judiciaires ou administratives lÃ©galement fondÃ©es.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 5 â FINALITÃS DES TRAITEMENTS</h2>
+<p>Les donnÃ©es personnelles collectÃ©es par Notitia Corp sont traitÃ©es aux fins suivantes, conformÃ©ment au principe de limitation des finalitÃ©s posÃ© par l'article 5, paragraphe 1, point (b) du RGPD.</p>
+<h3 class="legal-subtitle">5.1 CrÃ©ation et gestion du compte utilisateur</h3>
+<p>Permet la crÃ©ation, l'authentification, la gestion et la sÃ©curisation du compte personnel de l'utilisateur sur l'Application VIVE.</p>
+<p>Base lÃ©gale : ExÃ©cution du contrat (Art. 6Â§1(b)).</p>
+<h3 class="legal-subtitle">5.2 Personnalisation et fourniture du service wellness</h3>
+<p>Permet de personnaliser le programme de coaching wellness, les recommandations nutritionnelles, les plans d'entraÃ®nement fitness et les conseils bien-Ãªtre gÃ©nÃ©rÃ©s par l'intelligence artificielle de l'Application, en fonction du profil de santÃ© et des objectifs de l'utilisateur.</p>
+<p>Base lÃ©gale : Consentement explicite pour les donnÃ©es de santÃ© (Art. 9Â§2(a)) ; ExÃ©cution du contrat (Art. 6Â§1(b)).</p>
+<h3 class="legal-subtitle">5.3 Suivi et analyse des progrÃ¨s</h3>
+<p>Permet Ã  l'utilisateur de suivre ses progrÃ¨s dans le temps, de visualiser ses donnÃ©es de santÃ© et bien-Ãªtre sous forme de tableaux de bord et de graphiques, et de mesurer l'atteinte de ses objectifs.</p>
+<p>Base lÃ©gale : Consentement explicite (Art. 9Â§2(a)) ; ExÃ©cution du contrat (Art. 6Â§1(b)).</p>
+<h3 class="legal-subtitle">5.4 Gestion des abonnements et de la facturation</h3>
+<p>Permet de gÃ©rer les abonnements souscrits par l'utilisateur (mensuel, annuel), les renouvellements, les rÃ©siliations, l'Ã©mission des factures et reÃ§us de paiement.</p>
+<p>Base lÃ©gale : ExÃ©cution du contrat (Art. 6Â§1(b)) ; Obligation lÃ©gale (Art. 6Â§1(c)).</p>
+<h3 class="legal-subtitle">5.5 Livraison de la box bien-Ãªtre VIVE</h3>
+<p>Permet d'organiser et d'exÃ©cuter la livraison de la box bien-Ãªtre Ã  l'adresse postale renseignÃ©e par l'utilisateur, y compris la transmission des donnÃ©es de livraison aux prestataires logistiques concernÃ©s.</p>
+<p>Base lÃ©gale : ExÃ©cution du contrat (Art. 6Â§1(b)).</p>
+<h3 class="legal-subtitle">5.6 Communication et assistance client</h3>
+<p>Permet d'envoyer Ã  l'utilisateur des communications relatives Ã  son compte (confirmation d'inscription, factures, alertes de sÃ©curitÃ©), des informations sur les mises Ã  jour du service, et d'assurer le support client en rÃ©ponse aux demandes de l'utilisateur.</p>
+<p>Base lÃ©gale : ExÃ©cution du contrat (Art. 6Â§1(b)) ; Consentement (Art. 6Â§1(a)) pour les communications Ã  caractÃ¨re promotionnel.</p>
+<h3 class="legal-subtitle">5.7 Communications marketing et promotionnelles</h3>
+<p>Avec le consentement prÃ©alable et exprÃ¨s de l'utilisateur, Notitia Corp peut adresser des newsletters, offres promotionnelles, actualitÃ©s et informations sur les nouveaux services ou produits VIVE. L'utilisateur peut se dÃ©sinscrire Ã  tout moment via le lien de dÃ©sabonnement prÃ©sent dans chaque communication ou depuis les paramÃ¨tres de son compte.</p>
+<p>Base lÃ©gale : Consentement (Art. 6Â§1(a)).</p>
+<h3 class="legal-subtitle">5.8 AmÃ©lioration du service et recherche & dÃ©veloppement</h3>
+<p>Permet d'analyser les donnÃ©es d'utilisation agrÃ©gÃ©es et, lorsque applicable, les retours des utilisateurs afin d'identifier les dysfonctionnements, d'amÃ©liorer les fonctionnalitÃ©s existantes et de dÃ©velopper de nouveaux services. Ces analyses sont rÃ©alisÃ©es, dans la mesure du possible, sur des donnÃ©es anonymisÃ©es ou pseudonymisÃ©es.</p>
+<p>Base lÃ©gale : IntÃ©rÃªt lÃ©gitime (Art. 6Â§1(f)).</p>
+<h3 class="legal-subtitle">5.9 SÃ©curitÃ© des systÃ¨mes d'information et prÃ©vention des fraudes</h3>
+<p>Permet de dÃ©tecter, prÃ©venir et gÃ©rer les incidents de sÃ©curitÃ©, les accÃ¨s non autorisÃ©s, les activitÃ©s frauduleuses et les violations de donnÃ©es.</p>
+<p>Base lÃ©gale : IntÃ©rÃªt lÃ©gitime (Art. 6Â§1(f)) ; Obligation lÃ©gale (Art. 6Â§1(c)).</p>
+<h3 class="legal-subtitle">5.10 ConformitÃ© aux obligations lÃ©gales et rÃ©glementaires</h3>
+<p>Permet de satisfaire aux obligations lÃ©gales, fiscales, comptables et rÃ©glementaires incombant Ã  Notitia Corp, ainsi qu'aux obligations de coopÃ©ration avec les autoritÃ©s compÃ©tentes lÃ©galement habilitÃ©es.</p>
+<p>Base lÃ©gale : Obligation lÃ©gale (Art. 6Â§1(c)).</p>
+<h3 class="legal-subtitle">5.11 EntraÃ®nement des modÃ¨les d'intelligence artificielle</h3>
+<p>Notitia Corp peut utiliser des donnÃ©es de santÃ© et d'utilisation â exclusivement sous forme agrÃ©gÃ©e et anonymisÃ©e ne permettant pas de rÃ©identifier les utilisateurs â pour amÃ©liorer les modÃ¨les d'intelligence artificielle de l'Application. Aucune donnÃ©e directement identifiante ou identifiable ne sera utilisÃ©e Ã  cette fin sans consentement spÃ©cifique et explicite de l'utilisateur.</p>
+<p>Base lÃ©gale : Consentement (Art. 6Â§1(a) et Art. 9Â§2(a)) ou IntÃ©rÃªt lÃ©gitime sur donnÃ©es strictement anonymisÃ©es (Art. 6Â§1(f)).</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 6 â DURÃES DE CONSERVATION</h2>
+<p>ConformÃ©ment Ã  l'article 5, paragraphe 1, point (e) du RGPD (principe de limitation de la conservation), les donnÃ©es personnelles ne sont pas conservÃ©es au-delÃ  de ce qui est nÃ©cessaire aux finalitÃ©s pour lesquelles elles ont Ã©tÃ© collectÃ©es.</p>
+<h3 class="legal-subtitle">6.1 DonnÃ©es de compte et donnÃ©es de santÃ© (compte actif)</h3>
+<p>DurÃ©e : Pendant toute la durÃ©e d'activitÃ© du compte de l'utilisateur, augmentÃ©e d'une pÃ©riode de 3 ans Ã  compter de la derniÃ¨re connexion active (dÃ©lai de prescription de droit commun â Art. 2224 du Code civil).</p>
+<h3 class="legal-subtitle">6.2 DonnÃ©es de compte et donnÃ©es de santÃ© (aprÃ¨s suppression du compte)</h3>
+<p>Upon rÃ©ception d'une demande de suppression du compte ou d'exercice du droit Ã  l'effacement, les donnÃ©es personnelles sont supprimÃ©es ou anonymisÃ©es dans un dÃ©lai maximum de 30 jours calendaires. Des sauvegardes techniques (backups) peuvent conserver des copies chiffrÃ©es pour une durÃ©e supplÃ©mentaire maximum de 90 jours, aprÃ¨s quoi elles sont dÃ©finitivement dÃ©truites.</p>
+<h3 class="legal-subtitle">6.3 DonnÃ©es de facturation et piÃ¨ces comptables</h3>
+<p>DurÃ©e : 10 ans Ã  compter de la date de la transaction, conformÃ©ment Ã  l'article L. 123-22 du Code de commerce.</p>
+<h3 class="legal-subtitle">6.4 DonnÃ©es de paiement</h3>
+<p>Non stockÃ©es par Notitia Corp. ConservÃ©es par les prestataires de paiement conformÃ©ment Ã  leurs propres politiques et Ã  la rÃ©glementation applicable (notamment PCI-DSS).</p>
+<h3 class="legal-subtitle">6.5 DonnÃ©es de livraison</h3>
+<p>DurÃ©e : ConservÃ©es pendant la durÃ©e de l'abonnement actif de l'utilisateur, puis supprimÃ©es dans un dÃ©lai de 30 jours suivant la rÃ©siliation ou la suppression du compte, sous rÃ©serve des obligations lÃ©gales de conservation comptable pour les informations de commande (5 ans â Art. L. 110-4 du Code de commerce).</p>
+<h3 class="legal-subtitle">6.6 DonnÃ©es d'utilisation et logs techniques</h3>
+<p>DurÃ©e : 12 mois Ã  compter de leur collecte pour les logs de connexion et d'activitÃ©. Les donnÃ©es de diagnostic et de crash reports sont conservÃ©es 6 mois.</p>
+<h3 class="legal-subtitle">6.7 DonnÃ©es relatives aux consentements</h3>
+<p>La preuve du consentement donnÃ© par l'utilisateur (date, heure, version de la politique acceptÃ©e) est conservÃ©e pendant 5 ans Ã  compter de la date du consentement, conformÃ©ment aux obligations de dÃ©monstration de la conformitÃ© (Art. 7Â§1 du RGPD et Art. 5Â§2 du RGPD â accountability).</p>
+<h3 class="legal-subtitle">6.8 DonnÃ©es de communications marketing</h3>
+<p>DurÃ©e : 3 ans Ã  compter de la derniÃ¨re interaction de l'utilisateur ou de son dernier consentement actif. ConformÃ©ment aux recommandations de la CNIL.</p>
+<h3 class="legal-subtitle">6.9 Cookies et traceurs</h3>
+<p>DurÃ©e de conservation dÃ©finie Ã  l'article 10 de la prÃ©sente Politique.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 7 â DESTINATAIRES ET TRANSFERTS DE DONNÃES</h2>
+<h3 class="legal-subtitle">7.1 Principe gÃ©nÃ©ral</h3>
+<p>L'accÃ¨s aux donnÃ©es personnelles des utilisateurs est strictement limitÃ© aux personnes et entitÃ©s qui en ont besoin pour les finalitÃ©s dÃ©finies Ã  l'article 5. Notitia Corp ne vend, ne loue, ni ne cÃ¨de les donnÃ©es personnelles de ses utilisateurs Ã  des tiers Ã  des fins commerciales ou publicitaires. Cette interdiction est absolue et inconditionnelle.</p>
+<h3 class="legal-subtitle">7.2 Personnel interne de Notitia Corp</h3>
+<p>Les donnÃ©es sont accessibles en interne uniquement aux membres du personnel de Notitia Corp habilitÃ©s, dans la limite de leurs attributions et du besoin d'en connaÃ®tre (principe du moindre privilÃ¨ge). Ces personnes sont soumises Ã  des obligations de confidentialitÃ©.</p>
+<h3 class="legal-subtitle">7.3 Sous-traitants au sens de l'article 4, paragraphe 8 du RGPD</h3>
+<p>Notitia Corp fait appel aux sous-traitants suivants dans le cadre de la fourniture de l'Application VIVE. Chacun de ces sous-traitants a Ã©tÃ© soigneusement sÃ©lectionnÃ© et fait l'objet d'un accord de traitement des donnÃ©es (Data Processing Agreement â DPA) conforme Ã  l'article 28 du RGPD.</p>
+<h3 class="legal-subtitle">7.3.1 Supabase, Inc.</h3>
+<p>RÃ´le : HÃ©bergement de la base de donnÃ©es, authentification, stockage des fichiers.</p>
+<p>Localisation des donnÃ©es : Union europÃ©enne â Irlande (rÃ©gion AWS eu-west-1).</p>
+<p>Transfert hors UE : Aucun transfert de donnÃ©es hors de l'Union europÃ©enne n'est effectuÃ© dans le cadre de ce service. Les donnÃ©es restent hÃ©bergÃ©es sur le territoire de l'Union europÃ©enne.</p>
+<p>Garanties : DPA conforme au RGPD, certification SOC 2 Type II.</p>
+<h3 class="legal-subtitle">7.3.2 Stripe, Inc.</h3>
+<p>RÃ´le : Traitement des paiements par carte bancaire, gestion de la facturation.</p>
+<p>Localisation : Stripe opÃ¨re via ses entitÃ©s europÃ©ennes (Stripe Payments Europe Limited, entitÃ© irlandaise soumise au RGPD).</p>
+<p>Transfert hors UE : Dans le cadre des flux opÃ©rationnels de Stripe, des transferts vers les Ãtats-Unis peuvent intervenir. Ces transferts sont encadrÃ©s par les Clauses Contractuelles Types (CCT) approuvÃ©es par la Commission europÃ©enne conformÃ©ment Ã  la dÃ©cision d'exÃ©cution (UE) 2021/914, et par le Cadre de Protection des DonnÃ©es UE-Ãtats-Unis (EU-US Data Privacy Framework).</p>
+<p>Garanties : CertifiÃ© PCI-DSS niveau 1, DPA conforme RGPD, CCT.</p>
+<h3 class="legal-subtitle">7.3.3 RevenueCat, Inc.</h3>
+<p>RÃ´le : Gestion des abonnements in-app, suivi du statut des abonnements, rÃ©conciliation des achats multi-plateformes (iOS/Android).</p>
+<p>Localisation : Ãtats-Unis.</p>
+<p>Transfert hors UE : Des transferts de donnÃ©es vers les Ãtats-Unis interviennent dans le cadre de ce service. Ces transferts sont encadrÃ©s par les Clauses Contractuelles Types (CCT) approuvÃ©es par la Commission europÃ©enne et par un DPA spÃ©cifique conclu avec RevenueCat, Inc.</p>
+<p>Garanties : DPA conforme au RGPD, CCT, engagement de conformitÃ© au RGPD.</p>
+<h3 class="legal-subtitle">7.3.4 Vercel, Inc.</h3>
+<p>RÃ´le : HÃ©bergement et dÃ©ploiement de l'interface web de l'Application VIVE (frontend).</p>
+<p>Localisation : Vercel dispose de nÅuds edge en Europe. Notitia Corp configure son dÃ©ploiement afin de privilÃ©gier les rÃ©gions europÃ©ennes (EU West â France/Allemagne) pour le traitement des donnÃ©es des utilisateurs europÃ©ens.</p>
+<p>Transfert hors UE : Dans la mesure oÃ¹ des donnÃ©es pourraient transiter via des serveurs hors UE (notamment aux Ãtats-Unis pour les fonctions d'infrastructure globale), ces transferts sont encadrÃ©s par les Clauses Contractuelles Types (CCT) approuvÃ©es par la Commission europÃ©enne.</p>
+<p>Garanties : DPA conforme au RGPD, CCT, certifications de sÃ©curitÃ©.</p>
+<h3 class="legal-subtitle">7.3.5 Apple, Inc.</h3>
+<p>RÃ´le : Traitement des paiements in-app sur la plateforme iOS via l'App Store.</p>
+<p>Note : Les donnÃ©es de paiement traitÃ©es par Apple dans le cadre des achats in-app sont rÃ©gies exclusivement par la politique de confidentialitÃ© d'Apple. Notitia Corp ne reÃ§oit d'Apple que les informations de confirmation d'achat et de statut d'abonnement nÃ©cessaires Ã  la fourniture du service.</p>
+<h3 class="legal-subtitle">7.3.6 Google LLC</h3>
+<p>RÃ´le : Traitement des paiements in-app sur la plateforme Android via Google Play Store.</p>
+<p>Note : Les donnÃ©es de paiement traitÃ©es par Google dans le cadre des achats in-app sont rÃ©gies exclusivement par la politique de confidentialitÃ© de Google. Notitia Corp ne reÃ§oit de Google que les informations de confirmation d'achat et de statut d'abonnement nÃ©cessaires Ã  la fourniture du service.</p>
+<h3 class="legal-subtitle">7.4 Autres destinataires</h3>
+<h3 class="legal-subtitle">7.4.1 Prestataires logistiques</h3>
+<p>Les donnÃ©es de livraison (nom, prÃ©nom, adresse postale, tÃ©lÃ©phone) sont transmises aux transporteurs et prestataires logistiques partenaires dans la stricte mesure nÃ©cessaire Ã  l'exÃ©cution des livraisons des box bien-Ãªtre. Ces prestataires agissent en qualitÃ© de sous-traitants liÃ©s Ã  Notitia Corp par des DPA conformes au RGPD.</p>
+<h3 class="legal-subtitle">7.4.2 AutoritÃ©s lÃ©galement habilitÃ©es</h3>
+<p>En cas d'obligation lÃ©gale, de rÃ©quisition judiciaire ou de demande d'une autoritÃ© administrative ou judiciaire compÃ©tente, Notitia Corp peut Ãªtre tenue de communiquer certaines donnÃ©es. Dans ce cas, Notitia Corp ne communique que les donnÃ©es strictement nÃ©cessaires et en informe l'utilisateur dans la mesure oÃ¹ la loi le permet.</p>
+<h3 class="legal-subtitle">7.5 Absence de vente de donnÃ©es</h3>
+<p>Notitia Corp rÃ©affirme solennellement qu'elle ne vend, ne monnaie, ni ne cÃ¨de Ã  titre onÃ©reux ou gratuit Ã  des fins commerciales les donnÃ©es personnelles de ses utilisateurs. Cette pratique est formellement interdite par les politiques internes de Notitia Corp et serait contraire Ã  ses engagements contractuels envers ses utilisateurs.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 8 â DROITS DES UTILISATEURS</h2>
+<p>ConformÃ©ment aux articles 15 Ã  22 du RGPD et aux articles 48 Ã  52 de la loi Informatique et LibertÃ©s, les utilisateurs de l'Application VIVE disposent des droits suivants concernant leurs donnÃ©es personnelles.</p>
+<h3 class="legal-subtitle">8.1 Droit d'accÃ¨s â Article 15 du RGPD</h3>
+<p>L'utilisateur a le droit d'obtenir de Notitia Corp la confirmation que des donnÃ©es le concernant sont ou non traitÃ©es et, le cas Ã©chÃ©ant, d'accÃ©der Ã  ces donnÃ©es ainsi qu'aux informations suivantes : les finalitÃ©s du traitement, les catÃ©gories de donnÃ©es concernÃ©es, les destinataires ou catÃ©gories de destinataires, la durÃ©e de conservation prÃ©vue, l'existence des droits de rectification, d'effacement, de limitation et d'opposition, le droit d'introduire une rÃ©clamation auprÃ¨s d'une autoritÃ© de contrÃ´le, les informations disponibles sur la source des donnÃ©es et l'existence d'une prise de dÃ©cision automatisÃ©e.</p>
+<p>Notitia Corp fournira une copie des donnÃ©es faisant l'objet du traitement. En cas de demandes manifestement infondÃ©es ou excessives, notamment en raison de leur caractÃ¨re rÃ©pÃ©titif, Notitia Corp se rÃ©serve le droit d'exiger le paiement de frais raisonnables ou de refuser de donner suite Ã  la demande (Art. 12Â§5 du RGPD).</p>
+<h3 class="legal-subtitle">8.2 Droit de rectification â Article 16 du RGPD</h3>
+<p>L'utilisateur a le droit d'obtenir la rectification des donnÃ©es inexactes le concernant dans les meilleurs dÃ©lais. L'utilisateur a Ã©galement le droit d'obtenir que les donnÃ©es incomplÃ¨tes soient complÃ©tÃ©es, notamment par le biais d'une dÃ©claration complÃ©mentaire. La plupart des donnÃ©es peuvent Ãªtre modifiÃ©es directement depuis les paramÃ¨tres du compte dans l'Application.</p>
+<h3 class="legal-subtitle">8.3 Droit Ã  l'effacement (Â« droit Ã  l'oubli Â») â Article 17 du RGPD</h3>
+<p>L'utilisateur a le droit d'obtenir l'effacement de ses donnÃ©es personnelles dans les meilleurs dÃ©lais dans les cas suivants :</p>
+<ul>
+<li>Les donnÃ©es ne sont plus nÃ©cessaires au regard des finalitÃ©s pour lesquelles elles ont Ã©tÃ© collectÃ©es ;</li>
+<li>L'utilisateur retire son consentement et il n'existe pas d'autre base lÃ©gale au traitement ;</li>
+<li>L'utilisateur s'oppose au traitement et il n'existe pas de motif lÃ©gitime impÃ©rieux ;</li>
+<li>Les donnÃ©es ont fait l'objet d'un traitement illicite ;</li>
+<li>L'effacement est nÃ©cessaire pour respecter une obligation lÃ©gale.</li>
+</ul>
+<p>Le droit Ã  l'effacement ne s'applique pas lorsque le traitement est nÃ©cessaire Ã  l'exÃ©cution d'une mission d'intÃ©rÃªt public, Ã  des fins de recherche, Ã  la constatation, l'exercice ou la dÃ©fense de droits en justice, ou au respect d'une obligation lÃ©gale (notamment les obligations de conservation comptable).</p>
+<h3 class="legal-subtitle">8.4 Droit Ã  la limitation du traitement â Article 18 du RGPD</h3>
+<p>L'utilisateur a le droit d'obtenir la limitation du traitement de ses donnÃ©es dans les cas suivants :</p>
+<ul>
+<li>L'exactitude des donnÃ©es est contestÃ©e par l'utilisateur, pendant la durÃ©e permettant Ã  Notitia Corp de vÃ©rifier l'exactitude de ces donnÃ©es ;</li>
+<li>Le traitement est illicite et l'utilisateur s'oppose Ã  l'effacement et exige la limitation de leur utilisation ;</li>
+<li>Notitia Corp n'a plus besoin des donnÃ©es Ã  des fins de traitement, mais celles-ci sont encore nÃ©cessaires Ã  l'utilisateur pour la constatation, l'exercice ou la dÃ©fense de droits en justice ;</li>
+<li>L'utilisateur a exercÃ© son droit d'opposition, pendant la vÃ©rification portant sur les motifs lÃ©gitimes impÃ©rieux.</li>
+</ul>
+<h3 class="legal-subtitle">8.5 Droit Ã  la portabilitÃ© â Article 20 du RGPD</h3>
+<p>L'utilisateur a le droit de recevoir les donnÃ©es personnelles le concernant qu'il a fournies Ã  Notitia Corp, dans un format structurÃ©, couramment utilisÃ© et lisible par machine (JSON, CSV), et de les transmettre Ã  un autre responsable du traitement, lorsque le traitement est fondÃ© sur le consentement ou sur un contrat et est effectuÃ© Ã  l'aide de procÃ©dÃ©s automatisÃ©s. Ce droit ne s'applique pas aux donnÃ©es traitÃ©es dans l'exercice de missions d'intÃ©rÃªt public.</p>
+<h3 class="legal-subtitle">8.6 Droit d'opposition â Article 21 du RGPD</h3>
+<p>L'utilisateur a le droit de s'opposer Ã  tout moment, pour des raisons tenant Ã  sa situation particuliÃ¨re, au traitement de ses donnÃ©es personnelles fondÃ© sur l'intÃ©rÃªt lÃ©gitime de Notitia Corp (Art. 6Â§1(f)), y compris au profilage fondÃ© sur ces dispositions. Notitia Corp ne traitera plus les donnÃ©es, Ã  moins qu'elle ne dÃ©montre qu'il existe des motifs lÃ©gitimes et impÃ©rieux pour le traitement qui prÃ©valent sur les intÃ©rÃªts et les droits de l'utilisateur.</p>
+<p>Lorsque les donnÃ©es sont traitÃ©es Ã  des fins de prospection commerciale (marketing direct), l'utilisateur a le droit de s'y opposer Ã  tout moment et sans justification, et le traitement Ã  ces fins devra cesser sans dÃ©lai.</p>
+<h3 class="legal-subtitle">8.7 Droit de retrait du consentement â Article 7, paragraphe 3 du RGPD</h3>
+<p>Lorsque le traitement est fondÃ© sur le consentement de l'utilisateur, celui-ci a le droit de retirer son consentement Ã  tout moment, sans que ce retrait ne remette en cause la licÃ©itÃ© du traitement effectuÃ© avant ce retrait. Le retrait du consentement s'effectue soit directement depuis les paramÃ¨tres de l'Application (section Â« Vie privÃ©e et consentements Â»), soit en contactant le DPO.</p>
+<p>Concernant spÃ©cifiquement les donnÃ©es de santÃ©, le retrait du consentement entraÃ®nera la cessation du traitement de ces donnÃ©es et pourra limiter l'accÃ¨s Ã  certaines fonctionnalitÃ©s de personnalisation de l'Application.</p>
+<h3 class="legal-subtitle">8.8 Droits relatifs Ã  la prise de dÃ©cision automatisÃ©e et au profilage â Article 22 du RGPD</h3>
+<p>L'Application VIVE utilise des algorithmes d'intelligence artificielle pour personnaliser les recommandations fournies aux utilisateurs. Dans la mesure oÃ¹ ces processus peuvent constituer une prise de dÃ©cision automatisÃ©e, y compris un profilage au sens de l'article 22 du RGPD, l'utilisateur a le droit de ne pas faire l'objet d'une dÃ©cision fondÃ©e exclusivement sur un traitement automatisÃ©, y compris le profilage, produisant des effets juridiques le concernant ou l'affectant de maniÃ¨re significative de faÃ§on similaire.</p>
+<p>Notitia Corp s'engage Ã  ce que les recommandations gÃ©nÃ©rÃ©es par son IA constituent une aide Ã  la dÃ©cision pour l'utilisateur et ne constituent pas des dÃ©cisions mÃ©dicales automatisÃ©es contraignantes. Aucun diagnostic mÃ©dical n'est Ã©mis par l'Application.</p>
+<h3 class="legal-subtitle">8.9 Droit de dÃ©finir des directives post-mortem</h3>
+<p>ConformÃ©ment Ã  l'article 85 de la loi Informatique et LibertÃ©s, l'utilisateur peut dÃ©finir des directives relatives Ã  la conservation, Ã  l'effacement et Ã  la communication de ses donnÃ©es Ã  caractÃ¨re personnel aprÃ¨s son dÃ©cÃ¨s.</p>
+<h3 class="legal-subtitle">8.10 ModalitÃ©s d'exercice des droits</h3>
+<p>Pour exercer l'un des droits mentionnÃ©s ci-dessus, l'utilisateur peut :</p>
+<ul>
+<li>Utiliser les fonctionnalitÃ©s disponibles directement dans les paramÃ¨tres de l'Application (section Â« Mes donnÃ©es et vie privÃ©e Â») ;</li>
+<li>Adresser une demande Ã©crite par email au DPO : notitiacorp@gmail.com ;</li>
+<li>Adresser une demande Ã©crite par courrier postal : DPO â Notitia Corp, 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France.</li>
+</ul>
+<p>ConformÃ©ment Ã  l'article 12 du RGPD, Notitia Corp s'engage Ã  rÃ©pondre Ã  toute demande dans un dÃ©lai d'un (1) mois Ã  compter de la rÃ©ception de la demande. Ce dÃ©lai peut Ãªtre prolongÃ© de deux (2) mois supplÃ©mentaires en cas de complexitÃ© ou de nombre Ã©levÃ© de demandes, l'utilisateur en Ã©tant informÃ© dans le mois suivant la rÃ©ception.</p>
+<p>Afin de protÃ©ger la vie privÃ©e des utilisateurs, Notitia Corp peut demander la fourniture d'un justificatif d'identitÃ© pour traiter toute demande d'exercice de droits.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 9 â SÃCURITÃ DES DONNÃES</h2>
+<p>ConformÃ©ment Ã  l'article 32 du RGPD, Notitia Corp met en Åuvre les mesures techniques et organisationnelles appropriÃ©es pour garantir un niveau de sÃ©curitÃ© adaptÃ© au risque, compte tenu notamment de la nature sensible des donnÃ©es de santÃ© traitÃ©es.</p>
+<h3 class="legal-subtitle">9.1 Mesures techniques</h3>
+<ul>
+<li>Chiffrement des donnÃ©es en transit : toutes les communications entre l'Application et les serveurs sont chiffrÃ©es via le protocole TLS 1.2 minimum (Transport Layer Security) ;</li>
+<li>Chiffrement des donnÃ©es au repos : les donnÃ©es stockÃ©es dans la base de donnÃ©es Supabase sont chiffrÃ©es au repos (AES-256) ;</li>
+<li>Hachage des mots de passe : les mots de passe sont stockÃ©s sous forme hachÃ©e avec salage (algorithme bcrypt), rendant toute lecture en clair impossible ;</li>
+<li>Authentification forte : possibilitÃ© d'activer l'authentification Ã  deux facteurs (2FA) pour les comptes utilisateurs ;</li>
+<li>ContrÃ´le d'accÃ¨s : mise en Åuvre du principe du moindre privilÃ¨ge pour l'accÃ¨s aux donnÃ©es (Role-Based Access Control â RBAC) ;</li>
+<li>Pseudonymisation : dans la mesure du possible, les donnÃ©es sont pseudonymisÃ©es afin de rÃ©duire les risques en cas de violation ;</li>
+<li>Surveillance et dÃ©tection : mise en place de systÃ¨mes de dÃ©tection d'intrusion et de monitoring des accÃ¨s aux donnÃ©es.</li>
+</ul>
+<h3 class="legal-subtitle">9.2 Mesures organisationnelles</h3>
+<ul>
+<li>Formation et sensibilisation rÃ©guliÃ¨res du personnel Ã  la protection des donnÃ©es et Ã  la cybersÃ©curitÃ© ;</li>
+<li>Politique de contrÃ´le des accÃ¨s internes stricte, avec accÃ¨s aux donnÃ©es personnelles limitÃ© aux seuls personnels habilitÃ©s ;</li>
+<li>Engagement de confidentialitÃ© signÃ© par l'ensemble du personnel ayant accÃ¨s aux donnÃ©es ;</li>
+<li>RÃ©alisation d'Analyses d'Impact sur la Protection des DonnÃ©es (AIPD/DPIA) conformÃ©ment Ã  l'article 35 du RGPD pour les traitements Ã  risque Ã©levÃ©, notamment ceux portant sur les donnÃ©es de santÃ© ;</li>
+<li>ProcÃ©dures de gestion des violations de donnÃ©es personnelles conformÃ©ment aux articles 33 et 34 du RGPD (notification Ã  la CNIL dans les 72 heures, notification aux personnes concernÃ©es si le risque est Ã©levÃ©) ;</li>
+<li>Revue et audits de sÃ©curitÃ© rÃ©guliers ;</li>
+<li>Plan de continuitÃ© d'activitÃ© et de reprise aprÃ¨s sinistre.</li>
+</ul>
+<h3 class="legal-subtitle">9.3 Gestion des violations de donnÃ©es</h3>
+<p>En cas de violation de donnÃ©es Ã  caractÃ¨re personnel susceptible d'engendrer un risque pour les droits et libertÃ©s des personnes physiques, Notitia Corp s'engage Ã  :</p>
+<ul>
+<li>Notifier la violation Ã  la CNIL dans un dÃ©lai de 72 heures aprÃ¨s en avoir pris connaissance, conformÃ©ment Ã  l'article 33 du RGPD ;</li>
+<li>Notifier les utilisateurs concernÃ©s dans les meilleurs dÃ©lais lorsque la violation est susceptible d'engendrer un risque Ã©levÃ© pour leurs droits et libertÃ©s, conformÃ©ment Ã  l'article 34 du RGPD, en leur fournissant les informations nÃ©cessaires sur la nature de la violation, les consÃ©quences probables et les mesures prises ou envisagÃ©es.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 10 â COOKIES ET TRACEURS</h2>
+<p>ConformÃ©ment Ã  l'article 82 de la loi Informatique et LibertÃ©s, Ã  la directive ePrivacy (2002/58/CE rÃ©visÃ©e par la directive 2009/136/CE) et aux recommandations de la CNIL, la prÃ©sente section informe les utilisateurs de l'utilisation de cookies et traceurs sur l'Application VIVE et le site web associÃ©.</p>
+<h3 class="legal-subtitle">10.1 DÃ©finition</h3>
+<p>Un cookie est un petit fichier texte dÃ©posÃ© sur l'appareil de l'utilisateur (smartphone, ordinateur, tablette) lors de la navigation sur un site web ou l'utilisation d'une application. Il permet de stocker des informations relatives Ã  la navigation et peut Ãªtre lu lors des visites ultÃ©rieures.</p>
+<h3 class="legal-subtitle">10.2 CatÃ©gories de cookies utilisÃ©s</h3>
+<h3 class="legal-subtitle">10.2.1 Cookies strictement nÃ©cessaires (exemptÃ©s de consentement)</h3>
+<p>Ces cookies sont indispensables au fonctionnement de l'Application et du site web. Sans eux, les services demandÃ©s ne peuvent pas Ãªtre fournis. Ils ne peuvent pas Ãªtre dÃ©sactivÃ©s.</p>
+<ul>
+<li>Cookies de session et d'authentification : permettent de maintenir la session de l'utilisateur connectÃ© et d'assurer la sÃ©curitÃ© de l'authentification ;</li>
+<li>Cookies de sÃ©curitÃ© : permettent de dÃ©tecter les activitÃ©s frauduleuses et de protÃ©ger l'Application ;</li>
+<li>Cookies de prÃ©fÃ©rences techniques : mÃ©morisent les prÃ©fÃ©rences techniques essentielles de l'utilisateur (langue, rÃ©gion).</li>
+</ul>
+<p>DurÃ©e de conservation : Session ou jusqu'Ã  12 mois maximum pour les tokens d'authentification persistants.</p>
+<h3 class="legal-subtitle">10.2.2 Cookies analytiques et de mesure d'audience (soumis au consentement)</h3>
+<p>Ces cookies permettent Ã  Notitia Corp d'analyser l'audience et l'utilisation de l'Application afin d'en amÃ©liorer les performances et les fonctionnalitÃ©s. Ils ne sont dÃ©posÃ©s qu'avec le consentement prÃ©alable de l'utilisateur.</p>
+<ul>
+<li>Cookies de mesure d'audience anonymisÃ©e : permettent d'Ã©tablir des statistiques d'utilisation agrÃ©gÃ©es (nombre de sessions, pages vues, durÃ©e moyenne des sessions, taux de rÃ©tention). Notitia Corp s'efforce de configurer ces outils de maniÃ¨re Ã  anonymiser les donnÃ©es collectÃ©es dÃ¨s que possible.</li>
+</ul>
+<p>DurÃ©e de conservation : 13 mois maximum (conformÃ©ment aux recommandations de la CNIL).</p>
+<h3 class="legal-subtitle">10.2.3 Cookies fonctionnels (soumis au consentement)</h3>
+<p>Ces cookies permettent d'amÃ©liorer et de personnaliser les fonctionnalitÃ©s de l'Application en mÃ©morisant les choix de l'utilisateur et en proposant des fonctionnalitÃ©s enrichies.</p>
+<ul>
+<li>MÃ©morisation des prÃ©fÃ©rences de personnalisation non essentielles ;</li>
+<li>MÃ©morisation des contenus consultÃ©s pour faciliter la navigation.</li>
+</ul>
+<p>DurÃ©e de conservation : 6 mois maximum.</p>
+<h3 class="legal-subtitle">10.2.4 Cookies de performance et de diagnostic (soumis au consentement)</h3>
+<ul>
+<li>Crash reporters et outils de monitoring : permettent de dÃ©tecter les erreurs techniques et les dysfonctionnements de l'Application afin d'amÃ©liorer sa stabilitÃ©.</li>
+</ul>
+<p>DurÃ©e de conservation : 6 mois maximum.</p>
+<h3 class="legal-subtitle">10.3 Traceurs tiers</h3>
+<p>Les sous-traitants de Notitia Corp (listÃ©s Ã  l'article 7) peuvent Ã©galement dÃ©poser des traceurs dans le cadre de leurs services respectifs (Stripe pour la sÃ©curitÃ© des paiements, Supabase pour l'authentification). Ces traceurs sont soumis aux politiques de confidentialitÃ© de ces tiers.</p>
+<h3 class="legal-subtitle">10.4 Gestion du consentement aux cookies</h3>
+<p>ConformÃ©ment Ã  la rÃ©glementation applicable et aux recommandations de la CNIL :</p>
+<ul>
+<li>Lors de la premiÃ¨re utilisation de l'Application ou du site web, une interface de gestion du consentement (bandeau cookies / CMP â Consent Management Platform) est prÃ©sentÃ©e Ã  l'utilisateur ;</li>
+<li>L'utilisateur peut accepter l'ensemble des cookies non nÃ©cessaires, les refuser ou personnaliser ses choix par catÃ©gorie ;</li>
+<li>Le refus des cookies non nÃ©cessaires doit Ãªtre aussi simple que leur acceptation ;</li>
+<li>L'utilisateur peut modifier ses prÃ©fÃ©rences Ã  tout moment depuis la section Â« Gestion des cookies Â» accessible dans les paramÃ¨tres de l'Application ou en bas de page du site web ;</li>
+<li>Le consentement est recueilli pour une durÃ©e de 6 mois, aprÃ¨s quoi il est demandÃ© Ã  nouveau Ã  l'utilisateur.</li>
+</ul>
+<h3 class="legal-subtitle">10.5 Cookies des plateformes mobiles</h3>
+<p>Sur les applications mobiles iOS et Android, des identifiants publicitaires (IDFA sur iOS, GAID sur Android) peuvent Ãªtre utilisÃ©s. ConformÃ©ment aux rÃ¨gles d'Apple (App Tracking Transparency â ATT) et de Google, leur utilisation est soumise au consentement explicite prÃ©alable de l'utilisateur via les interfaces systÃ¨me dÃ©diÃ©es.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 11 â PROTECTION DES MINEURS</h2>
+<h3 class="legal-subtitle">11.1 Ãge minimum requis</h3>
+<p>L'Application VIVE est destinÃ©e exclusivement aux personnes Ã¢gÃ©es de seize (16) ans ou plus. ConformÃ©ment Ã  l'article 8 du RGPD et Ã  l'article 45 de la loi Informatique et LibertÃ©s, le traitement des donnÃ©es Ã  caractÃ¨re personnel d'un enfant de moins de 16 ans n'est licite que si le consentement est donnÃ© ou autorisÃ© par le titulaire de la responsabilitÃ© parentale.</p>
+<h3 class="legal-subtitle">11.2 Mesures de vÃ©rification de l'Ã¢ge</h3>
+<p>Lors de l'inscription, Notitia Corp collecte la date de naissance de l'utilisateur et empÃªche l'accÃ¨s Ã  l'Application aux personnes indiquant Ãªtre Ã¢gÃ©es de moins de 16 ans. Notitia Corp ne procÃ¨de pas volontairement Ã  la collecte de donnÃ©es personnelles d'enfants de moins de 16 ans.</p>
+<h3 class="legal-subtitle">11.3 DÃ©tection et suppression des donnÃ©es</h3>
+<p>Si Notitia Corp apprend ou a des raisons de croire qu'un utilisateur est Ã¢gÃ© de moins de 16 ans, elle prendra les mesures nÃ©cessaires pour :</p>
+<ul>
+<li>Suspendre ou supprimer le compte concernÃ© ;</li>
+<li>Supprimer l'ensemble des donnÃ©es personnelles collectÃ©es auprÃ¨s de cet utilisateur dans les meilleurs dÃ©lais.</li>
+</ul>
+<p>Les parents ou tuteurs lÃ©gaux qui ont connaissance de l'inscription d'un enfant mineur de moins de 16 ans Ã  l'Application VIVE sont invitÃ©s Ã  contacter Notitia Corp Ã  l'adresse notitiacorp@gmail.com afin de demander la suppression des donnÃ©es et du compte.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 12 â MODIFICATIONS DE LA PRÃSENTE POLITIQUE</h2>
+<h3 class="legal-subtitle">12.1 Droit de modification</h3>
+<p>Notitia Corp se rÃ©serve le droit de modifier la prÃ©sente Politique de ConfidentialitÃ© Ã  tout moment, notamment pour se conformer Ã  l'Ã©volution de la rÃ©glementation applicable, aux dÃ©cisions et recommandations de la CNIL ou des autoritÃ©s europÃ©ennes de protection des donnÃ©es (EDPB â European Data Protection Board), ou pour reflÃ©ter l'Ã©volution des services et fonctionnalitÃ©s de l'Application VIVE.</p>
+<h3 class="legal-subtitle">12.2 Information des utilisateurs</h3>
+<p>En cas de modifications substantielles de la prÃ©sente Politique â c'est-Ã -dire affectant de maniÃ¨re significative les droits des utilisateurs ou les modalitÃ©s de traitement de leurs donnÃ©es â Notitia Corp s'engage Ã  informer les utilisateurs par les moyens suivants :</p>
+<ul>
+<li>Une notification in-app visible lors de la prochaine connexion de l'utilisateur ;</li>
+<li>Un email adressÃ© Ã  l'adresse Ã©lectronique associÃ©e au compte de l'utilisateur ;</li>
+<li>La mise Ã  jour de la date d'entrÃ©e en vigueur figurant en tÃªte du prÃ©sent document.</li>
+</ul>
+<h3 class="legal-subtitle">12.3 Acceptation des modifications</h3>
+<p>Pour les modifications substantielles impliquant de nouvelles finalitÃ©s de traitement ou de nouvelles catÃ©gories de donnÃ©es traitÃ©es, notamment des donnÃ©es de santÃ©, un nouveau consentement explicite sera recueilli auprÃ¨s des utilisateurs avant la mise en Åuvre de ces modifications.</p>
+<h3 class="legal-subtitle">12.4 AccÃ¨s aux versions antÃ©rieures</h3>
+<p>L'ensemble des versions antÃ©rieures de la Politique de ConfidentialitÃ© est archivÃ© et accessible sur demande auprÃ¨s du DPO.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 13 â CONTACT ET EXERCICE DES DROITS</h2>
+<p>Pour toute question relative Ã  la prÃ©sente Politique de ConfidentialitÃ©, Ã  l'exercice de vos droits, ou Ã  la gestion de vos donnÃ©es personnelles, vous pouvez contacter Notitia Corp par les voies suivantes :</p>
+<p>DÃ©lÃ©guÃ© Ã  la Protection des DonnÃ©es (DPO) â Notitia Corp</p>
+<p>Adresse postale : 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p>ConformÃ©ment Ã  l'article 12 du RGPD, Notitia Corp accusera rÃ©ception de votre demande et y rÃ©pondra dans un dÃ©lai maximum d'un (1) mois Ã  compter de la rÃ©ception de celle-ci. Si nÃ©cessaire, ce dÃ©lai peut Ãªtre prolongÃ© de deux (2) mois supplÃ©mentaires, compte tenu de la complexitÃ© et du nombre de demandes. Dans ce cas, Notitia Corp vous informera de cette prolongation dans le dÃ©lai d'un mois suivant la rÃ©ception de votre demande, en vous indiquant les raisons de ce report.</p>
+<p>En cas d'exercice de vos droits par voie postale ou Ã©lectronique, il vous sera demandÃ© de joindre la copie d'un justificatif d'identitÃ© en cours de validitÃ© afin de permettre Ã  Notitia Corp de vÃ©rifier votre identitÃ© et de protÃ©ger vos donnÃ©es contre tout accÃ¨s non autorisÃ©.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 14 â RÃCLAMATION AUPRÃS DE L'AUTORITÃ DE CONTRÃLE</h2>
+<h3 class="legal-subtitle">14.1 Droit Ã  l'introduction d'une rÃ©clamation</h3>
+<p>ConformÃ©ment Ã  l'article 77 du RGPD, si vous estimez que le traitement de vos donnÃ©es personnelles par Notitia Corp porte atteinte aux dispositions du RGPD ou de la loi Informatique et LibertÃ©s, vous avez le droit d'introduire une rÃ©clamation auprÃ¨s de l'autoritÃ© de contrÃ´le compÃ©tente, sans prÃ©judice de tout autre recours administratif ou juridictionnel.</p>
+<h3 class="legal-subtitle">14.2 AutoritÃ© de contrÃ´le compÃ©tente en France</h3>
+<p>L'autoritÃ© de contrÃ´le compÃ©tente en France est la Commission Nationale de l'Informatique et des LibertÃ©s (CNIL) :</p>
+<p>Commission Nationale de l'Informatique et des LibertÃ©s (CNIL)</p>
+<p>3 Place de Fontenoy â TSA 80715</p>
+<p>75334 Paris Cedex 07</p>
+<p>France</p>
+<p>Site web : www.cnil.fr</p>
+<p>TÃ©lÃ©phone : 01 53 73 22 22</p>
+<p>Formulaire de plainte en ligne : https://www.cnil.fr/fr/plaintes</p>
+<h3 class="legal-subtitle">14.3 Recours prÃ©alable recommandÃ©</h3>
+<p>Notitia Corp encourage les utilisateurs Ã  la contacter en prioritÃ© avant d'introduire une rÃ©clamation auprÃ¨s de la CNIL, afin de tenter de rÃ©soudre amiablement tout diffÃ©rend relatif Ã  la protection des donnÃ©es personnelles. Notitia Corp s'engage Ã  traiter toute rÃ©clamation de maniÃ¨re sÃ©rieuse et diligente.</p>
+<h3 class="legal-subtitle">14.4 Recours juridictionnel</h3>
+<p>ConformÃ©ment Ã  l'article 79 du RGPD, indÃ©pendamment de tout recours administratif ou extrajudiciaire, vous disposez d'un droit Ã  un recours juridictionnel effectif si vous considÃ©rez que vos droits ont Ã©tÃ© violÃ©s Ã  la suite d'un traitement de vos donnÃ©es Ã  caractÃ¨re personnel effectuÃ© en violation du RGPD.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">DISPOSITIONS FINALES</h2>
+<p>La prÃ©sente Politique de ConfidentialitÃ© est rÃ©digÃ©e en langue franÃ§aise. En cas de traduction dans une autre langue, la version franÃ§aise prÃ©vaudra en cas de divergence d'interprÃ©tation.</p>
+<p>La prÃ©sente Politique de ConfidentialitÃ© est soumise au droit franÃ§ais. Les tribunaux compÃ©tents en cas de litige relatif Ã  l'interprÃ©tation ou Ã  l'exÃ©cution de la prÃ©sente Politique seront, sous rÃ©serve des rÃ¨gles d'ordre public applicables, les tribunaux du ressort de Montpellier, France.</p>
+<p>Si une disposition de la prÃ©sente Politique Ã©tait dÃ©clarÃ©e invalide ou inapplicable par une juridiction compÃ©tente, les autres dispositions resteraient en vigueur et continueraient Ã  s'appliquer pleinement.</p>
+<hr class="legal-separator">
+<p>Date d'entrÃ©e en vigueur : 1er mars 2025</p>
+<p>Version : 1.0</p>
+<p>Responsable de la publication : Notitia Corp â DPO</p>
+<p>Â© 2025 Notitia Corp â Tous droits rÃ©servÃ©s. Application VIVE.</p>
+<hr class="legal-separator">
+<p>---</p>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo font-cormorant">VIVE</span>
+      <p class="footer-tagline">Concierge santÃ© personnel. PilotÃ© par l'intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Produit</h4>
+      <a href="index.html#how">Comment Ã§a marche</a><a href="index.html#box">La Box</a><a href="index.html#pricing">Tarifs</a><a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">CommunautÃ©</h4>
+      <a href="#">Blog</a><a href="#">Recherche</a><a href="#">Founders</a><a href="#">ÃvÃ©nements</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">LÃ©gal</h4>
+      <a href="mentions-legales.html">Mentions lÃ©gales</a><a href="privacy.html">ConfidentialitÃ©</a><a href="cgv.html">CGV</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Â© 2025 VIVE. Tous droits rÃ©servÃ©s.</p>
+  </div>
+</footer>
+
+</body>
+</html>
