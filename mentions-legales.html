@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions LÃ©gales â VIVE</title>
+<meta name="description" content="Mentions lÃ©gales de l'application VIVE Ã©ditÃ©e par Notitia Corp. Informations sur l'Ã©diteur, l'hÃ©bergeur et les droits de propriÃ©tÃ© intellectuelle.">
+<meta property="og:title" content="Mentions LÃ©gales â VIVE">
+<meta property="og:description" content="Mentions lÃ©gales de l'application VIVE par Notitia Corp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://notitiacorp-design.github.io/vive-landing/mentions-legales.html">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://notitiacorp-design.github.io/vive-landing/mentions-legales.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080810;
+  --surface: #111118;
+  --card: #1C1C28;
+  --border: #2A2A38;
+  --platinum: #E8E8F0;
+  --silver: #A8A8C0;
+  --blue: #3D8BFF;
+  --text: #F2F2F8;
+  --muted: #6B6B82;
+  --cta-bg: #FFFFFF;
+  --cta-text: #080810;
+  --nav-scrolled-bg: rgba(8,8,16,0.85);
+  --selection-bg: rgba(61,139,255,0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* NAV */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,232,240,0.05);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--platinum);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--platinum);
+}
+
+/* LEGAL PAGE STYLES */
+.legal-hero {
+  padding: 120px 48px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--platinum);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.legal-hero p {
+  color: var(--muted);
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 48px 80px;
+}
+
+.legal-content {
+  line-height: 1.8;
+}
+
+.legal-content p {
+  color: var(--silver);
+  font-size: 15px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.legal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--platinum);
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 60px;
+  letter-spacing: 0.5px;
+}
+
+.legal-title:first-child {
+  margin-top: 0;
+}
+
+.legal-version {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 24px;
+}
+
+.legal-separator {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.legal-toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.legal-toc .legal-article-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--platinum);
+}
+
+.toc-item {
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.toc-item:hover {
+  color: var(--platinum) !important;
+  border-color: var(--blue);
+}
+
+.legal-article-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--platinum);
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.5px;
+}
+
+.legal-subtitle {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-content li {
+  color: var(--silver);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.legal-content li::before {
+  content: 'â';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.legal-section-break {
+  height: 80px;
+  border-top: 2px solid var(--border);
+  margin-top: 60px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--surface);
+  padding: 64px 48px 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-tagline {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-title {
+  color: var(--platinum);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.footer-col a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--platinum);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 16px 24px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .legal-hero {
+    padding: 80px 24px 40px;
+  }
+  
+  .legal-container {
+    padding: 40px 24px 60px;
+  }
+  
+  .footer {
+    padding: 48px 24px 24px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<nav class="nav-bar scrolled" style="position:sticky;background:var(--nav-scrolled-bg);backdrop-filter:blur(20px);border-bottom:1px solid rgba(232,232,240,0.05);">
+  <a href="index.html" class="nav-logo font-cormorant">VIVE</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="privacy.html">ConfidentialitÃ©</a></li>
+    <li><a href="cgv.html">CGV & CGU</a></li>
+    <li><a href="mentions-legales.html">Mentions lÃ©gales</a></li>
+  </ul>
+</nav>
+
+<section class="legal-hero">
+  <h1 class="font-cormorant">Mentions LÃ©gales</h1>
+  <p class="font-mono">Date d'entrÃ©e en vigueur : 1er mars 2025</p>
+</section>
+
+<main class="legal-container">
+<div class="legal-content">
+<h1 class="legal-title font-cormorant">MENTIONS LÃGALES</h1>
+<p class="legal-version">Site web et Application VIVE</p>
+<p class="legal-version">Date d'entrÃ©e en vigueur : 1er mars 2025</p>
+<p>ConformÃ©ment aux dispositions de la loi nÂ° 2004-575 du 21 juin 2004 pour la Confiance dans l'Ãconomie NumÃ©rique (LCEN), notamment ses articles 6-III et 19, et au dÃ©cret nÂ° 2011-219 du 25 fÃ©vrier 2011 relatif Ã  la conservation et Ã  la communication des donnÃ©es permettant l'identification de toute personne ayant contribuÃ© Ã  la crÃ©ation d'un contenu mis en ligne, les prÃ©sentes mentions lÃ©gales ont pour objet d'informer les utilisateurs du site web et de l'application mobile VIVE (ci-aprÃ¨s dÃ©signÃ©s collectivement Â« la Plateforme Â») de l'identitÃ© des diffÃ©rents intervenants dans le cadre de leur conception, de leur publication et de leur hÃ©bergement.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 1 â ÃDITEUR DU SITE ET DE L'APPLICATION</h2>
+<p>La Plateforme VIVE (site vitrine, application mobile et API associÃ©e) est Ã©ditÃ©e par :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>Entreprise individuelle â Micro-entreprise</p>
+<p>NumÃ©ro SIRET : 995 367 208 00015</p>
+<p>SiÃ¨ge social : 15 Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>CoordonnÃ©es de contact :</p>
+<ul>
+<li>Adresse Ã©lectronique : notitiacorp@gmail.com</li>
+<li>TÃ©lÃ©phone : 06 71 90 25 13</li>
+</ul>
+<p class="legal-version">Notitia Corp est une entreprise individuelle immatriculÃ©e au registre du commerce et des sociÃ©tÃ©s compÃ©tent, exerÃ§ant son activitÃ© dans le domaine du dÃ©veloppement de solutions numÃ©riques, d'applications mobiles et de services bien-Ãªtre.</p>
+<p>En application de l'article 6-III-1Â° de la loi nÂ° 2004-575 du 21 juin 2004 prÃ©citÃ©e, l'Ã©diteur s'engage Ã  ce que les prÃ©sentes mentions lÃ©gales soient accessibles de faÃ§on permanente, directe et aisÃ©e Ã  partir de l'ensemble des pages de la Plateforme.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 2 â DIRECTEUR DE LA PUBLICATION</h2>
+<p>ConformÃ©ment Ã  l'article 6-III-1Â° de la loi nÂ° 2004-575 du 21 juin 2004, le directeur de la publication est :</p>
+<p>Monsieur Quentin CONVERT</p>
+<p>En sa qualitÃ© de dirigeant de Notitia Corp</p>
+<p>Adresse : 15 Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p>Le directeur de la publication est responsable du contenu Ã©ditorial publiÃ© sur l'ensemble de la Plateforme VIVE, dans les conditions prÃ©vues par la lÃ©gislation franÃ§aise en vigueur, notamment la loi du 29 juillet 1881 sur la libertÃ© de la presse et la loi nÂ° 2004-575 du 21 juin 2004 prÃ©citÃ©e.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 3 â HÃBERGEURS</h2>
+<p>ConformÃ©ment Ã  l'article 6-III-2Â° de la loi nÂ° 2004-575 du 21 juin 2004 pour la Confiance dans l'Ãconomie NumÃ©rique, les services constitutifs de la Plateforme VIVE sont hÃ©bergÃ©s par plusieurs prestataires distincts, dÃ©taillÃ©s ci-aprÃ¨s.</p>
+<h3 class="legal-subtitle">3.1 â HÃ©bergement de l'Application mobile et de l'API</h3>
+<p>Vercel Inc.</p>
+<p>340 S Lemon Ave #4133</p>
+<p>Walnut, CA 91789</p>
+<p>Ãtats-Unis d'AmÃ©rique</p>
+<p class="legal-version">Site web : https://vercel.com</p>
+<p>Vercel Inc. est le prestataire d'hÃ©bergement et de dÃ©ploiement en charge de l'application mobile VIVE et de l'interface de programmation applicative (API) qui lui est associÃ©e. Les serveurs utilisÃ©s dans le cadre de cette prestation peuvent Ãªtre localisÃ©s dans diffÃ©rentes rÃ©gions gÃ©ographiques conformÃ©ment Ã  la politique d'infrastructure de Vercel Inc.</p>
+<h3 class="legal-subtitle">3.2 â HÃ©bergement de la Base de donnÃ©es</h3>
+<p>Supabase Inc.</p>
+<p>970 Toa Payoh North #07-04</p>
+<p>Singapore 318992</p>
+<p>RÃ©publique de Singapour</p>
+<p class="legal-version">Site web : https://supabase.com</p>
+<p>Les donnÃ©es de la Plateforme VIVE sont stockÃ©es sur l'infrastructure de Supabase Inc. Notitia Corp a choisi une configuration d'hÃ©bergement des donnÃ©es localisÃ©e dans la rÃ©gion Europe â Irlande (EU West), au sein de l'Union europÃ©enne, afin de garantir un niveau de protection des donnÃ©es personnelles conforme aux exigences du RÃ¨glement (UE) 2016/679 du Parlement europÃ©en et du Conseil du 27 avril 2016 relatif Ã  la protection des donnÃ©es (RGPD) et de la loi nÂ° 78-17 du 6 janvier 1978 relative Ã  l'informatique, aux fichiers et aux libertÃ©s, dite Â« loi Informatique et LibertÃ©s Â».</p>
+<h3 class="legal-subtitle">3.3 â HÃ©bergement du Site vitrine</h3>
+<p>GitHub Inc. (service GitHub Pages)</p>
+<p>88 Colin P Kelly Jr St</p>
+<p>San Francisco, CA 94107</p>
+<p>Ãtats-Unis d'AmÃ©rique</p>
+<p class="legal-version">Site web : https://github.com</p>
+<p>Le site vitrine de la Plateforme VIVE est hÃ©bergÃ© par le service GitHub Pages, opÃ©rÃ© par GitHub Inc., filiale de Microsoft Corporation. Ce service assure la mise en ligne des pages statiques constituant la prÃ©sentation publique de l'offre VIVE.</p>
+<p>Pour toute notification relative Ã  des contenus illicites, conformÃ©ment aux articles 6-I-2Â° et 6-I-3Â° de la loi nÂ° 2004-575 du 21 juin 2004, les utilisateurs peuvent contacter l'Ã©diteur aux coordonnÃ©es mentionnÃ©es Ã  l'article 1 des prÃ©sentes mentions lÃ©gales.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 4 â PROPRIÃTÃ INTELLECTUELLE</h2>
+<h3 class="legal-subtitle">4.1 â Droits de l'Ã©diteur</h3>
+<p>L'ensemble des Ã©lÃ©ments constitutifs de la Plateforme VIVE, qu'ils soient visuels, textuels, sonores, graphiques, interactifs ou informatiques, incluant mais sans s'y limiter : la marque VIVE, les logos, icÃ´nes, typographies, identitÃ© visuelle, photographies, illustrations, vidÃ©os, textes rÃ©dactionnels, slogans, interfaces graphiques (UI/UX), architecture fonctionnelle, code source, code objet, algorithmes, bases de donnÃ©es, et tout autre contenu ou Ã©lÃ©ment technique, sont la propriÃ©tÃ© exclusive de Notitia Corp ou font l'objet d'une licence d'utilisation consentie Ã  son profit.</p>
+<p>Ces Ã©lÃ©ments sont protÃ©gÃ©s par les dispositions du Code de la propriÃ©tÃ© intellectuelle, notamment :</p>
+<ul>
+<li>Le droit d'auteur au titre des articles L. 111-1 et suivants du Code de la propriÃ©tÃ© intellectuelle ;</li>
+<li>Le droit sui generis des producteurs de bases de donnÃ©es au titre des articles L. 341-1 et suivants du mÃªme code ;</li>
+<li>Le droit des marques au titre des articles L. 711-1 et suivants du mÃªme code.</li>
+</ul>
+<h3 class="legal-subtitle">4.2 â La marque VIVE</h3>
+<p>La dÃ©nomination VIVE constitue une marque appartenant Ã  Notitia Corp. Toute reproduction, reprÃ©sentation, utilisation, apposition, imitation ou modification de cette marque, sans l'autorisation prÃ©alable et Ã©crite de Notitia Corp, est strictement interdite et susceptible de constituer une contrefaÃ§on au sens des articles L. 716-1 et suivants du Code de la propriÃ©tÃ© intellectuelle, passible de sanctions civiles et pÃ©nales.</p>
+<h3 class="legal-subtitle">4.3 â Interdictions</h3>
+<p>Toute reproduction, reprÃ©sentation, modification, adaptation, traduction, extraction substantielle, diffusion, commercialisation, totale ou partielle, par quelque procÃ©dÃ© et sur quelque support que ce soit, des Ã©lÃ©ments de la Plateforme, sans l'autorisation prÃ©alable, expresse et Ã©crite de Notitia Corp, est strictement interdite et constituerait une contrefaÃ§on sanctionnÃ©e par les articles L. 335-2 et suivants du Code de la propriÃ©tÃ© intellectuelle.</p>
+<h3 class="legal-subtitle">4.4 â Contenus tiers</h3>
+<p>Les marques, logos, photographies, textes ou autres Ã©lÃ©ments appartenant Ã  des tiers et reproduits sur la Plateforme avec leur accord demeurent la propriÃ©tÃ© exclusive de leurs titulaires respectifs. Toute reproduction ou utilisation de ces Ã©lÃ©ments est soumise Ã  l'accord prÃ©alable de leurs titulaires.</p>
+<h3 class="legal-subtitle">4.5 â Liens hypertextes</h3>
+<p>La crÃ©ation de liens hypertextes vers la Plateforme VIVE est soumise Ã  l'accord prÃ©alable et Ã©crit de Notitia Corp. Notitia Corp dÃ©cline toute responsabilitÃ© quant au contenu des sites tiers vers lesquels des liens peuvent Ãªtre Ã©tablis depuis la Plateforme.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 5 â CONDITIONS D'UTILISATION</h2>
+<p>L'accÃ¨s et l'utilisation de la Plateforme VIVE, qu'il s'agisse du site vitrine, de l'application mobile ou des services associÃ©s, sont soumis Ã  l'acceptation et au respect des Conditions GÃ©nÃ©rales d'Utilisation (CGU) et, le cas Ã©chÃ©ant, des Conditions GÃ©nÃ©rales de Vente (CGV) de Notitia Corp.</p>
+<h3 class="legal-subtitle">5.1 â Conditions GÃ©nÃ©rales d'Utilisation (CGU)</h3>
+<p>Les CGU dÃ©finissent les rÃ¨gles d'accÃ¨s, d'inscription, d'utilisation et de comportement applicables Ã  l'ensemble des utilisateurs de la Plateforme VIVE. Elles sont consultables directement sur la Plateforme et tout utilisateur est rÃ©putÃ© les avoir acceptÃ©es dÃ¨s lors qu'il accÃ¨de Ã  la Plateforme ou qu'il crÃ©e un compte utilisateur.</p>
+<h3 class="legal-subtitle">5.2 â Conditions GÃ©nÃ©rales de Vente (CGV)</h3>
+<p>Les CGV rÃ©gissent les modalitÃ©s de souscription, de paiement, de livraison et de rÃ©tractation applicables aux services et produits commercialisÃ©s par Notitia Corp, notamment l'abonnement Ã  l'application mobile health concierge VIVE et la box bien-Ãªtre mensuelle. Elles sont accessibles depuis la Plateforme et s'imposent Ã  tout acheteur ou abonnÃ©.</p>
+<p>En cas de contradiction entre les CGU et les CGV, les dispositions des CGV prÃ©vaudront s'agissant des relations commerciales.</p>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de modifier Ã  tout moment les CGU et/ou les CGV, les nouvelles versions Ã©tant applicables dÃ¨s leur mise en ligne. Il appartient Ã  l'utilisateur de consulter rÃ©guliÃ¨rement ces documents.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 6 â PROTECTION DES DONNÃES PERSONNELLES</h2>
+<p class="legal-version">Notitia Corp attache une importance primordiale Ã  la protection des donnÃ©es personnelles de ses utilisateurs et s'engage Ã  traiter ces donnÃ©es conformÃ©ment aux dispositions lÃ©gales et rÃ©glementaires en vigueur, en particulier :</p>
+<ul>
+<li>Le RÃ¨glement (UE) 2016/679 du Parlement europÃ©en et du Conseil du 27 avril 2016 relatif Ã  la protection des personnes physiques Ã  l'Ã©gard du traitement des donnÃ©es Ã  caractÃ¨re personnel et Ã  la libre circulation de ces donnÃ©es (RGPD) ;</li>
+<li>La loi nÂ° 78-17 du 6 janvier 1978 relative Ã  l'informatique, aux fichiers et aux libertÃ©s, telle que modifiÃ©e.</li>
+</ul>
+<h3 class="legal-subtitle">6.1 â Responsable du traitement</h3>
+<p>Le responsable du traitement des donnÃ©es personnelles collectÃ©es dans le cadre de l'utilisation de la Plateforme VIVE est :</p>
+<p class="legal-version">Notitia Corp, reprÃ©sentÃ©e par Monsieur Quentin CONVERT</p>
+<p>15 Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<h3 class="legal-subtitle">6.2 â DÃ©lÃ©guÃ© Ã  la Protection des DonnÃ©es (DPO)</h3>
+<p>Pour toute question relative Ã  la protection de vos donnÃ©es personnelles, ou pour exercer vos droits, vous pouvez contacter le rÃ©fÃ©rent en charge de la protection des donnÃ©es de Notitia Corp :</p>
+<p>Par courrier Ã©lectronique : notitiacorp@gmail.com (en indiquant en objet : Â« Protection des donnÃ©es personnelles Â»)</p>
+<p>Par courrier postal : Notitia Corp â Protection des donnÃ©es personnelles, 15 Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<h3 class="legal-subtitle">6.3 â Renvoi Ã  la Politique de ConfidentialitÃ©</h3>
+<p>L'ensemble des informations relatives aux traitements de donnÃ©es personnelles effectuÃ©s par Notitia Corp dans le cadre de la Plateforme VIVE, notamment les finalitÃ©s des traitements, les catÃ©gories de donnÃ©es collectÃ©es, les durÃ©es de conservation, les destinataires des donnÃ©es, les transferts Ã©ventuels hors de l'Union europÃ©enne et les droits dont disposent les utilisateurs (droit d'accÃ¨s, de rectification, d'effacement, de limitation, d'opposition, de portabilitÃ© et droit de dÃ©finir des directives relatives au sort des donnÃ©es aprÃ¨s le dÃ©cÃ¨s), sont dÃ©taillÃ©s dans la Politique de ConfidentialitÃ© de VIVE, accessible depuis la Plateforme.</p>
+<p>Les utilisateurs sont invitÃ©s Ã  consulter attentivement ce document prÃ©alablement Ã  toute utilisation de la Plateforme.</p>
+<h3 class="legal-subtitle">6.4 â Droit d'introduire une rÃ©clamation</h3>
+<p>ConformÃ©ment Ã  l'article 77 du RGPD, tout utilisateur dispose du droit d'introduire une rÃ©clamation auprÃ¨s de la Commission Nationale de l'Informatique et des LibertÃ©s (CNIL) :</p>
+<p>CNIL</p>
+<p>3 Place de Fontenoy</p>
+<p>TSA 80715</p>
+<p>75334 Paris Cedex 07</p>
+<p class="legal-version">Site web : https://www.cnil.fr</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 7 â COOKIES ET TRACEURS</h2>
+<p>Lors de la navigation sur la Plateforme VIVE, des cookies et autres traceurs sont susceptibles d'Ãªtre dÃ©posÃ©s sur le terminal de l'utilisateur (ordinateur, tablette, smartphone), sous rÃ©serve de son consentement prÃ©alable lorsque celui-ci est requis par la rÃ©glementation en vigueur, notamment la directive 2002/58/CE du Parlement europÃ©en et du Conseil du 12 juillet 2002 (dite Â« directive ePrivacy Â»), transposÃ©e Ã  l'article 82 de la loi nÂ° 78-17 du 6 janvier 1978 modifiÃ©e, et les recommandations de la CNIL.</p>
+<p>Ces traceurs peuvent Ãªtre de nature fonctionnelle, analytique ou, le cas Ã©chÃ©ant, publicitaire. Leur utilisation a pour finalitÃ© d'assurer le bon fonctionnement technique de la Plateforme, d'amÃ©liorer l'expÃ©rience utilisateur et, le cas Ã©chÃ©ant, de mesurer l'audience de la Plateforme.</p>
+<p>L'utilisateur dispose Ã  tout moment de la facultÃ© de paramÃ©trer, d'accepter ou de refuser les cookies non strictement nÃ©cessaires au fonctionnement de la Plateforme, via le gestionnaire de consentement aux cookies accessible sur la Plateforme, ou via les paramÃ¨tres de son navigateur ou de son systÃ¨me d'exploitation.</p>
+<p>Pour toute information exhaustive sur les cookies dÃ©posÃ©s, leurs finalitÃ©s, leur durÃ©e de vie et les modalitÃ©s d'exercice des choix de l'utilisateur, il convient de se reporter Ã  la section dÃ©diÃ©e aux cookies de la Politique de ConfidentialitÃ© de VIVE, accessible depuis la Plateforme.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 8 â CRÃDITS</h2>
+<h3 class="legal-subtitle">8.1 â Conception et dÃ©veloppement</h3>
+<p>La conception, le design graphique, le dÃ©veloppement informatique et la mise en production de la Plateforme VIVE, comprenant le site vitrine, l'application mobile et l'API, ont Ã©tÃ© rÃ©alisÃ©s par :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>Entreprise individuelle â Micro-entreprise</p>
+<p>15 Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>SIRET : 995 367 208 00015</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<h3 class="legal-subtitle">8.2 â Technologies utilisÃ©es</h3>
+<p>La Plateforme VIVE est dÃ©veloppÃ©e en mobilisant des technologies numÃ©riques contemporaines dans le respect des droits de propriÃ©tÃ© intellectuelle de leurs titulaires respectifs. Les logiciels, bibliothÃ¨ques ou frameworks open source utilisÃ©s dans le dÃ©veloppement de la Plateforme sont exploitÃ©s conformÃ©ment Ã  leurs licences respectives.</p>
+<h3 class="legal-subtitle">8.3 â Visuels et contenus</h3>
+<p>Sauf mention contraire explicite, l'ensemble des photographies, illustrations, pictogrammes et contenus visuels prÃ©sents sur la Plateforme sont soit la propriÃ©tÃ© de Notitia Corp, soit utilisÃ©s avec l'accord de leurs titulaires ou dans le cadre de licences d'utilisation en vigueur.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 9 â LIMITATION DE RESPONSABILITÃ</h2>
+<h3 class="legal-subtitle">9.1 â Exactitude et disponibilitÃ© des contenus</h3>
+<p class="legal-version">Notitia Corp s'efforce de maintenir les informations diffusÃ©es sur la Plateforme VIVE aussi exactes, complÃ¨tes et Ã  jour que possible. Toutefois, Notitia Corp ne saurait garantir l'exactitude, la complÃ©tude, l'actualitÃ© ou l'adÃ©quation Ã  un usage particulier des informations et contenus prÃ©sents sur la Plateforme. La responsabilitÃ© de Notitia Corp ne pourra Ãªtre engagÃ©e du fait d'Ã©ventuelles erreurs, imprÃ©cisions ou omissions portant sur les informations disponibles sur la Plateforme.</p>
+<h3 class="legal-subtitle">9.2 â DisponibilitÃ© de la Plateforme</h3>
+<p class="legal-version">Notitia Corp s'efforce de maintenir la Plateforme accessible en permanence. Toutefois, l'accÃ¨s Ã  la Plateforme peut Ãªtre interrompu, notamment pour des raisons de maintenance, de mise Ã  jour, de dÃ©faillance technique, ou en cas de force majeure au sens de l'article 1218 du Code civil. Notitia Corp ne saurait Ãªtre tenu responsable des interruptions ou indisponibilitÃ©s temporaires de la Plateforme, quelles qu'en soient la cause et la durÃ©e.</p>
+<h3 class="legal-subtitle">9.3 â Liens hypertextes vers des sites tiers</h3>
+<p>La Plateforme peut contenir des liens hypertextes vers des sites web tiers. Ces liens sont fournis Ã  titre informatif uniquement. Notitia Corp n'exerce aucun contrÃ´le sur le contenu de ces sites tiers et dÃ©cline toute responsabilitÃ© quant aux informations, produits, services ou contenus qui y sont diffusÃ©s. L'existence de ces liens ne saurait Ãªtre interprÃ©tÃ©e comme une approbation ou une recommandation de la part de Notitia Corp.</p>
+<h3 class="legal-subtitle">9.4 â Conseils mÃ©dicaux et de santÃ©</h3>
+<p>Les contenus de la Plateforme VIVE relatifs au bien-Ãªtre, Ã  la santÃ© et aux habitudes de vie sont fournis Ã  titre informatif et gÃ©nÃ©ral. Ils ne constituent en aucun cas des conseils mÃ©dicaux, des diagnostics ou des prescriptions mÃ©dicales au sens de la lÃ©gislation applicable Ã  la profession mÃ©dicale. En aucun cas, ces contenus ne sauraient se substituer Ã  un avis, diagnostic ou traitement mÃ©dical professionnel. L'utilisateur est invitÃ© Ã  consulter un professionnel de santÃ© qualifiÃ© pour tout question mÃ©dicale.</p>
+<h3 class="legal-subtitle">9.5 â Comportement des utilisateurs</h3>
+<p class="legal-version">Notitia Corp ne saurait Ãªtre tenu responsable des contenus publiÃ©s par les utilisateurs sur les espaces interactifs de la Plateforme, ni des dommages rÃ©sultant d'un usage non conforme ou frauduleux de la Plateforme par un utilisateur.</p>
+<h3 class="legal-subtitle">9.6 â Cas de force majeure</h3>
+<p>La responsabilitÃ© de Notitia Corp ne saurait Ãªtre engagÃ©e en cas de force majeure au sens de l'article 1218 du Code civil, ou en cas de fait imprÃ©visible et insurmontable d'un tiers.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 10 â DROIT APPLICABLE ET LITIGES</h2>
+<h3 class="legal-subtitle">10.1 â Droit applicable</h3>
+<p>Les prÃ©sentes mentions lÃ©gales et, plus gÃ©nÃ©ralement, l'ensemble des relations juridiques entre Notitia Corp et les utilisateurs de la Plateforme VIVE, sont rÃ©gies exclusivement par le droit franÃ§ais, sans prÃ©judice des dispositions impÃ©ratives applicables aux consommateurs en vertu du RÃ¨glement (CE) nÂ° 593/2008 du Parlement europÃ©en et du Conseil du 17 juin 2008 sur la loi applicable aux obligations contractuelles (Rome I) et du RÃ¨glement (CE) nÂ° 864/2007 du 11 juillet 2007 (Rome II).</p>
+<h3 class="legal-subtitle">10.2 â MÃ©diation de la consommation</h3>
+<p>ConformÃ©ment aux articles L. 612-1 et suivants du Code de la consommation, et Ã  l'ordonnance nÂ° 2015-1033 du 20 aoÃ»t 2015 relative au rÃ¨glement extrajudiciaire des litiges de consommation, tout consommateur a le droit de recourir gratuitement Ã  un mÃ©diateur de la consommation en vue de la rÃ©solution amiable d'un litige avec un professionnel.</p>
+<p>PrÃ©alablement Ã  toute saisine d'un mÃ©diateur, l'utilisateur est invitÃ© Ã  contacter Notitia Corp par Ã©crit aux coordonnÃ©es mentionnÃ©es Ã  l'article 1 des prÃ©sentes, afin de tenter de rÃ©soudre le litige Ã  l'amiable.</p>
+<p>En cas d'Ã©chec de cette dÃ©marche amiable, l'utilisateur peut saisir le mÃ©diateur compÃ©tent. Les informations relatives au mÃ©diateur compÃ©tent pour Notitia Corp sont disponibles sur demande auprÃ¨s de l'Ã©diteur Ã  l'adresse notitiacorp@gmail.com.</p>
+<p>La Commission europÃ©enne met Ã©galement Ã  disposition une plateforme de rÃ¨glement en ligne des litiges (RLL) accessible Ã  l'adresse suivante : https://ec.europa.eu/consumers/odr</p>
+<h3 class="legal-subtitle">10.3 â Juridiction compÃ©tente</h3>
+<p>En dehors des cas de recours Ã  la mÃ©diation ou Ã  tout autre mode alternatif de rÃ©solution des litiges, et sous rÃ©serve des dispositions d'ordre public applicables aux consommateurs, tout litige relatif Ã  l'interprÃ©tation, Ã  la validitÃ© ou Ã  l'exÃ©cution des prÃ©sentes mentions lÃ©gales relÃ¨ve de la compÃ©tence exclusive des juridictions franÃ§aises, et plus particuliÃ¨rement des juridictions du ressort du tribunal compÃ©tent selon les rÃ¨gles de droit commun applicables.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 11 â CONTACT</h2>
+<p>Pour toute question, demande d'information, signalement de contenu illicite, exercice de droits relatifs aux donnÃ©es personnelles, ou rÃ©clamation relative Ã  la Plateforme VIVE, les utilisateurs peuvent contacter Notitia Corp selon les coordonnÃ©es suivantes :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>Ã l'attention de Monsieur Quentin CONVERT</p>
+<p>15 Bis Boulevard de Strasbourg</p>
+<p>34500 BÃ©ziers</p>
+<p>France</p>
+<p>Adresse Ã©lectronique : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p class="legal-version">Notitia Corp s'engage Ã  accuser rÃ©ception de toute demande et Ã  y apporter une rÃ©ponse dans un dÃ©lai raisonnable, et en tout Ã©tat de cause dans les dÃ©lais imposÃ©s par la rÃ©glementation applicable lorsqu'il s'agit de demandes relatives Ã  l'exercice de droits en matiÃ¨re de donnÃ©es personnelles.</p>
+<p>Pour toute notification de contenus ou d'activitÃ©s illicites au sens de l'article 6-I-3Â° de la loi nÂ° 2004-575 du 21 juin 2004, la notification doit Ãªtre adressÃ©e par voie Ã©lectronique Ã  l'adresse notitiacorp@gmail.com ou par courrier recommandÃ© avec accusÃ© de rÃ©ception Ã  l'adresse postale ci-dessus, en prÃ©cisant les Ã©lÃ©ments requis par ledit article, notamment la description des faits litigieux et leur localisation prÃ©cise sur la Plateforme, les raisons pour lesquelles le contenu doit Ãªtre retirÃ©, ainsi que les coordonnÃ©es complÃ¨tes du notifiant.</p>
+<hr class="legal-separator">
+<p>Les prÃ©sentes mentions lÃ©gales sont entrÃ©es en vigueur le 1er mars 2025.</p>
+<p>Elles sont susceptibles d'Ãªtre modifiÃ©es Ã  tout moment par Notitia Corp, notamment pour se conformer Ã  toute Ã©volution lÃ©gislative ou rÃ©glementaire applicable. Les utilisateurs sont invitÃ©s Ã  les consulter rÃ©guliÃ¨rement.</p>
+<p>DerniÃ¨re mise Ã  jour : 1er mars 2025</p>
+<p>Â© 2025 Notitia Corp â Tous droits rÃ©servÃ©s.</p>
+<p>---</p>
+<p>Document gÃ©nÃ©rÃ© pour Notitia Corp â VIVE</p>
+<p>15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Contact : notitiacorp@gmail.com | 06 71 90 25 13</p>
+<p>SIRET : 99536720800015</p>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo font-cormorant">VIVE</span>
+      <p class="footer-tagline">Concierge santÃ© personnel. PilotÃ© par l'intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Produit</h4>
+      <a href="index.html#how">Comment Ã§a marche</a><a href="index.html#box">La Box</a><a href="index.html#pricing">Tarifs</a><a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">CommunautÃ©</h4>
+      <a href="#">Blog</a><a href="#">Recherche</a><a href="#">Founders</a><a href="#">ÃvÃ©nements</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">LÃ©gal</h4>
+      <a href="mentions-legales.html">Mentions lÃ©gales</a><a href="privacy.html">ConfidentialitÃ©</a><a href="cgv.html">CGV</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Â© 2025 VIVE. Tous droits rÃ©servÃ©s.</p>
+  </div>
+</footer>
+
+</body>
+</html>
