@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://notitiacorp-design.github.io/vive-landing/sitemap.xml
