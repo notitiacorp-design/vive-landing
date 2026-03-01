@@ -23,16 +23,24 @@
   --cta-text: #080810;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+::selection {
+  background: rgba(61,139,255,0.3);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -45,76 +53,65 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.section-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.section-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* NAV */
-nav {
-  position: sticky;
+.nav-bar {
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  padding: 16px 24px;
+  padding: 20px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background 0.3s ease;
+  background: transparent;
+  transition: background 0.4s;
+  backdrop-filter: none;
 }
 
-nav.scrolled {
-  background: rgba(8, 8, 16, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.nav-bar.scrolled {
+  background: rgba(8,8,16,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,232,240,0.05);
 }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
-  font-weight: 700;
   color: var(--platinum);
+  font-weight: 600;
   text-decoration: none;
+  letter-spacing: 2px;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
   gap: 32px;
   list-style: none;
 }
 
 .nav-links a {
-  font-family: 'Inter', sans-serif;
+  color: var(--muted);
   font-size: 14px;
-  color: var(--silver);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color: var(--platinum);
 }
 
 .nav-cta {
   border: 1px solid var(--platinum);
   color: var(--platinum);
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  padding: 10px 24px;
   font-size: 14px;
-  min-height: 44px;
   background: transparent;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.3s;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.5px;
+  min-height: 44px;
 }
 
 .nav-cta:hover {
@@ -123,91 +120,251 @@ nav.scrolled {
 }
 
 /* HERO */
-#hero {
+.hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 120px 24px 80px;
-  position: relative;
+  overflow: hidden;
 }
 
-#hero-canvas {
+#shader-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
-#hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  line-height: 1.1;
-  color: var(--text);
-  max-width: 800px;
-  font-weight: 700;
+#text3d-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.hero-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  color: var(--silver);
-  max-width: 600px;
-  margin-top: 24px;
-  line-height: 1.6;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .hero-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: var(--blue);
-  background: var(--card);
-  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(61,139,255,0.3);
   border-radius: 100px;
-  margin-top: 32px;
-  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  width: fit-content;
+  letter-spacing: 0.5px;
 }
 
-.hero-cta {
-  background: var(--cta-bg);
-  color: var(--cta-text);
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  animation: badge-pulse 2s infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-title-fallback {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 96px;
   font-weight: 700;
-  border: none;
-  cursor: pointer;
-  margin-top: 24px;
-  min-height: 44px;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--platinum);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--silver);
+  line-height: 1.6;
+  max-width: 480px;
+  font-weight: 400;
+}
+
+.cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  padding: 18px 40px;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  min-height: 52px;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
+  width: fit-content;
 }
 
-.hero-cta:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255,255,255,0.15);
 }
 
-/* METRICS BAND */
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--platinum);
+  color: var(--platinum);
+  padding: 14px 32px;
+  font-size: 15px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.5px;
+  min-height: 44px;
+}
+
+.cta-secondary:hover {
+  background: var(--platinum);
+  color: var(--bg);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--platinum), transparent);
+  animation: scroll-pulse 2s infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.scroll-text {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* PHONE MOCKUP */
+.phone-wrapper {
+  perspective: 1000px;
+}
+
+.phone-mockup {
+  width: 280px;
+  height: 560px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, var(--border), var(--card));
+  border: 8px solid var(--border);
+  position: relative;
+  transform: rotateY(-15deg) rotateX(5deg);
+  transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 40px rgba(61,139,255,0.1);
+}
+
+.phone-mockup::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
+  pointer-events: none;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 0 0 14px 14px;
+  z-index: 5;
+}
+
+.phone-screen {
+  width: 264px;
+  height: 544px;
+  background: var(--bg);
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.phone-screen canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* METRICS MARQUEE */
 .metrics-band {
   overflow: hidden;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  border-top: 1px solid rgba(232,232,240,0.05);
+  border-bottom: 1px solid rgba(232,232,240,0.05);
+  background: var(--surface);
 }
 
-.marquee-track {
+.metrics-track {
   display: flex;
   gap: 48px;
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
+  width: max-content;
 }
 
 @keyframes marquee {
@@ -215,580 +372,1585 @@ nav.scrolled {
   100% { transform: translateX(-50%); }
 }
 
-.marquee-track span {
+.metrics-item {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--silver);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
-/* PROOF */
-#proof {
-  padding: 100px 24px;
+.metrics-separator {
+  color: var(--muted);
 }
 
-.proof-inner {
-  max-width: 1120px;
+/* SECTIONS */
+.section {
+  padding: 120px 48px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
 .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 64px;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--platinum);
+  line-height: 1.15;
+  margin-bottom: 24px;
 }
 
+.section-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* PROOF/STATS */
 .proof-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .proof-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
+  padding: 48px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
 }
 
-.proof-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.proof-stat {
+.proof-card .stat-number {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 48px;
-  color: var(--platinum);
+  font-size: 56px;
   font-weight: 700;
-  line-height: 1;
+  color: var(--platinum);
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.proof-label {
-  font-family: 'Inter', sans-serif;
+.proof-card .stat-number.visible {
+  opacity: 1;
+}
+
+.proof-card .stat-label {
   font-size: 14px;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 12px;
 }
 
-.proof-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: var(--silver);
-  margin-top: 16px;
-  line-height: 1.6;
+.stat-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--platinum);
+  border-radius: 50%;
+  opacity: 0;
 }
 
 /* HOW IT WORKS */
-#methode {
-  padding: 100px 24px;
+.how-section {
+  padding: 120px 48px;
 }
 
-.methode-inner {
-  max-width: 1120px;
+.how-container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.steps-grid {
+.how-steps {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
 }
 
-.step-number {
+.how-sticky {
+  position: sticky;
+  top: 120px;
+}
+
+.how-step {
+  padding: 32px;
+  border-left: 2px solid var(--border);
+  opacity: 0.3;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.how-step.active {
+  opacity: 1;
+  border-left-color: var(--blue);
+}
+
+.how-step-number {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 64px;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--border);
-  margin-bottom: 16px;
-  line-height: 1;
-  font-weight: 700;
-}
-
-.step-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 12px;
+  color: var(--blue);
   margin-bottom: 8px;
 }
 
-.step-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
+.how-step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--platinum);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.how-step-desc {
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.6;
 }
 
+.how-visual {
+  padding: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-progress-line {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  background: var(--blue);
+  transition: height 0.5s;
+}
+
 /* DASHBOARD DEMO */
-#demo {
-  padding: 100px 24px;
-  text-align: center;
+.dashboard-demo {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 48px;
+  max-width: 800px;
+  margin: 48px auto 0;
 }
 
-#dashboard-canvas {
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 72px;
+  color: var(--platinum);
+  font-weight: 700;
+}
+
+.dashboard-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#ecg-canvas {
+  width: 100%;
+  height: 80px;
   display: block;
-  margin: 0 auto;
-  border-radius: 16px;
-  max-width: 100%;
 }
 
-/* LA BOX */
-#box {
-  padding: 100px 24px;
-}
-
-.box-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
+/* BOX SECTION */
 .box-scroll {
+  display: flex;
+  gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  display: flex;
-  gap: 20px;
-  padding-bottom: 16px;
+  padding: 24px 48px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .box-scroll::-webkit-scrollbar {
-  height: 4px;
-}
-
-.box-scroll::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 2px;
+  display: none;
 }
 
 .box-card {
   min-width: 280px;
-  flex-shrink: 0;
   scroll-snap-align: start;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
+  padding: 32px;
+  flex-shrink: 0;
 }
 
-.box-badge {
+.box-card-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--blue);
-  margin-bottom: 12px;
-  display: block;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
 }
 
 .box-card-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--platinum);
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .box-card-desc {
-  font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* TARIFS */
-#tarifs {
-  padding: 100px 24px;
-}
-
-.tarifs-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.tarifs-grid {
+/* PRICING */
+.pricing-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.plan-card {
+.pricing-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 40px;
+  padding: 40px 32px;
   position: relative;
 }
 
-.plan-card.plan-premium {
+.pricing-card.featured {
   border-color: var(--platinum);
+  box-shadow: 0 0 60px rgba(232,232,240,0.05);
 }
 
-.founders-badge {
+.pricing-card.featured::before {
+  content: 'Populaire';
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--blue);
-  color: #ffffff;
+  background: var(--platinum);
+  color: var(--bg);
+  font-size: 11px;
   padding: 4px 16px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-  font-family: 'Inter', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.plan-price {
+.pricing-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--platinum);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.pricing-price {
   font-family: 'JetBrains Mono', monospace;
   font-size: 48px;
   color: var(--platinum);
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
-.plan-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
   margin-bottom: 4px;
+  font-weight: 700;
 }
 
-.plan-period {
-  font-family: 'Inter', sans-serif;
+.pricing-period {
   font-size: 14px;
   color: var(--muted);
   margin-bottom: 24px;
 }
 
-.feature-list {
+.pricing-features {
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
-  font-family: 'Inter', sans-serif;
+.pricing-features li {
   font-size: 14px;
   color: var(--silver);
-  border-bottom: 1px solid var(--border);
+  padding-left: 20px;
+  position: relative;
 }
 
-.feature-item:last-child {
-  border-bottom: none;
+.pricing-features li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
 }
 
-.feature-check {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  stroke: var(--blue);
-}
-
-.plan-cta {
+.pricing-cta {
   width: 100%;
-  margin-top: 24px;
-  padding: 14px;
-  border-radius: 10px;
-  font-family: 'Inter', sans-serif;
+  padding: 16px;
   font-size: 14px;
-  font-weight: 700;
   cursor: pointer;
-  min-height: 44px;
-  transition: opacity 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  min-height: 48px;
+  letter-spacing: 0.5px;
+  border: none;
+  transition: all 0.3s;
 }
 
-.plan-cta:hover {
-  opacity: 0.85;
-}
-
-.plan-cta-primary {
+.pricing-cta.primary {
   background: var(--cta-bg);
   color: var(--cta-text);
-  border: none;
 }
 
-.plan-cta-secondary {
+.pricing-cta.secondary {
   background: transparent;
-  color: var(--platinum);
   border: 1px solid var(--border);
+  color: var(--platinum);
 }
 
-/* URGENCE */
-#urgence {
-  background: var(--surface);
-  padding: 80px 40px;
+.pricing-cta:hover {
+  transform: translateY(-1px);
+}
+
+/* FOUNDERS */
+.founders-section {
+  padding: 120px 48px;
   text-align: center;
 }
 
-.urgence-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  color: var(--text);
-  margin-bottom: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.progress-container {
-  background: var(--card);
-  border-radius: 4px;
-  height: 4px;
-  max-width: 400px;
+.founders-container {
+  max-width: 600px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .progress-bar {
-  width: 27%;
-  background: var(--platinum);
-  height: 100%;
-  border-radius: 4px;
+  height: 4px;
+  background: var(--card);
+  width: 100%;
+  margin: 24px 0 32px;
+  border-radius: 2px;
 }
 
-.progress-text {
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--platinum));
+  width: 73%;
+  border-radius: 2px;
+  transition: width 1s;
+}
+
+.founders-count {
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
   color: var(--muted);
-  margin-top: 16px;
-}
-
-.urgence-cta {
-  background: var(--cta-bg);
-  color: var(--cta-text);
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  margin-top: 32px;
-  min-height: 44px;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.urgence-cta:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+  margin-bottom: 32px;
 }
 
 /* FAQ */
-#faq {
-  padding: 100px 24px;
-}
-
-.faq-inner {
-  max-width: 720px;
+.faq-list {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-details {
+.faq-item {
   border-bottom: 1px solid var(--border);
 }
 
-details summary {
-  font-family: 'Inter', sans-serif;
+.faq-item summary {
+  padding: 24px 0;
   font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-  padding: 20px 0;
+  color: var(--platinum);
   cursor: pointer;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  font-weight: 500;
 }
 
-details summary::-webkit-details-marker {
+.faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-details summary::marker {
-  display: none;
+.faq-item summary::after {
+  content: '+';
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--blue);
+  font-size: 20px;
+  transition: transform 0.3s;
 }
 
-.faq-arrow {
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  stroke: var(--muted);
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
 }
 
-details[open] .faq-arrow {
-  transform: rotate(180deg);
-}
-
-details p {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: var(--silver);
+.faq-item p {
   padding: 0 0 24px;
-  line-height: 1.6;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 /* FOOTER */
-footer {
+.footer {
+  padding: 80px 48px;
   border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--platinum);
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand .nav-logo {
+  display: block;
+  margin-bottom: 16px;
 }
 
 .footer-tagline {
-  font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: var(--muted);
-  margin-top: 4px;
+  line-height: 1.6;
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
+.footer-col-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
-.footer-links a {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
+.footer-col a {
+  display: block;
+  font-size: 14px;
   color: var(--muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  margin-bottom: 8px;
+  transition: color 0.3s;
 }
 
-.footer-links a:hover {
-  color: var(--silver);
+.footer-col a:hover {
+  color: var(--platinum);
 }
 
-.footer-copy {
-  font-family: 'Inter', sans-serif;
+.footer-bottom {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
   font-size: 12px;
   color: var(--muted);
-  width: 100%;
 }
 
-/* MEDIA QUERIES */
+/* FADE IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SHADER FALLBACK */
+.shader-fallback {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(61,139,255,0.06), transparent 70%),
+    radial-gradient(ellipse at 70% 50%, rgba(232,232,240,0.04), transparent 70%),
+    var(--bg);
+  z-index: 0;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
 
-  #hero h1 {
-    font-size: 40px;
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .hero-text {
+    align-items: center;
   }
 
   .hero-subtitle {
-    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-primary {
+    width: 100%;
+  }
+
+  .hero-title-fallback {
+    font-size: 56px;
+  }
+
+  .phone-wrapper {
+    margin: 0 auto;
+  }
+
+  .phone-mockup {
+    transform: none;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .how-sticky {
+    position: relative;
+    top: auto;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section {
+    padding: 80px 24px;
   }
 
   .section-title {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .urgence-title {
     font-size: 36px;
   }
 
-  #urgence {
-    padding: 60px 24px;
+  #shader-canvas {
+    display: none;
   }
 
-  .proof-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tarifs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (min-width: 769px) {
-  #hero h1 {
-    font-size: 64px;
-  }
-
-  .proof-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .steps-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .tarifs-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .urgence-title {
-    font-size: 56px;
+  .shader-fallback {
+    display: block !important;
   }
 }
 </style>
-</head>
-<body>
+</head><body>
 
-<nav id="main-nav">
-  <a href="#hero" class="nav-logo font-cormorant">VIVE</a>
+<div class="shader-fallback"></div>
+
+<nav class="nav-bar">
+  <a href="#" class="nav-logo font-cormorant">VIVE</a>
   <ul class="nav-links">
-    <li><a href="#proof">Proof</a></li>
-    <li><a href="#methode">Methode</a></li>
-    <li><a href="#box">Box</a></li>
-    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#how">Comment ca marche</a></li>
+    <li><a href="#box">La Box</a></li>
+    <li><a href="#pricing">Tarifs</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <button class="nav-cta">Commencer</button>
+  <button class="nav-cta">Rejoindre Founders</button>
 </nav>
 
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <h1 class="font-cormorant">Ton corps a des donnees. VIVE les dechiffre.</h1>
-  <p class="hero-subtitle">Un concierge sante personnel qui analyse vos biomarqueurs, optimise votre energie et vous accompagne chaque jour vers la meilleure version de vous-meme.</p>
-  <span class="hero-badge font-mono">73 places Founders restantes</span>
-  <button class="hero-cta">Rejoindre les Founders -- 149 euros</button>
+  <canvas id="shader-canvas"></canvas>
+  <canvas id="text3d-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge font-mono">73 places Founders restantes</div>
+      <h1 class="hero-title-fallback font-cormorant">VIVE</h1>
+      <p class="hero-subtitle">Concierge sante personnel. Pilote par l'intelligence.</p>
+      <div class="hero-ctas">
+        <button class="cta-primary">Commencer l'experience</button>
+        <button class="cta-secondary">Voir la demo</button>
+      </div>
+    </div>
+    <div class="phone-wrapper">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <canvas id="phone-canvas" width="264" height="544"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Decouvrir</span>
+  </div>
 </section>
-<section class="metrics-band section-reveal"><div class="marquee-track"><span class="font-mono">+52 min sommeil profond</span><span class="font-mono"> -- </span><span class="font-mono">Score HRV +18 points</span><span class="font-mono"> -- </span><span class="font-mono">-34% cortisol</span><span class="font-mono"> -- </span><span class="font-mono">Satisfaction 4.9 sur 5</span><span class="font-mono"> -- </span><span class="font-mono">+52 min sommeil profond</span><span class="font-mono"> -- </span><span class="font-mono">Score HRV +18 points</span><span class="font-mono"> -- </span><span class="font-mono">-34% cortisol</span><span class="font-mono"> -- </span><span class="font-mono">Satisfaction 4.9 sur 5</span><span class="font-mono"> -- </span></div></section><section id="proof" class="proof-section section-reveal"><h2 class="font-cormorant">Ce que VIVE change en 30 jours</h2><div class="proof-grid"><div class="proof-card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--platinum)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><div class="stat"><span class="font-mono stat-number" data-target="52" data-prefix="+" data-suffix=" min">0</span></div><div class="stat-label">Sommeil profond</div><p>Nos utilisateurs gagnent en moyenne 52 minutes de sommeil profond par nuit.</p></div><div class="proof-card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--platinum)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><div class="stat"><span class="font-mono stat-number" data-target="18" data-prefix="+" data-suffix=" pts">0</span></div><div class="stat-label">Score HRV</div><p>Le score HRV augmente en moyenne de 18 points apres 30 jours.</p></div><div class="proof-card"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--platinum)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><div class="stat"><span class="font-mono stat-number" data-target="34" data-prefix="-" data-suffix="%">0</span></div><div class="stat-label">Cortisol matin</div><p>Le cortisol matinal diminue de 34% en moyenne apres un mois.</p></div></div></section><section id="methode" class="how-section section-reveal"><h2 class="font-cormorant">De zero a optimise en 4 etapes</h2><div class="how-grid"><div class="how-step"><span class="font-mono step-number">01</span><h3>Onboarding 10 min</h3><p>Tu reponds a un questionnaire rapide sur ton mode de vie, tes objectifs et ton rythme biologique. VIVE cree ton profil personnalise.</p></div><div class="how-step"><span class="font-mono step-number">02</span><h3>Connexion capteurs</h3><p>Tu connectes tes appareils existants -- montre, bague ou bracelet connecte. VIVE agregge tes donnees en temps reel.</p></div><div class="how-step"><span class="font-mono step-number">03</span><h3>Analyse VIVE</h3><p>Notre algorithme analyse ton sommeil, ta variabilite cardiaque et ton stress pour identifier les leviers d optimisation cles.</p></div><div class="how-step"><span class="font-mono step-number">04</span><h3>Ta box arrive</h3><p>En 48h, ta box VIVE personnalisee est livree chez toi avec les supplements et protocoles adaptes a ton profil unique.</p></div></div></section>
-<section class="dashboard-section section-reveal"><div class="dashboard-inner"><h2 class="font-cormorant dashboard-title">Ton tableau de bord en temps reel</h2><canvas id="dashboard-canvas" width="600" height="300"></canvas></div></section><section id="box" class="box-section section-reveal"><div class="box-inner"><h2 class="font-cormorant box-title">Assemblee pour toi. Expediee chaque mois.</h2><div class="box-scroll"><div class="box-card"><span class="font-mono box-badge">Hero Item</span><h3>Supplement adapte</h3><p>Un supplement formule selon ton profil biologique unique, ajuste chaque mois selon tes donnees de sante.</p></div><div class="box-card"><span class="font-mono box-badge">Support 1</span><h3>Protocole sommeil</h3><p>Un guide d optimisation du sommeil base sur tes cycles HRV et tes habitudes de recuperation personnelles.</p></div><div class="box-card"><span class="font-mono box-badge">Support 2</span><h3>Routine mouvement</h3><p>Une carte de routine mouvement concue pour ton niveau d energie actuel et tes objectifs de performance.</p></div><div class="box-card"><span class="font-mono box-badge">Consumable</span><h3>Tisane adaptogene</h3><p>Un melange d herbes adaptogenes selectionne pour soutenir ton systeme nerveux et reduire le stress chronique.</p></div><div class="box-card"><span class="font-mono box-badge">Collectible</span><h3>Carte membre VIVE</h3><p>Ta carte membre collector en edition limitee, symbole de ton engagement dans la communaute VIVE Founders.</p></div></div></div></section><section id="tarifs" class="pricing-section section-reveal"><div class="pricing-inner"><h2 class="font-cormorant pricing-title">Choisis ton plan</h2><div class="pricing-grid"><div class="plan-card"><h3 class="plan-name">Free</h3><div class="plan-price font-mono">0<span class="plan-currency">EUR</span></div><p class="plan-period">Gratuit pour toujours</p><ul class="plan-features"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Score bien-etre quotidien</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Recommandations de base</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Communaute VIVE</span></li></ul><button class="plan-cta-secondary" type="button" style="min-height:44px">Commencer gratuitement</button></div><div class="plan-card"><h3 class="plan-name">Plus</h3><div class="plan-price font-mono">20<span class="plan-currency">EUR / mois</span></div><p class="plan-period">Facture mensuellement</p><ul class="plan-features"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Tout Free +</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Analyses avancees HRV</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Protocoles personnalises</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Support prioritaire</span></li></ul><button class="plan-cta-secondary" type="button" style="min-height:44px">Choisir Plus</button></div><div class="plan-card plan-premium"><span class="founders-badge">Founders</span><h3 class="plan-name">Premium Box</h3><div class="plan-price font-mono">169<span class="plan-currency">EUR / mois</span></div><p class="plan-founders-note">149 EUR pour les Founders</p><p class="plan-period">Box livree chaque mois</p><ul class="plan-features"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Tout Plus +</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Box mensuelle personnalisee</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Supplements et produits premium</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Acces mode secret gift</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Tokens VIVE exclusifs</span></li></ul><button class="plan-cta-primary" type="button" style="min-height:44px">Devenir Founder -- 149 EUR</button></div></div></div></section>
-<section class="urgence-section section-reveal"><div class="urgence-inner"><h2 class="font-cormorant urgence-title">100 places. Pas une de plus.</h2><div class="progress-bar"><div class="progress-fill" style="width:27%"></div></div><p class="font-mono progress-text">27 sur 100 places prises</p><a href="#" class="btn-hero urgence-cta">Rejoindre les Founders -- 149 EUR</a></div></section><section class="faq-section section-reveal"><div class="faq-inner"><h2 class="font-cormorant faq-title">Questions frequentes</h2><div class="faq-list"><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Quel est le delai de reception de la box ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">La premiere box est expediee sous 5 jours ouvrables apres validation de votre commande. Les box suivantes partent le 1er de chaque mois.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Quelle est la politique de remboursement ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">Vous disposez de 30 jours pour tester VIVE. Si vous n'etes pas satisfait, nous vous remboursons integralement, sans condition.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Quels appareils sont compatibles ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">VIVE se connecte a la plupart des wearables du marche : Apple Watch, Oura Ring, Whoop, Garmin, Fitbit et bien d'autres.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Comment sont securisees mes donnees ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">Vos donnees sont chiffrees de bout en bout et stockees sur des serveurs certifies en Europe. Nous ne revendons jamais vos informations.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Comment fonctionne l'abonnement et la resiliation ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">L'abonnement est sans engagement. Vous pouvez resilier a tout moment depuis votre espace personnel, en un clic.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Comment la box est-elle personnalisee ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">Notre algorithme analyse vos donnees biometriques, vos objectifs et vos preferences pour composer une box unique chaque mois.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Qu'est-ce que le mode secret gift ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">Le mode secret gift vous permet d'offrir une box VIVE a un proche sans qu'il connaisse le contenu a l'avance. Surprise garantie.</p></details><details class="faq-item"><summary class="faq-summary"><span class="faq-question">Qu'est-ce que le swap token ?</span><svg class="faq-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><p class="faq-answer">Le swap token vous permet d'echanger un produit de votre box contre un autre du catalogue VIVE, si un element ne vous convient pas.</p></details></div></div></section><footer class="footer-section"><div class="footer-inner"><div class="footer-brand"><span class="font-cormorant footer-logo">VIVE</span><p class="footer-tagline">Optimise. Mesure. Performe.</p></div><nav class="footer-nav"><a href="#" class="footer-link">CGV</a><a href="#" class="footer-link">Confidentialite</a><a href="#" class="footer-link">Contact</a></nav><div class="footer-legal"><p>2026 VIVE -- Notitia Corp</p></div></div></footer><style>.urgence-section{padding:120px 24px;background:var(--bg);text-align:center;}.urgence-inner{max-width:600px;margin:0 auto;}.urgence-title{font-size:clamp(2.5rem,6vw,4rem);color:var(--silver);margin-bottom:48px;line-height:1.1;}.progress-bar{width:100%;height:6px;background:rgba(232,232,240,0.1);border-radius:3px;overflow:hidden;margin-bottom:16px;}.progress-fill{height:100%;background:var(--silver);border-radius:3px;transition:width 1s ease;}.progress-text{font-size:0.75rem;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:48px;}.urgence-cta{display:inline-block;min-height:44px;padding:14px 40px;border:1px solid var(--silver);background:transparent;color:var(--silver);font-family:inherit;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.3s ease,color 0.3s ease;}.urgence-cta:hover{background:var(--silver);color:var(--bg);}.faq-section{padding:120px 24px;background:#0D0D14;}.faq-inner{max-width:760px;margin:0 auto;}.faq-title{font-size:clamp(2rem,5vw,3.5rem);color:var(--silver);text-align:center;margin-bottom:64px;line-height:1.1;}.faq-list{display:flex;flex-direction:column;gap:0;}.faq-item{border-bottom:1px solid rgba(232,232,240,0.1);}.faq-item:first-child{border-top:1px solid rgba(232,232,240,0.1);}.faq-summary{display:flex;align-items:center;justify-content:space-between;padding:24px 0;cursor:pointer;list-style:none;gap:16px;}.faq-summary::-webkit-details-marker{display:none;}.faq-question{font-family:var(--font-mono,monospace);font-size:0.85rem;letter-spacing:0.05em;color:var(--silver);text-transform:uppercase;flex:1;text-align:left;}.faq-arrow{flex-shrink:0;transition:transform 0.3s ease;}details[open] .faq-arrow{transform:rotate(180deg);}.faq-answer{font-size:0.9rem;color:var(--muted);line-height:1.8;padding:0 0 24px 0;margin:0;}.footer-section{padding:64px 24px;background:var(--bg);border-top:1px solid rgba(232,232,240,0.1);}.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;}.footer-brand{display:flex;flex-direction:column;gap:8px;}.footer-logo{font-size:1.8rem;color:var(--silver);letter-spacing:0.1em;}.footer-tagline{font-size:0.75rem;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;margin:0;}.footer-nav{display:flex;gap:32px;align-items:center;}.footer-link{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s ease;}.footer-link:hover{color:var(--silver);}.footer-legal p{font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:0;}@media(max-width:640px){.footer-inner{flex-direction:column;align-items:flex-start;text-align:left;}.footer-nav{flex-direction:column;gap:16px;align-items:flex-start;}}</style><script>(function(){var nav=document.getElementById('main-nav');if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50);},{passive:true});}})();(function(){var sections=document.querySelectorAll('.section-reveal');if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});sections.forEach(function(s){obs.observe(s);});}else{sections.forEach(function(s){s.classList.add('visible');});}})();(function(){var stats=document.querySelectorAll('.stat-number');if(!stats.length)return;var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;var target=parseInt(el.getAttribute('data-target'),10);var prefix=el.getAttribute('data-prefix')||'';var suffix=el.getAttribute('data-suffix')||'';var current=0;var step=Math.max(1,Math.floor(target/60));function animate(){current=Math.min(current+step,target);el.textContent=prefix+current+suffix;if(current<target)requestAnimationFrame(animate);}animate();obs.unobserve(el);});},{threshold:0.3});stats.forEach(function(s){obs.observe(s);});})();(function(){try{if(typeof THREE==='undefined')return;if(window.innerWidth<768)return;var canvas=document.getElementById('hero-canvas');if(!canvas)return;var scene=new THREE.Scene();var camera=new THREE.PerspectiveCamera(75,canvas.clientWidth/canvas.clientHeight,0.1,1000);camera.position.z=5;var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:false});renderer.setSize(canvas.clientWidth,canvas.clientHeight);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));var count=800;var geo=new THREE.BufferGeometry();var pos=new Float32Array(count*3);for(var i=0;i<count*3;i++)pos[i]=(Math.random()-0.5)*10;geo.setAttribute('position',new THREE.BufferAttribute(pos,3));var mat=new THREE.PointsMaterial({color:0xE8E8F0,size:0.02,transparent:true,opacity:0.6});var points=new THREE.Points(geo,mat);scene.add(points);var running=true;function tick(){if(!running)return;requestAnimationFrame(tick);points.rotation.y+=0.0005;points.rotation.x+=0.0002;renderer.render(scene,camera);}tick();window.addEventListener('resize',function(){if(!canvas.clientWidth)return;camera.aspect=canvas.clientWidth/canvas.clientHeight;camera.updateProjectionMatrix();renderer.setSize(canvas.clientWidth,canvas.clientHeight);});document.addEventListener('visibilitychange',function(){if(document.hidden){running=false;}else{running=true;tick();}});}catch(e){console.warn('Three.js particles skipped:',e.message);}})();(function(){try{var c=document.getElementById('dashboard-canvas');if(!c)return;var ctx=c.getContext('2d');var W=600,H=300;c.width=W;c.height=H;var offset=0;var running=true;function draw(){if(!running)return;requestAnimationFrame(draw);ctx.fillStyle='#111118';ctx.fillRect(0,0,W,H);ctx.fillStyle='#E8E8F0';ctx.font='700 96px JetBrains Mono, monospace';ctx.textAlign='center';ctx.fillText('87',W/2,120);ctx.fillStyle='#6B6B82';ctx.font='500 12px Inter, sans-serif';ctx.fillText('SCORE SOMMEIL',W/2,150);ctx.beginPath();ctx.strokeStyle='#E8E8F0';ctx.lineWidth=1.5;for(var x=0;x<W;x++){var y=200+Math.sin((x+offset)*0.03)*20+Math.sin((x+offset)*0.07)*10;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.stroke();ctx.beginPath();ctx.strokeStyle='#3D8BFF';ctx.lineWidth=1;for(var x2=0;x2<W;x2++){var y2=250+Math.sin((x2+offset)*0.02)*15+Math.cos((x2+offset)*0.05)*8;if(x2===0)ctx.moveTo(x2,y2);else ctx.lineTo(x2,y2);}ctx.stroke();offset+=2;}draw();document.addEventListener('visibilitychange',function(){if(document.hidden){running=false;}else{running=true;draw();}});}catch(e){console.warn('Dashboard canvas skipped:',e.message);}})();(function(){document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}});});})();</script></body></html>
+
+<div class="metrics-band">
+  <div class="metrics-track">
+    <span class="metrics-item font-mono">+52 min sommeil profond</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">Score HRV +18 points</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">-34% cortisol</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">4.9 sur 5 satisfaction</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">+52 min sommeil profond</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">Score HRV +18 points</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">-34% cortisol</span>
+    <span class="metrics-separator">--</span>
+    <span class="metrics-item font-mono">4.9 sur 5 satisfaction</span>
+    <span class="metrics-separator">--</span>
+  </div>
+</div>
+
+<section id="proof" class="section">
+  <div class="section-label">Resultats cliniques</div>
+  <h2 class="section-title font-cormorant">Des chiffres. Pas des promesses.</h2>
+  <div class="proof-grid">
+    <div class="proof-card fade-in">
+      <div class="stat-number font-cormorant">+52</div>
+      <div class="stat-label">minutes de sommeil profond par nuit</div>
+    </div>
+    <div class="proof-card fade-in">
+      <div class="stat-number font-cormorant">+18</div>
+      <div class="stat-label">points de Score HRV en moyenne</div>
+    </div>
+    <div class="proof-card fade-in">
+      <div class="stat-number font-cormorant">-34%</div>
+      <div class="stat-label">de cortisol apres 90 jours</div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="how-section">
+    <div class="how-container">
+      <div class="how-sticky">
+        <div class="how-visual">
+          <canvas id="how-canvas"></canvas>
+        </div>
+      </div>
+      <div class="how-steps">
+        <div class="how-step active">
+          <div class="how-step-number font-mono">01</div>
+          <div class="how-step-content">
+            <h3 class="how-step-title font-cormorant">Analyse</h3>
+            <p class="how-step-desc">Capteurs biometriques et questionnaire initial pour comprendre votre profil unique.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number font-mono">02</div>
+          <div class="how-step-content">
+            <h3 class="how-step-title font-cormorant">Intelligence</h3>
+            <p class="how-step-desc">Jarvis, votre IA personnelle, analyse vos donnees et cree votre protocole.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number font-mono">03</div>
+          <div class="how-step-content">
+            <h3 class="how-step-title font-cormorant">La Box</h3>
+            <p class="how-step-desc">Supplements, outils et rituels selectionnes pour vous. Livres chaque mois.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number font-mono">04</div>
+          <div class="how-step-content">
+            <h3 class="how-step-title font-cormorant">Evolution</h3>
+            <p class="how-step-desc">Suivi continu. Ajustements en temps reel. Resultats mesurables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dashboard-section">
+  <div class="section-label">Tableau de bord</div>
+  <h2 class="section-title font-cormorant">Vos donnees. Votre pouvoir.</h2>
+  <div class="dashboard-demo">
+    <div class="dashboard-header">
+      <div class="dashboard-header-left">
+        <div class="dashboard-label">Score Sommeil</div>
+        <div class="dashboard-score font-mono">87</div>
+      </div>
+      <div class="dashboard-header-right">
+        <div class="dashboard-label">Tendance</div>
+        <span class="font-mono trend-positive">+12%</span>
+      </div>
+    </div>
+    <canvas id="ecg-canvas" width="700" height="80"></canvas>
+  </div>
+</section>
+
+<section id="box" class="section">
+  <div class="section-label">La box mensuelle</div>
+  <h2 class="section-title font-cormorant">Curee pour vous. Chaque mois.</h2>
+  <div class="box-scroll">
+    <div class="box-card">
+      <div class="box-tag font-mono">Sommeil</div>
+      <h3 class="box-title font-cormorant">Magnesium Bisglycinate</h3>
+      <p class="box-desc">Forme hautement biodisponible. 300mg par dose. Absorption optimale avant le coucher.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-tag font-mono">Stress</div>
+      <h3 class="box-title font-cormorant">Ashwagandha KSM-66</h3>
+      <p class="box-desc">Adaptogene cliniquement dose. Reduction du cortisol prouvee en 60 jours.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-tag font-mono">Cognition</div>
+      <h3 class="box-title font-cormorant">Lion's Mane Extract</h3>
+      <p class="box-desc">Champignon nootropique. Soutient la neurogenese et la concentration.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-tag font-mono">Recovery</div>
+      <h3 class="box-title font-cormorant">Omega-3 Ultra Pure</h3>
+      <p class="box-desc">EPA/DHA concentres. Source durable. Anti-inflammatoire naturel.</p>
+    </div>
+    <div class="box-card box-card-hero">
+      <div class="box-tag font-mono">Hero Item</div>
+      <h3 class="box-title font-cormorant">Surprise mensuelle</h3>
+      <p class="box-desc">Un produit exclusif selectionne par Jarvis selon votre evolution.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <div class="section-label">Tarifs</div>
+  <h2 class="section-title font-cormorant">Investissez dans vous.</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-name font-cormorant">Essentiel</div>
+      <div class="pricing-price-row">
+        <span class="pricing-price font-cormorant">49</span>
+        <span class="pricing-period font-mono">euros / mois</span>
+      </div>
+      <ul class="pricing-features">
+        <li>Box mensuelle personnalisee</li>
+        <li>Tableau de bord VIVE</li>
+        <li>Protocole de base Jarvis</li>
+        <li>Support email</li>
+      </ul>
+      <button class="pricing-cta secondary">Choisir Essentiel</button>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-featured-label font-mono">Populaire</div>
+      <div class="pricing-name font-cormorant">Premium</div>
+      <div class="pricing-price-row">
+        <span class="pricing-price font-cormorant">89</span>
+        <span class="pricing-period font-mono">euros / mois</span>
+      </div>
+      <ul class="pricing-features">
+        <li>Tout Essentiel +</li>
+        <li>Jarvis IA avancee</li>
+        <li>Coaching 1:1 mensuel</li>
+        <li>Hero Item exclusif</li>
+        <li>Analyses biometriques</li>
+      </ul>
+      <button class="pricing-cta primary">Choisir Premium</button>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-name font-cormorant">Elite</div>
+      <div class="pricing-price-row">
+        <span class="pricing-price font-cormorant">149</span>
+        <span class="pricing-period font-mono">euros / mois</span>
+      </div>
+      <ul class="pricing-features">
+        <li>Tout Premium +</li>
+        <li>Concierge dedie 24/7</li>
+        <li>Protocoles cliniques</li>
+        <li>Acces recherche privee</li>
+        <li>Evenements VIP</li>
+      </ul>
+      <button class="pricing-cta secondary">Choisir Elite</button>
+    </div>
+  </div>
+</section>
+
+<section id="founders">
+  <div class="founders-section">
+    <div class="founders-container">
+      <div class="section-label">Edition Founders</div>
+      <h2 class="section-title font-cormorant">Les 100 premiers. Avantage a vie.</h2>
+      <p class="section-subtitle">Tarif bloque. Acces prioritaire. Communaute privee. Les Founders faconnent VIVE.</p>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 27%;"></div>
+      </div>
+      <div class="founders-count font-mono">73 places restantes sur 100</div>
+      <button class="cta-primary cta-large">Rejoindre les Founders</button>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="section-label">Questions</div>
+  <h2 class="section-title font-cormorant">Tout ce que vous devez savoir.</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-question">Qu'est-ce que VIVE exactement ?</summary>
+      <div class="faq-answer">VIVE est un concierge de sante personnel qui combine intelligence artificielle, supplements personnalises et suivi biometrique pour optimiser votre bien-etre au quotidien.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Comment fonctionne Jarvis ?</summary>
+      <div class="faq-answer">Jarvis analyse vos donnees biometriques, votre mode de vie et vos objectifs pour creer un protocole unique. Il s'adapte en continu grace au machine learning.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Que contient la box mensuelle ?</summary>
+      <div class="faq-answer">Chaque box contient des supplements doses sur mesure, un hero item surprise et des outils de bien-etre selectionnes selon votre profil et votre evolution.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Les resultats sont-ils garantis ?</summary>
+      <div class="faq-answer">Nos donnees montrent des ameliorations significatives en 90 jours. Chaque protocole est base sur des etudes cliniques et ajuste en temps reel.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Puis-je annuler a tout moment ?</summary>
+      <div class="faq-answer">Oui. Aucun engagement. Vous pouvez annuler ou modifier votre abonnement a tout moment depuis votre espace personnel.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Qu'est-ce que l'edition Founders ?</summary>
+      <div class="faq-answer">Les 100 premiers membres beneficient d'un tarif bloque a vie, d'un acces prioritaire aux nouvelles fonctionnalites et d'une ligne directe avec l'equipe.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">VIVE remplace-t-il un medecin ?</summary>
+      <div class="faq-answer">Non. VIVE est un complement de bien-etre. Nous ne diagnostiquons pas et ne traitons pas de pathologies. Consultez toujours un professionnel de sante.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Quels capteurs sont compatibles ?</summary>
+      <div class="faq-answer">VIVE s'integre avec Apple Watch, Oura Ring, Whoop et la plupart des capteurs de sante connectes du marche.</div>
+    </details>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo font-cormorant">VIVE</span>
+      <p class="footer-tagline">Concierge sante personnel. Pilote par l'intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Produit</h4>
+      <a href="#how">Comment ca marche</a><a href="#box">La Box</a><a href="#pricing">Tarifs</a><a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Communaute</h4>
+      <a href="#">Blog</a><a href="#">Recherche</a><a href="#">Founders</a><a href="#">Evenements</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Legal</h4>
+      <a href="#">Mentions legales</a><a href="#">Confidentialite</a><a href="#">CGV</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>2025 VIVE. Tous droits reserves.</p>
+  </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+
+    // 1. NAV SCROLL EFFECT
+    try {
+      window.addEventListener('scroll', function() {
+        try {
+          var nav = document.querySelector('.nav-bar');
+          if (!nav) return;
+          if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+        } catch(e) {}
+      });
+    } catch(e) {}
+
+    // Shared mouse tracking
+    var mouseTarget = { x: 0.5, y: 0.5 };
+    var mouseCurrent = { x: 0.5, y: 0.5 };
+
+    try {
+      document.addEventListener('mousemove', function(e) {
+        try {
+          mouseTarget.x = e.clientX / window.innerWidth;
+          mouseTarget.y = 1.0 - (e.clientY / window.innerHeight);
+        } catch(e2) {}
+      });
+    } catch(e) {}
+
+    // 2. WEBGL SHADER BACKGROUND
+    try {
+      var shaderCanvas = document.getElementById('shader-canvas');
+      var shaderFallback = document.querySelector('.shader-fallback');
+
+      function showShaderFallback() {
+        try {
+          if (shaderFallback) shaderFallback.style.display = 'block';
+          if (shaderCanvas) shaderCanvas.style.display = 'none';
+        } catch(e) {}
+      }
+
+      if (!window.THREE) throw new Error('THREE not found');
+      if (window.innerWidth <= 768) throw new Error('mobile');
+
+      // Check WebGL support
+      var testCanvas = document.createElement('canvas');
+      var testCtx = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
+      if (!testCtx) throw new Error('WebGL not supported');
+
+      if (!shaderCanvas) throw new Error('No shader canvas');
+
+      var scene1 = new THREE.Scene();
+      var camera1 = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+      var renderer1 = new THREE.WebGLRenderer({ canvas: shaderCanvas, antialias: false });
+      renderer1.setSize(window.innerWidth, window.innerHeight);
+      renderer1.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      var vertexShader = [
+        'varying vec2 vUv;',
+        'void main() {',
+        '  vUv = uv;',
+        '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
+        '}'
+      ].join('\n');
+
+      var fragmentShader = [
+        'uniform float uTime;',
+        'uniform vec2 uMouse;',
+        'uniform vec2 uResolution;',
+        'varying vec2 vUv;',
+        'void main() {',
+        '  vec2 uv = vUv;',
+        '  vec2 mouse = uMouse;',
+        '  float dist = distance(uv, mouse);',
+        '  float wave1 = sin(uv.x * 8.0 + uTime * 0.5 + dist * 12.0) * 0.5 + 0.5;',
+        '  float wave2 = sin(uv.y * 6.0 - uTime * 0.3 + dist * 8.0) * 0.5 + 0.5;',
+        '  float wave3 = sin((uv.x + uv.y) * 10.0 + uTime * 0.7) * 0.5 + 0.5;',
+        '  float combined = wave1 * 0.4 + wave2 * 0.35 + wave3 * 0.25;',
+        '  combined *= (1.0 - dist * 0.8);',
+        '  float heartbeat = sin(uTime * 1.5708) * 0.5 + 0.5;',
+        '  heartbeat = pow(heartbeat, 8.0);',
+        '  float pulse = (1.0 - length(uv - vec2(0.5))) * heartbeat * 0.15;',
+        '  combined += pulse;',
+        '  vec3 colorPlatinum = vec3(0.91, 0.91, 0.94);',
+        '  vec3 colorBlue = vec3(0.24, 0.55, 1.0);',
+        '  vec3 colorBg = vec3(0.031, 0.031, 0.063);',
+        '  vec3 color = mix(colorBg, colorPlatinum, combined * 0.12);',
+        '  color = mix(color, colorBlue, wave3 * 0.06);',
+        '  gl_FragColor = vec4(color, 1.0);',
+        '}'
+      ].join('\n');
+
+      var geometry1 = new THREE.PlaneGeometry(2, 2);
+      var material1 = new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+          uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+        },
+        vertexShader: vertexShader,
+        fragmentShader: fragmentShader
+      });
+
+      var mesh1 = new THREE.Mesh(geometry1, material1);
+      scene1.add(mesh1);
+
+      window.addEventListener('resize', function() {
+        try {
+          renderer1.setSize(window.innerWidth, window.innerHeight);
+          material1.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+        } catch(e) {}
+      });
+
+      function animateShader() {
+        try {
+          requestAnimationFrame(animateShader);
+          material1.uniforms.uTime.value += 0.016;
+          mouseCurrent.x += (mouseTarget.x - mouseCurrent.x) * 0.05;
+          mouseCurrent.y += (mouseTarget.y - mouseCurrent.y) * 0.05;
+          material1.uniforms.uMouse.value.set(mouseCurrent.x, mouseCurrent.y);
+          renderer1.render(scene1, camera1);
+        } catch(e) {}
+      }
+      animateShader();
+
+    } catch(shaderErr) {
+      try {
+        var sf = document.querySelector('.shader-fallback');
+        var sc = document.getElementById('shader-canvas');
+        if (sf) sf.style.display = 'block';
+        if (sc) sc.style.display = 'none';
+      } catch(e) {}
+    }
+
+    // 3. 3D TEXT "VIVE"
+    try {
+      var text3dCanvas = document.getElementById('text3d-canvas');
+      var heroFallback = document.querySelector('.hero-title-fallback');
+
+      function showTextFallback() {
+        try {
+          if (heroFallback) heroFallback.style.display = 'block';
+          if (text3dCanvas) text3dCanvas.style.display = 'none';
+        } catch(e) {}
+      }
+
+      if (!window.THREE) throw new Error('THREE not found');
+      if (window.innerWidth <= 768) throw new Error('mobile');
+      if (!text3dCanvas) throw new Error('No text3d canvas');
+      if (!THREE.FontLoader || !THREE.TextGeometry) {
+        showTextFallback();
+        throw new Error('FontLoader or TextGeometry not available');
+      }
+
+      var w3d = text3dCanvas.clientWidth || text3dCanvas.offsetWidth || 600;
+      var h3d = text3dCanvas.clientHeight || text3dCanvas.offsetHeight || 200;
+
+      var scene2 = new THREE.Scene();
+      var camera2 = new THREE.PerspectiveCamera(45, w3d / h3d, 0.1, 100);
+      camera2.position.z = 5;
+
+      var renderer2 = new THREE.WebGLRenderer({ canvas: text3dCanvas, alpha: true, antialias: true });
+      renderer2.setSize(w3d, h3d);
+      renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer2.setClearColor(0x000000, 0);
+
+      var ambientLight2 = new THREE.AmbientLight(0x111118);
+      scene2.add(ambientLight2);
+
+      var pointLight2a = new THREE.PointLight(0x3D8BFF, 1);
+      pointLight2a.position.set(2, 3, 4);
+      scene2.add(pointLight2a);
+
+      var pointLight2b = new THREE.PointLight(0xE8E8F0, 0.8);
+      pointLight2b.position.set(-2, 1, 2);
+      scene2.add(pointLight2b);
+
+      var textMesh = null;
+      var textTime = 0;
+
+      var loader = new THREE.FontLoader();
+      loader.load(
+        'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_bold.typeface.json',
+        function(font) {
+          try {
+            var textGeo = new THREE.TextGeometry('VIVE', {
+              font: font,
+              size: 1.2,
+              height: 0.15,
+              curveSegments: 12,
+              bevelEnabled: true,
+              bevelThickness: 0.02,
+              bevelSize: 0.01
+            });
+            textGeo.computeBoundingBox();
+            var bbox = textGeo.boundingBox;
+            var centerX = (bbox.max.x - bbox.min.x) / 2;
+            var centerY = (bbox.max.y - bbox.min.y) / 2;
+            textGeo.translate(-centerX, -centerY, 0);
+
+            var textMat = new THREE.MeshStandardMaterial({
+              color: 0xE8E8F0,
+              metalness: 0.9,
+              roughness: 0.1
+            });
+
+            textMesh = new THREE.Mesh(textGeo, textMat);
+            scene2.add(textMesh);
+
+            if (heroFallback) heroFallback.style.display = 'none';
+
+            function animateText() {
+              try {
+                requestAnimationFrame(animateText);
+                textTime += 0.016;
+                if (textMesh) {
+                  textMesh.rotation.y = Math.sin(textTime * 0.3) * 0.15 + (mouseCurrent.x - 0.5) * 0.05;
+                  textMesh.rotation.x = (mouseCurrent.y - 0.5) * 0.1;
+                }
+                renderer2.render(scene2, camera2);
+              } catch(e) {}
+            }
+            animateText();
+
+            window.addEventListener('resize', function() {
+              try {
+                var nw = text3dCanvas.clientWidth || 600;
+                var nh = text3dCanvas.clientHeight || 200;
+                camera2.aspect = nw / nh;
+                camera2.updateProjectionMatrix();
+                renderer2.setSize(nw, nh);
+              } catch(e) {}
+            });
+
+          } catch(e) {
+            showTextFallback();
+          }
+        },
+        undefined,
+        function(err) {
+          showTextFallback();
+        }
+      );
+
+    } catch(textErr) {
+      try {
+        var htf = document.querySelector('.hero-title-fallback');
+        var t3c = document.getElementById('text3d-canvas');
+        if (htf) htf.style.display = 'block';
+        if (t3c) t3c.style.display = 'none';
+      } catch(e) {}
+    }
+
+    // 4. PHONE MOCKUP CANVAS ANIMATION
+    try {
+      var phoneCanvas = document.getElementById('phone-canvas');
+      if (phoneCanvas) {
+        var pCtx = phoneCanvas.getContext('2d');
+        var pW = phoneCanvas.width;
+        var pH = phoneCanvas.height;
+        var screenIndex = 0;
+        var screenTime = 0;
+        var screenDuration = 3.0;
+        var transitionDuration = 0.3;
+        var inTransition = false;
+        var transitionAlpha = 1.0;
+        var transitionOut = true;
+        var phoneStartTime = null;
+        var phonePrevTime = null;
+        var chatMessageIndex = 0;
+        var chatMessageTimer = 0;
+        var chatMessages = [
+          { sender: 'jarvis', text: 'Bonjour. Votre HRV est en hausse.' },
+          { sender: 'user', text: 'Merci Jarvis. Des conseils ?' },
+          { sender: 'jarvis', text: 'Maintenez votre routine. Box J-2.' }
+        ];
+        var ecgPhoneOffset = 0;
+
+        function drawScreen1(alpha, dt) {
+          try {
+            pCtx.globalAlpha = alpha;
+            pCtx.fillStyle = '#080810';
+            pCtx.fillRect(0, 0, pW, pH);
+
+            pCtx.fillStyle = '#6B6B82';
+            pCtx.font = '11px Inter, sans-serif';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('SCORE SOMMEIL', pW / 2, 60);
+
+            pCtx.fillStyle = '#E8E8F0';
+            pCtx.font = 'bold 72px "JetBrains Mono", monospace';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('87', pW / 2, 140);
+
+            var progress = Math.min(screenTime / screenDuration, 1.0);
+            var lineY = 195;
+            var lineStartX = 10;
+            var lineEndX = pW - 10;
+            var lineWidth = lineEndX - lineStartX;
+            var drawUpTo = lineStartX + lineWidth * progress;
+
+            pCtx.strokeStyle = '#E8E8F0';
+            pCtx.lineWidth = 1.5;
+            pCtx.beginPath();
+            var step = 2;
+            var started = false;
+            for (var x = lineStartX; x <= drawUpTo; x += step) {
+              var t = (x - lineStartX) / lineWidth;
+              var y = lineY + Math.sin(t * Math.PI * 8) * 20;
+              if (!started) { pCtx.moveTo(x, y); started = true; }
+              else { pCtx.lineTo(x, y); }
+            }
+            pCtx.stroke();
+
+            var cardLabels = ['Meditation', 'Exercice', 'Nutrition'];
+            var cardW = (pW - 30) / 3;
+            for (var i = 0; i < 3; i++) {
+              pCtx.fillStyle = '#1C1C28';
+              pCtx.beginPath();
+              pCtx.roundRect(8 + i * (cardW + 7), pH - 60, cardW, 48, 6);
+              pCtx.fill();
+              pCtx.fillStyle = '#6B6B82';
+              pCtx.font = '9px Inter, sans-serif';
+              pCtx.textAlign = 'center';
+              pCtx.fillText(cardLabels[i], 8 + i * (cardW + 7) + cardW / 2, pH - 30);
+            }
+            pCtx.globalAlpha = 1;
+          } catch(e) {}
+        }
+
+        function drawScreen2(alpha, dt) {
+          try {
+            pCtx.globalAlpha = alpha;
+            pCtx.fillStyle = '#080810';
+            pCtx.fillRect(0, 0, pW, pH);
+
+            chatMessageTimer += dt;
+            if (chatMessageTimer > 0.8 && chatMessageIndex < chatMessages.length) {
+              chatMessageIndex++;
+              chatMessageTimer = 0;
+            }
+
+            var yPos = 40;
+            for (var i = 0; i < chatMessageIndex; i++) {
+              var msg = chatMessages[i];
+              var isUser = msg.sender === 'user';
+              var bubbleW = Math.min(pCtx.measureText(msg.text).width + 20, pW - 30);
+              var bubbleH = 32;
+              var bx = isUser ? pW - bubbleW - 8 : 8;
+
+              pCtx.fillStyle = isUser ? 'rgba(61,139,255,0.3)' : '#1C1C28';
+              pCtx.beginPath();
+              pCtx.roundRect(bx, yPos, bubbleW, bubbleH, 8);
+              pCtx.fill();
+
+              pCtx.fillStyle = '#F2F2F8';
+              pCtx.font = '10px Inter, sans-serif';
+              pCtx.textAlign = isUser ? 'right' : 'left';
+              pCtx.fillText(msg.text, isUser ? pW - 18 : 18, yPos + 20);
+              yPos += bubbleH + 10;
+            }
+            pCtx.globalAlpha = 1;
+          } catch(e) {}
+        }
+
+        function drawScreen3(alpha, dt) {
+          try {
+            pCtx.globalAlpha = alpha;
+            pCtx.fillStyle = '#080810';
+            pCtx.fillRect(0, 0, pW, pH);
+
+            pCtx.fillStyle = '#6B6B82';
+            pCtx.font = '11px Inter, sans-serif';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('Ta box arrive dans', pW / 2, 80);
+
+            pCtx.fillStyle = '#E8E8F0';
+            pCtx.font = 'bold 48px "JetBrains Mono", monospace';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('J-2', pW / 2, 160);
+
+            var cardX = 15;
+            var cardY = 185;
+            var cardWidth = pW - 30;
+            var cardHeight = 70;
+            pCtx.fillStyle = '#1C1C28';
+            pCtx.beginPath();
+            pCtx.roundRect(cardX, cardY, cardWidth, cardHeight, 8);
+            pCtx.fill();
+
+            pCtx.fillStyle = '#3D8BFF';
+            pCtx.font = 'bold 9px Inter, sans-serif';
+            pCtx.textAlign = 'left';
+            pCtx.fillText('HERO ITEM', cardX + 10, cardY + 20);
+
+            pCtx.fillStyle = '#E8E8F0';
+            pCtx.font = '10px Inter, sans-serif';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('Hero Item', pW / 2, cardY + 45);
+
+            var btnY = pH - 50;
+            pCtx.fillStyle = '#E8E8F0';
+            pCtx.beginPath();
+            pCtx.roundRect(20, btnY, pW - 40, 36, 18);
+            pCtx.fill();
+
+            pCtx.fillStyle = '#080810';
+            pCtx.font = 'bold 12px Inter, sans-serif';
+            pCtx.textAlign = 'center';
+            pCtx.fillText('Valider', pW / 2, btnY + 23);
+
+            pCtx.globalAlpha = 1;
+          } catch(e) {}
+        }
+
+        function animatePhone(timestamp) {
+          try {
+            requestAnimationFrame(animatePhone);
+            if (!phonePrevTime) phonePrevTime = timestamp;
+            var dt = (timestamp - phonePrevTime) / 1000;
+            phonePrevTime = timestamp;
+            dt = Math.min(dt, 0.1);
+
+            pCtx.clearRect(0, 0, pW, pH);
+
+            if (!inTransition) {
+              screenTime += dt;
+              var drawFn = [drawScreen1, drawScreen2, drawScreen3][screenIndex];
+              drawFn(1.0, dt);
+
+              if (screenTime >= screenDuration) {
+                inTransition = true;
+                transitionAlpha = 1.0;
+                transitionOut = true;
+              }
+            } else {
+              if (transitionOut) {
+                transitionAlpha -= dt / transitionDuration;
+                if (transitionAlpha <= 0) {
+                  transitionAlpha = 0;
+                  screenIndex = (screenIndex + 1) % 3;
+                  screenTime = 0;
+                  chatMessageIndex = 0;
+                  chatMessageTimer = 0;
+                  transitionOut = false;
+                }
+                var drawFn2 = [drawScreen1, drawScreen2, drawScreen3][screenIndex];
+                drawFn2(Math.max(0, transitionAlpha), 0);
+              } else {
+                transitionAlpha += dt / transitionDuration;
+                if (transitionAlpha >= 1) {
+                  transitionAlpha = 1;
+                  inTransition = false;
+                }
+                var drawFn3 = [drawScreen1, drawScreen2, drawScreen3][screenIndex];
+                drawFn3(Math.min(1, transitionAlpha), dt);
+              }
+            }
+          } catch(e) {}
+        }
+        requestAnimationFrame(animatePhone);
+      }
+    } catch(phoneErr) {}
+
+    // Phone parallax
+    try {
+      var phoneMockup = document.querySelector('.phone-mockup');
+      if (phoneMockup) {
+        phoneMockup.style.transition = 'transform 0.15s ease-out';
+        document.addEventListener('mousemove', function(e) {
+          try {
+            var rx = ((e.clientY / window.innerHeight) - 0.5) * 15;
+            var ry = ((e.clientX / window.innerWidth) - 0.5) * 15;
+            phoneMockup.style.transform = 'rotateX(' + (-rx) + 'deg) rotateY(' + ry + 'deg)';
+          } catch(e2) {}
+        });
+      }
+    } catch(e) {}
+
+    // 5. PARTICLE STATS ANIMATION
+    try {
+      var proofCards = document.querySelectorAll('.proof-card');
+      if (proofCards.length > 0 && window.IntersectionObserver) {
+        var proofObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            proofObserver.unobserve(entry.target);
+            var card = entry.target;
+
+            try {
+              var cardRect = card.getBoundingClientRect();
+              var cx = card.offsetWidth / 2;
+              var cy = card.offsetHeight / 2;
+              var particles = [];
+              var prevPos = card.style.position;
+              if (!prevPos || prevPos === 'static') card.style.position = 'relative';
+
+              var maxDuration = 900;
+              for (var i = 0; i < 40; i++) {
+                var p = document.createElement('div');
+                var angle = Math.random() * Math.PI * 2;
+                var radius = Math.random() * 100;
+                var startX = cx + Math.cos(angle) * radius;
+                var startY = cy + Math.sin(angle) * radius;
+                p.style.cssText = [
+                  'position:absolute',
+                  'width:2px',
+                  'height:2px',
+                  'background:var(--platinum,#E8E8F0)',
+                  'border-radius:50%',
+                  'left:' + startX + 'px',
+                  'top:' + startY + 'px',
+                  'pointer-events:none',
+                  'z-index:10'
+                ].join(';');
+                card.appendChild(p);
+                particles.push(p);
+
+                var dur = 600 + Math.random() * 300;
+                try {
+                  p.animate([
+                    { left: startX + 'px', top: startY + 'px', opacity: 1 },
+                    { left: cx + 'px', top: cy + 'px', opacity: 0 }
+                  ], {
+                    duration: dur,
+                    easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    fill: 'forwards'
+                  });
+                } catch(animErr) {}
+              }
+
+              setTimeout(function() {
+                try {
+                  var statNum = card.querySelector('.stat-number');
+                  if (statNum) statNum.classList.add('visible');
+                } catch(e) {}
+              }, maxDuration);
+
+              setTimeout(function() {
+                try {
+                  particles.forEach(function(p) {
+                    if (p.parentNode) p.parentNode.removeChild(p);
+                  });
+                } catch(e) {}
+              }, maxDuration + 500);
+
+            } catch(e) {}
+          });
+        }, { threshold: 0.5 });
+
+        proofCards.forEach(function(card) {
+          proofObserver.observe(card);
+        });
+      }
+    } catch(e) {}
+
+    // 6. HOW-IT-WORKS SCROLL
+    try {
+      var howSteps = document.querySelectorAll('.how-step');
+      if (howSteps.length > 0) {
+        function updateHowSteps() {
+          try {
+            var windowH = window.innerHeight;
+            var closestStep = null;
+            var closestDist = Infinity;
+            howSteps.forEach(function(step) {
+              var rect = step.getBoundingClientRect();
+              var dist = Math.abs(rect.top + rect.height / 2 - windowH / 2);
+              if (dist < closestDist) {
+                closestDist = dist;
+                closestStep = step;
+              }
+            });
+            howSteps.forEach(function(step) {
+              if (step === closestStep) {
+                step.classList.add('active');
+              } else {
+                step.classList.remove('active');
+              }
+            });
+          } catch(e) {}
+        }
+        window.addEventListener('scroll', updateHowSteps, { passive: true });
+        updateHowSteps();
+      }
+    } catch(e) {}
+
+    // 7. ECG CANVAS ANIMATION
+    try {
+      var ecgCanvas = document.getElementById('ecg-canvas');
+      if (ecgCanvas) {
+        var ecgCtx = ecgCanvas.getContext('2d');
+        var ecgW = ecgCanvas.width;
+        var ecgH = ecgCanvas.height;
+        var ecgOffset = 0;
+        var ecgPrevTime = null;
+
+        function getEcgY(x, w, h) {
+          try {
+            var normX = (x % w) / w;
+            var t = normX * Math.PI * 10;
+            var base = Math.sin(t) * (h * 0.12);
+            var spike = 0;
+            var spikePos = normX % 0.2;
+            if (spikePos > 0.08 && spikePos < 0.085) {
+              spike = -(h * 0.35);
+            } else if (spikePos >= 0.085 && spikePos < 0.095) {
+              spike = h * 0.15;
+            } else if (spikePos >= 0.095 && spikePos < 0.11) {
+              spike = -(h * 0.1);
+            }
+            return h / 2 + base + spike;
+          } catch(e) { return h / 2; }
+        }
+
+        function animateEcg(timestamp) {
+          try {
+            requestAnimationFrame(animateEcg);
+            if (!ecgPrevTime) ecgPrevTime = timestamp;
+            var dt = (timestamp - ecgPrevTime) / 1000;
+            ecgPrevTime = timestamp;
+            ecgOffset += dt * 80;
+            if (ecgOffset > ecgW) ecgOffset -= ecgW;
+
+            ecgCtx.clearRect(0, 0, ecgW, ecgH);
+            ecgCtx.strokeStyle = '#E8E8F0';
+            ecgCtx.lineWidth = 1.5;
+            ecgCtx.beginPath();
+
+            for (var x = 0; x <= ecgW; x += 2) {
+              var srcX = (x + ecgOffset) % ecgW;
+              var y = getEcgY(srcX, ecgW, ecgH);
+              if (x === 0) ecgCtx.moveTo(x, y);
+              else ecgCtx.lineTo(x, y);
+            }
+            ecgCtx.stroke();
+          } catch(e) {}
+        }
+        requestAnimationFrame(animateEcg);
+      }
+    } catch(e) {}
+
+    // 8. FADE-IN ON SCROLL
+    try {
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if (fadeEls.length > 0 && window.IntersectionObserver) {
+        var fadeObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(function(el) { fadeObserver.observe(el); });
+      }
+    } catch(e) {}
+
+    // 9. SMOOTH SCROLL for nav links
+    try {
+      var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          try {
+            var href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            var target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          } catch(e2) {}
+        });
+      });
+    } catch(e) {}
+
+  } catch(topErr) {}
+});
+</script>
+</body></html>
