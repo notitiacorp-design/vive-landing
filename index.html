@@ -1003,6 +1003,29 @@ body {
     display: block !important;
   }
 }
+
+/* Social Proof Beta Responsive */
+@media (max-width: 768px) {
+  #social-proof-beta > div > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Sticky CTA Bar padding for body on mobile */
+@media (max-width: 768px) {
+  body { padding-bottom: 70px; }
+}
+
+/* Exit Intent Modal responsive */
+@media (max-width: 480px) {
+  #exit-intent-overlay > div {
+    padding: 32px 24px !important;
+  }
+  #exit-intent-form {
+    flex-direction: column !important;
+  }
+}
+
 </style>
 </head><body>
 
@@ -1034,6 +1057,13 @@ body {
         <button class="cta-secondary">Voir la dÃ©mo</button>
       </div>
         <p class="hero-reassurance" style="color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 1rem; letter-spacing: 0.02em;">30 jours satisfait ou remboursÃ© Â· Annulation Ã  tout moment Â· Tarif bloquÃ© Ã  vie pour les Founders</p>
+      <div class="hero-stats-band" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 1.5rem; flex-wrap: wrap;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">500+ inscrits waitlist</span>
+        <span style="color: var(--border); font-size: 13px;">|</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">4.9/5 satisfaction beta</span>
+        <span style="color: var(--border); font-size: 13px;">|</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">Box expediee en 48h</span>
+      </div>
       </div>
     </div>
     <div class="phone-wrapper">
@@ -1050,6 +1080,49 @@ body {
     <span class="scroll-text">DÃ©couvrir</span>
   </div>
 </section>
+<!-- Social Proof Beta Testers -->
+<section id="social-proof-beta" class="section" style="padding: 64px 24px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Retours beta</div>
+    <h2 class="section-title font-cormorant">Ils l'ont teste. Voici ce qu'ils en disent.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px;">
+      <!-- Testimonial 1 -->
+      <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+        <p style="color: var(--platinum); font-size: 1rem; line-height: 1.7; font-style: italic;">&laquo; Depuis que Jarvis a ajuste mon protocole sommeil, je gagne presque une heure de profond par nuit. Les donnees ne mentent pas &mdash; mon Oura le confirme chaque matin. &raquo;</p>
+        <div style="display: flex; align-items: center; gap: 14px; margin-top: auto;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--card); border: 1.5px solid var(--platinum); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--platinum); flex-shrink: 0;">TL</div>
+          <div>
+            <div style="color: var(--platinum); font-size: 0.9rem; font-weight: 600;">Thomas L.</div>
+            <div style="color: var(--muted); font-size: 0.8rem;">Beta testeur VIVE &middot; Lyon</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+        <p style="color: var(--platinum); font-size: 1rem; line-height: 1.7; font-style: italic;">&laquo; L'unboxing est une experience en soi. Chaque item est personnalise, l'emballage est magnifique, et surtout tout est adapte a mon profil. On sent que l'IA a vraiment bosse. &raquo;</p>
+        <div style="display: flex; align-items: center; gap: 14px; margin-top: auto;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--card); border: 1.5px solid var(--platinum); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--platinum); flex-shrink: 0;">CM</div>
+          <div>
+            <div style="color: var(--platinum); font-size: 0.9rem; font-weight: 600;">Camille M.</div>
+            <div style="color: var(--muted); font-size: 0.8rem;">Beta testeur VIVE &middot; Paris</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+        <p style="color: var(--platinum); font-size: 1rem; line-height: 1.7; font-style: italic;">&laquo; J'ai teste des dizaines d'apps sante. VIVE est le premier service ou je n'ai rien eu a configurer &mdash; j'ai connecte ma montre et Jarvis a fait le reste. Simple et bluffant. &raquo;</p>
+        <div style="display: flex; align-items: center; gap: 14px; margin-top: auto;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--card); border: 1.5px solid var(--platinum); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--platinum); flex-shrink: 0;">AR</div>
+          <div>
+            <div style="color: var(--platinum); font-size: 0.9rem; font-weight: 600;">Antoine R.</div>
+            <div style="color: var(--muted); font-size: 0.8rem;">Beta testeur VIVE &middot; Bordeaux</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <div class="metrics-band">
   <div class="metrics-track">
@@ -1288,6 +1361,15 @@ body {
     <details class="faq-item">
       <summary class="faq-question">Quels capteurs sont compatibles ?</summary>
       <div class="faq-answer">VIVE s'integre avec Apple Watch, Oura Ring, Whoop et la plupart des capteurs de santÃ© connectes du marche.</div>
+    </details>
+  
+    <details class="faq-item">
+      <summary class="faq-question">Que se passe-t-il si je ne suis pas satisfait de ma box ?</summary>
+      <div class="faq-answer">Vous beneficiez d'une garantie satisfait ou rembourse de 30 jours. Si votre premiere box ne vous convient pas, nous vous remboursons integralement, sans condition. De plus, Jarvis ajuste votre profil apres chaque retour pour affiner les prochaines recommandations.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">Comment VIVE est-il different de Whoop ou Oura ?</summary>
+      <div class="faq-answer">Whoop et Oura mesurent vos donnees. VIVE va plus loin : il analyse ces donnees, identifie vos points faibles, et vous envoie chaque mois un protocole actionnable (supplements, outils, recommandations). Nous ne sommes pas un tracker de plus, mais le pont entre vos donnees et des resultats concrets.</div>
     </details>
   </div>
 </section>
@@ -2021,5 +2103,131 @@ document.addEventListener('DOMContentLoaded', function() {
 
   } catch(topErr) {}
 });
+
+
+    // === STICKY CTA BAR (mobile, appears after 300px scroll) ===
+    try {
+      var stickyBar = document.getElementById('sticky-cta-bar');
+      var foundersSection = document.getElementById('founders');
+      if (stickyBar && foundersSection) {
+        var stickyVisible = false;
+        var foundersInView = false;
+
+        var foundersObserver = new IntersectionObserver(function(entries) {
+          try {
+            foundersInView = entries[0].isIntersecting;
+            if (foundersInView) {
+              stickyBar.style.transform = 'translateY(100%)';
+            } else if (stickyVisible) {
+              stickyBar.style.transform = 'translateY(0)';
+            }
+          } catch(e) {}
+        }, { threshold: 0.1 });
+        foundersObserver.observe(foundersSection);
+
+        window.addEventListener('scroll', function() {
+          try {
+            if (window.innerWidth > 768) return;
+            if (window.scrollY > 300) {
+              if (!stickyVisible) {
+                stickyVisible = true;
+                stickyBar.style.display = 'block';
+                setTimeout(function() {
+                  if (!foundersInView) stickyBar.style.transform = 'translateY(0)';
+                }, 50);
+              }
+            } else {
+              stickyVisible = false;
+              stickyBar.style.transform = 'translateY(100%)';
+            }
+          } catch(e) {}
+        }, { passive: true });
+      }
+    } catch(e) {}
+
+    // === EXIT INTENT MODAL (desktop only) ===
+    try {
+      var exitOverlay = document.getElementById('exit-intent-overlay');
+      var exitClose = document.getElementById('exit-intent-close');
+      var exitForm = document.getElementById('exit-intent-form');
+      var exitSuccess = document.getElementById('exit-intent-success');
+      var exitShown = false;
+
+      function showExitIntent() {
+        try {
+          if (exitShown) return;
+          if (localStorage.getItem('vive_exit_dismissed')) return;
+          if (window.innerWidth < 1024) return;
+          exitShown = true;
+          exitOverlay.style.display = 'flex';
+        } catch(e) {}
+      }
+
+      function closeExitIntent() {
+        try {
+          exitOverlay.style.display = 'none';
+          localStorage.setItem('vive_exit_dismissed', '1');
+        } catch(e) {}
+      }
+
+      document.addEventListener('mouseout', function(e) {
+        try {
+          if (e.clientY <= 0 && e.relatedTarget === null) {
+            showExitIntent();
+          }
+        } catch(e2) {}
+      });
+
+      if (exitClose) {
+        exitClose.addEventListener('click', closeExitIntent);
+      }
+
+      if (exitOverlay) {
+        exitOverlay.addEventListener('click', function(e) {
+          try {
+            if (e.target === exitOverlay) closeExitIntent();
+          } catch(e2) {}
+        });
+      }
+
+      if (exitForm) {
+        exitForm.addEventListener('submit', function(e) {
+          try {
+            e.preventDefault();
+            var email = document.getElementById('exit-intent-email').value;
+            if (email) {
+              localStorage.setItem('vive_waitlist_email', email);
+              localStorage.setItem('vive_exit_dismissed', '1');
+              exitForm.style.display = 'none';
+              exitSuccess.style.display = 'block';
+              setTimeout(closeExitIntent, 2000);
+            }
+          } catch(e2) {}
+        });
+      }
+    } catch(e) {}
+
 </script>
+
+<!-- Sticky CTA Bar (mobile) -->
+<div id="sticky-cta-bar" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--surface); border-top: 1px solid var(--border); padding: 12px 16px; transform: translateY(100%); transition: transform 0.3s ease;">
+  <a href="#founders" style="display: block; width: 100%; padding: 14px 0; background: var(--cta-bg); color: var(--cta-text); text-align: center; border-radius: 12px; font-weight: 700; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.01em;">Rejoindre les Founders &mdash; 149&euro;</a>
+</div>
+
+<!-- Exit Intent Modal (desktop) -->
+<div id="exit-intent-overlay" style="display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(8,8,16,0.9); align-items: center; justify-content: center; padding: 24px;">
+  <div style="background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 48px 40px; max-width: 440px; width: 100%; text-align: center; position: relative;">
+    <button id="exit-intent-close" style="position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; padding: 8px;" aria-label="Fermer">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--platinum)" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/></svg>
+    </button>
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Edition limitee</div>
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--platinum); margin: 0 0 12px; line-height: 1.2;">Attends &mdash; 100 places seulement</h3>
+    <p style="color: var(--silver); font-size: 0.95rem; line-height: 1.6; margin: 0 0 28px;">Inscris-toi a la waitlist pour bloquer ton tarif Founders a 149&euro;/mois au lieu de 249&euro;.</p>
+    <form id="exit-intent-form" style="display: flex; gap: 10px;">
+      <input id="exit-intent-email" type="email" placeholder="ton@email.com" required style="flex: 1; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 0.9rem; outline: none;" />
+      <button type="submit" style="padding: 12px 24px; background: var(--cta-bg); color: var(--cta-text); border: none; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; white-space: nowrap;">Rejoindre</button>
+    </form>
+    <div id="exit-intent-success" style="display: none; color: var(--platinum); font-size: 0.95rem; padding: 12px 0;">Merci ! Tu es sur la liste.</div>
+  </div>
+</div>
 </body></html>
