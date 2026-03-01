@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGV & CGU â VIVE</title>
+<meta name="description" content="Conditions GÃ©nÃ©rales de Vente et Conditions GÃ©nÃ©rales d'Utilisation de l'application VIVE par Notitia Corp.">
+<meta property="og:title" content="CGV & CGU â VIVE">
+<meta property="og:description" content="Conditions GÃ©nÃ©rales de Vente et d'Utilisation de l'application VIVE.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://notitiacorp-design.github.io/vive-landing/cgv.html">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://notitiacorp-design.github.io/vive-landing/cgv.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080810;
+  --surface: #111118;
+  --card: #1C1C28;
+  --border: #2A2A38;
+  --platinum: #E8E8F0;
+  --silver: #A8A8C0;
+  --blue: #3D8BFF;
+  --text: #F2F2F8;
+  --muted: #6B6B82;
+  --cta-bg: #FFFFFF;
+  --cta-text: #080810;
+  --nav-scrolled-bg: rgba(8,8,16,0.85);
+  --selection-bg: rgba(61,139,255,0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* NAV */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,232,240,0.05);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--platinum);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--platinum);
+}
+
+/* LEGAL PAGE STYLES */
+.legal-hero {
+  padding: 120px 48px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--platinum);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.legal-hero p {
+  color: var(--muted);
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 48px 80px;
+}
+
+.legal-content {
+  line-height: 1.8;
+}
+
+.legal-content p {
+  color: var(--silver);
+  font-size: 15px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.legal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--platinum);
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 60px;
+  letter-spacing: 0.5px;
+}
+
+.legal-title:first-child {
+  margin-top: 0;
+}
+
+.legal-version {
+  color: var(--muted);
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 24px;
+}
+
+.legal-separator {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.legal-toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.legal-toc .legal-article-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--platinum);
+}
+
+.toc-item {
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.toc-item:hover {
+  color: var(--platinum) !important;
+  border-color: var(--blue);
+}
+
+.legal-article-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--platinum);
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.5px;
+}
+
+.legal-subtitle {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-content li {
+  color: var(--silver);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.legal-content li::before {
+  content: 'â';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.legal-section-break {
+  height: 80px;
+  border-top: 2px solid var(--border);
+  margin-top: 60px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--surface);
+  padding: 64px 48px 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-tagline {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-title {
+  color: var(--platinum);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.footer-col a {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--platinum);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 16px 24px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .legal-hero {
+    padding: 80px 24px 40px;
+  }
+  
+  .legal-container {
+    padding: 40px 24px 60px;
+  }
+  
+  .footer {
+    padding: 48px 24px 24px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<nav class="nav-bar scrolled" style="position:sticky;background:var(--nav-scrolled-bg);backdrop-filter:blur(20px);border-bottom:1px solid rgba(232,232,240,0.05);">
+  <a href="index.html" class="nav-logo font-cormorant">VIVE</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="privacy.html">ConfidentialitÃ©</a></li>
+    <li><a href="cgv.html">CGV & CGU</a></li>
+    <li><a href="mentions-legales.html">Mentions lÃ©gales</a></li>
+  </ul>
+</nav>
+
+<section class="legal-hero">
+  <h1 class="font-cormorant">Conditions GÃ©nÃ©rales</h1>
+  <p class="font-mono">CGV & CGU â Version en vigueur au 1er mars 2025</p>
+</section>
+
+<main class="legal-container">
+<div class="legal-content">
+<h1 class="legal-title font-cormorant">CONDITIONS GÃNÃRALES DE VENTE â APPLICATION VIVE</h1>
+<p class="legal-version">Notitia Corp | Version du 1er mars 2025</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">PRÃAMBULE</h2>
+<hr class="legal-separator">
+<p>Les prÃ©sentes Conditions GÃ©nÃ©rales de Vente (ci-aprÃ¨s Â« CGV Â») sont conclues entre la sociÃ©tÃ© Notitia Corp, sociÃ©tÃ© par actions simplifiÃ©e immatriculÃ©e sous le numÃ©ro SIRET 99536720800015, dont le siÃ¨ge social est situÃ© au 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France (ci-aprÃ¨s Â« la SociÃ©tÃ© Â» ou Â« VIVE Â»), et toute personne physique ou morale procÃ©dant Ã  un achat ou Ã  une souscription d'abonnement via l'application mobile VIVE ou tout autre canal de distribution officiel (ci-aprÃ¨s Â« l'Utilisateur Â» ou Â« le Client Â»).</p>
+<p>Les prÃ©sentes CGV ont pour objet de dÃ©finir les droits et obligations des parties dans le cadre de la vente de services numÃ©riques et de produits physiques proposÃ©s par VIVE. Elles sont rÃ©digÃ©es conformÃ©ment aux dispositions du Code de la consommation franÃ§ais, du Code civil, du RÃ¨glement (UE) 2016/679 du 27 avril 2016 relatif Ã  la protection des donnÃ©es personnelles (RGPD), ainsi que des directives europÃ©ennes applicables, notamment la Directive 2011/83/UE relative aux droits des consommateurs et la Directive 2019/770 relative aux contrats de fourniture de contenus et services numÃ©riques.</p>
+<p>L'accÃ¨s aux services payants de l'application VIVE, la souscription Ã  un abonnement ou la commande d'une box physique emportent acceptation pleine et entiÃ¨re des prÃ©sentes CGV par le Client. Toute condition contraire posÃ©e par le Client sera, Ã  dÃ©faut d'acceptation expresse de la SociÃ©tÃ©, inopposable Ã  cette derniÃ¨re.</p>
+<p>Les prÃ©sentes CGV sont accessibles Ã  tout moment sur l'application VIVE et sur le site officiel de la SociÃ©tÃ©. Elles prÃ©valent sur tout autre document ou communication orale ou Ã©crite Ã©manant de la SociÃ©tÃ©, sauf accord Ã©crit contraire dÃ»ment signÃ©.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 1 â OBJET ET CHAMP D'APPLICATION</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">1.1 Objet</h3>
+<p>Les prÃ©sentes CGV ont pour objet de dÃ©finir les conditions dans lesquelles la SociÃ©tÃ© commercialise et fournit :</p>
+<p>a) Des services numÃ©riques accessibles via l'application mobile VIVE, notamment des fonctionnalitÃ©s de type Â« health concierge Â» permettant au Client de bÃ©nÃ©ficier d'un accompagnement personnalisÃ© dans la gestion de son bien-Ãªtre et de sa santÃ© au quotidien ;</p>
+<p>b) Des produits physiques sous forme de box mensuelles (ci-aprÃ¨s Â« la Box Â»), contenant des produits et accessoires liÃ©s au bien-Ãªtre et Ã  la santÃ©, expÃ©diÃ©es au domicile du Client.</p>
+<h3 class="legal-subtitle">1.2 Champ d'application</h3>
+<p>Les prÃ©sentes CGV s'appliquent :</p>
+<ul>
+<li>Ã toutes les souscriptions d'abonnements aux plans payants de l'application VIVE (plans Plus, Premium Box, Founders) ;</li>
+<li>Ã toutes les commandes de Box physiques incluses dans les abonnements concernÃ©s ;</li>
+<li>Ã toute relation contractuelle entre la SociÃ©tÃ© et le Client, quelle que soit la plateforme de souscription utilisÃ©e (application mobile iOS, application mobile Android, site web officiel de la SociÃ©tÃ©).</li>
+</ul>
+<h3 class="legal-subtitle">1.3 Exclusion des relations interentreprises</h3>
+<p>Dans l'hypothÃ¨se oÃ¹ le Client agirait dans le cadre de son activitÃ© professionnelle, les dispositions protectrices du droit de la consommation applicables aux seuls consommateurs (au sens de l'article liminaire du Code de la consommation) ne lui seront pas opposables dans les limites prÃ©vues par la loi. Toutefois, les prÃ©sentes CGV demeurent applicables dans leur intÃ©gralitÃ© aux droits et obligations contractuels des parties.</p>
+<h3 class="legal-subtitle">1.4 OpposabilitÃ©</h3>
+<p>Le Client reconnaÃ®t avoir pris connaissance des prÃ©sentes CGV avant toute souscription ou achat, et les accepte en cochant la case prÃ©vue Ã  cet effet lors du processus de crÃ©ation de compte ou de souscription. Cette acceptation est rÃ©putÃ©e constituer une signature Ã©lectronique au sens de l'article 1366 du Code civil.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 2 â DÃFINITIONS</h2>
+<hr class="legal-separator">
+<p>Aux fins des prÃ©sentes CGV, les termes suivants ont la signification qui leur est attribuÃ©e ci-dessous :</p>
+<p>Â« Application Â» ou Â« Application VIVE Â» : dÃ©signe l'application mobile health concierge Ã©ditÃ©e par la SociÃ©tÃ©, disponible sur les plateformes iOS (App Store d'Apple) et Android (Google Play Store), ainsi que toute interface web associÃ©e.</p>
+<p>Â« Abonnement Â» : dÃ©signe le contrat Ã  durÃ©e dÃ©terminÃ©e renouvelable par tacite reconduction, souscrit par le Client pour accÃ©der aux fonctionnalitÃ©s payantes de l'Application, selon l'un des plans tarifaires dÃ©crits Ã  l'Article 3.</p>
+<p>Â« Box Â» ou Â« Box Physique Â» : dÃ©signe le colis mensuel contenant des produits physiques liÃ©s au bien-Ãªtre et Ã  la santÃ©, expÃ©diÃ© au Client dans le cadre des plans Premium Box et Founders.</p>
+<p>Â« Client Â» ou Â« Utilisateur Â» : dÃ©signe toute personne physique majeure ou morale ayant crÃ©Ã© un compte sur l'Application et ayant souscrit Ã  l'un des services proposÃ©s par la SociÃ©tÃ©.</p>
+<p>Â« Compte Client Â» : dÃ©signe l'espace personnel sÃ©curisÃ© accessible depuis l'Application via des identifiants (adresse e-mail et mot de passe) crÃ©Ã©s par le Client, permettant de gÃ©rer son abonnement, ses informations personnelles et l'historique de ses commandes.</p>
+<p>Â« Consommateur Â» : dÃ©signe tout Client personne physique agissant Ã  des fins n'entrant pas dans le cadre de son activitÃ© commerciale, industrielle, artisanale, libÃ©rale ou agricole, au sens de l'article liminaire du Code de la consommation.</p>
+<p>Â« Contenu NumÃ©rique Â» : dÃ©signe l'ensemble des fonctionnalitÃ©s, donnÃ©es, informations, recommandations, programmes et services fournis sous forme numÃ©rique dans le cadre de l'Application VIVE, au sens de la Directive 2019/770/UE et de l'article L224-25-1 du Code de la consommation.</p>
+<p>Â« DonnÃ©es Personnelles Â» : dÃ©signe toute information relative Ã  une personne physique identifiÃ©e ou identifiable, au sens de l'article 4 du RÃ¨glement (UE) 2016/679 (RGPD).</p>
+<p>Â« Partenaires de Paiement Â» : dÃ©signe les prestataires de services de paiement tiers utilisÃ©s par la SociÃ©tÃ© pour le traitement des transactions financiÃ¨res, Ã  savoir Stripe Payments Europe, Ltd., Apple Inc. (via Apple StoreKit / App Store Connect) et Google LLC (via Google Play Billing).</p>
+<p>Â« Plan Free Â» : dÃ©signe l'offre gratuite de l'Application VIVE, permettant un accÃ¨s limitÃ© Ã  certaines fonctionnalitÃ©s de base, sans engagement financier.</p>
+<p>Â« Plan Plus Â» : dÃ©signe l'offre payante de l'Application VIVE au tarif de 20 euros (â¬) par mois, donnant accÃ¨s Ã  des fonctionnalitÃ©s Ã©tendues de l'Application sans Box physique.</p>
+<p>Â« Plan Premium Box Â» : dÃ©signe l'offre payante de l'Application VIVE au tarif de 169 euros (â¬) par mois, incluant l'accÃ¨s aux fonctionnalitÃ©s Premium de l'Application et la livraison mensuelle d'une Box physique.</p>
+<p>Â« Plan Founders Â» : dÃ©signe l'offre tarifaire prÃ©fÃ©rentielle au tarif de 149 euros (â¬) par mois, rÃ©servÃ©e aux premiers abonnÃ©s de l'Application (ci-aprÃ¨s Â« Fondateurs Â»), incluant l'accÃ¨s aux fonctionnalitÃ©s Premium de l'Application et la livraison mensuelle d'une Box physique, selon les conditions dÃ©crites Ã  l'Article 3.</p>
+<p>Â« Politique de ConfidentialitÃ© Â» : dÃ©signe le document distinct disponible dans l'Application et sur le site officiel de la SociÃ©tÃ©, dÃ©crivant les modalitÃ©s de collecte, de traitement et de conservation des DonnÃ©es Personnelles des Clients, conformÃ©ment aux exigences du RGPD.</p>
+<p>Â« Services Â» : dÃ©signe l'ensemble des services numÃ©riques et des produits physiques proposÃ©s par la SociÃ©tÃ© dans le cadre de l'Application VIVE.</p>
+<p>Â« SociÃ©tÃ© Â» : dÃ©signe Notitia Corp, sociÃ©tÃ© par actions simplifiÃ©e, SIRET 99536720800015, dont le siÃ¨ge social est situÃ© au 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France.</p>
+<p>Â« Stripe Â» : dÃ©signe Stripe Payments Europe, Ltd., prestataire de services de paiement en ligne, dont le siÃ¨ge est Ã  Dublin, Irlande, agrÃ©Ã© comme Ã©tablissement de paiement.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 3 â PRIX ET MODALITÃS DE PAIEMENT</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">3.1 Tarifs</h3>
+<p>Les tarifs des diffÃ©rents plans proposÃ©s par la SociÃ©tÃ© sont les suivants, toutes taxes comprises (TTC) :</p>
+<ul>
+<li>Plan Free : 0 â¬ / accÃ¨s gratuit aux fonctionnalitÃ©s de base ;</li>
+<li>Plan Plus : 20,00 â¬ TTC par mois ;</li>
+<li>Plan Premium Box : 169,00 â¬ TTC par mois (incluant la Box physique mensuelle) ;</li>
+<li>Plan Founders : 149,00 â¬ TTC par mois (incluant la Box physique mensuelle, rÃ©servÃ© aux abonnÃ©s fondateurs selon les conditions d'Ã©ligibilitÃ© dÃ©finies par la SociÃ©tÃ©).</li>
+</ul>
+<p>Les prix sont libellÃ©s en euros et incluent la taxe sur la valeur ajoutÃ©e (TVA) applicable au taux en vigueur au jour de la souscription conformÃ©ment aux articles 256 et suivants du Code gÃ©nÃ©ral des impÃ´ts. Tout changement du taux de TVA lÃ©galement applicable sera rÃ©percutÃ© sur les prix affichÃ©s.</p>
+<p>Les prix des plans incluant une Box physique intÃ¨grent les frais de livraison standard en France mÃ©tropolitaine. Des frais supplÃ©mentaires pourront Ãªtre appliquÃ©s pour toute livraison hors France mÃ©tropolitaine dans les zones desservies par la SociÃ©tÃ©, le cas Ã©chÃ©ant.</p>
+<h3 class="legal-subtitle">3.2 Modification des tarifs</h3>
+<p>La SociÃ©tÃ© se rÃ©serve le droit de modifier ses tarifs Ã  tout moment. Toutefois, les modifications tarifaires ne s'appliquent pas aux abonnements en cours sans information prÃ©alable du Client par tout moyen Ã©crit (e-mail ou notification in-app) au moins trente (30) jours avant la prise d'effet de la modification. Ã dÃ©faut d'acceptation de ces nouvelles conditions, le Client dispose du droit de rÃ©silier son abonnement dans les conditions prÃ©vues Ã  l'Article 4 des prÃ©sentes. S'agissant des abonnements souscrits via l'App Store Apple ou le Google Play Store, les modifications tarifaires sont soumises aux rÃ¨gles et procÃ©dures propres Ã  ces plateformes.</p>
+<p>Le Plan Founders est un tarif prÃ©fÃ©rentiel garanti pour les abonnÃ©s ayant souscrit dans le cadre de la pÃ©riode de lancement dÃ©finie par la SociÃ©tÃ©. La SociÃ©tÃ© s'engage Ã  maintenir ce tarif prÃ©fÃ©rentiel pendant toute la durÃ©e de l'abonnement actif, sous rÃ©serve du maintien de la continuitÃ© de l'abonnement sans interruption. Toute interruption de l'abonnement Founders entraÃ®ne la perte du bÃ©nÃ©fice du tarif prÃ©fÃ©rentiel.</p>
+<h3 class="legal-subtitle">3.3 ModalitÃ©s de paiement</h3>
+<p>Le paiement des abonnements s'effectue exclusivement par voie Ã©lectronique, selon l'un des trois systÃ¨mes de paiement disponibles en fonction de la plateforme utilisÃ©e par le Client :</p>
+<h3 class="legal-subtitle">3.3.1 Paiement via Stripe</h3>
+<p>Lorsque le Client souscrit Ã  un abonnement via le site web officiel de la SociÃ©tÃ© ou directement via l'interface web de l'Application, le paiement est traitÃ© par Stripe Payments Europe, Ltd. Le Client renseigne ses coordonnÃ©es bancaires (numÃ©ro de carte, date d'expiration, cryptogramme visuel) dans le formulaire sÃ©curisÃ© fourni par Stripe. Ces donnÃ©es sont transmises directement Ã  Stripe et ne sont Ã  aucun moment stockÃ©es sur les serveurs de la SociÃ©tÃ©. Le dÃ©bit est effectuÃ© au dÃ©but de chaque pÃ©riode d'abonnement mensuelle. La relation entre le Client et Stripe est rÃ©gie par les conditions d'utilisation de Stripe, accessibles sur le site https://stripe.com. La SociÃ©tÃ© n'est pas responsable des refus de paiement ou des dysfonctionnements imputables Ã  Stripe. En cas d'Ã©chec de paiement, la SociÃ©tÃ© notifiera le Client par e-mail et procÃ¨dera Ã  une nouvelle tentative de dÃ©bit selon les rÃ¨gles dÃ©finies par Stripe. En cas d'Ã©chec persistant, l'accÃ¨s aux fonctionnalitÃ©s payantes pourra Ãªtre suspendu jusqu'Ã  rÃ©gularisation du paiement.</p>
+<h3 class="legal-subtitle">3.3.2 Paiement via Apple StoreKit (App Store)</h3>
+<p>Lorsque le Client souscrit Ã  un abonnement depuis l'application VIVE disponible sur l'App Store d'Apple, la transaction est intÃ©gralement gÃ©rÃ©e par Apple Inc. via le systÃ¨me Apple StoreKit / In-App Purchase. Dans ce cas, les paiements sont rÃ©gis exclusivement par les Conditions GÃ©nÃ©rales de l'App Store d'Apple et les rÃ¨gles applicables aux achats intÃ©grÃ©s (In-App Purchases). La SociÃ©tÃ© n'intervient pas dans le processus de facturation ni dans le traitement des donnÃ©es de paiement, ces Ã©lÃ©ments relevant de la responsabilitÃ© exclusive d'Apple. Le Client reconnaÃ®t expressÃ©ment qu'en cas de litige relatif au paiement, au remboursement ou Ã  la facturation pour les abonnements souscrits via l'App Store, la demande doit Ãªtre adressÃ©e en prioritÃ© au support Apple selon les procÃ©dures prÃ©vues par Apple. Les remboursements et gestions de facturation sont soumis aux politiques d'Apple, accessibles sur https://www.apple.com/legal/internet-services/itunes/.</p>
+<h3 class="legal-subtitle">3.3.3 Paiement via Google Play Billing</h3>
+<p>Lorsque le Client souscrit Ã  un abonnement depuis l'application VIVE disponible sur le Google Play Store, la transaction est intÃ©gralement gÃ©rÃ©e par Google LLC via le systÃ¨me Google Play Billing. Les paiements sont rÃ©gis exclusivement par les Conditions d'utilisation du Google Play Store. La SociÃ©tÃ© n'intervient pas dans le processus de facturation ni dans le traitement des donnÃ©es de paiement, ces Ã©lÃ©ments relevant de la responsabilitÃ© exclusive de Google. Le Client reconnaÃ®t expressÃ©ment qu'en cas de litige relatif au paiement, au remboursement ou Ã  la facturation pour les abonnements souscrits via Google Play, la demande doit Ãªtre adressÃ©e en prioritÃ© au support Google selon les procÃ©dures prÃ©vues. Les remboursements et gestions de facturation sont soumis aux politiques de Google, accessibles sur https://play.google.com/intl/fr/about/play-terms/.</p>
+<h3 class="legal-subtitle">3.4 Facturation</h3>
+<p>Pour les abonnements traitÃ©s via Stripe, le Client reÃ§oit une facture Ã©lectronique Ã  chaque Ã©chÃ©ance de paiement, Ã  l'adresse e-mail associÃ©e Ã  son Compte Client. Pour les abonnements traitÃ©s via Apple StoreKit ou Google Play Billing, la facturation est assurÃ©e directement par Apple ou Google selon leurs procÃ©dures respectives.</p>
+<h3 class="legal-subtitle">3.5 SÃ©curitÃ© des paiements</h3>
+<p>L'ensemble des transactions financiÃ¨res rÃ©alisÃ©es via l'Application VIVE bÃ©nÃ©ficie des protocoles de sÃ©curitÃ© les plus Ã©levÃ©s, notamment le protocole TLS (Transport Layer Security) et la conformitÃ© aux normes PCI DSS (Payment Card Industry Data Security Standard) appliquÃ©es par les Partenaires de Paiement. La SociÃ©tÃ© ne stocke aucune donnÃ©e bancaire du Client sur ses propres serveurs.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 4 â ABONNEMENTS : DURÃE, RENOUVELLEMENT ET RÃSILIATION</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">4.1 DurÃ©e de l'abonnement</h3>
+<p>Les abonnements payants de l'Application VIVE (plans Plus, Premium Box et Founders) sont des contrats Ã  durÃ©e dÃ©terminÃ©e d'un (1) mois, se renouvelant automatiquement par tacite reconduction pour des pÃ©riodes successives d'un (1) mois, conformÃ©ment aux articles L215-1 et suivants du Code de la consommation.</p>
+<p>Chaque pÃ©riode d'abonnement commence Ã  la date de souscription initiale ou Ã  la date anniversaire mensuelle correspondante.</p>
+<h3 class="legal-subtitle">4.2 Renouvellement automatique</h3>
+<p>ConformÃ©ment Ã  l'article L215-1 du Code de la consommation, le Client est informÃ© de la reconduction automatique de son abonnement lors de la souscription initiale et rappelÃ© au plus tÃ´t trois (3) mois et au plus tard un (1) mois avant le terme de la pÃ©riode en cours, par voie de notification Ã©lectronique (e-mail et/ou notification in-app), de la possibilitÃ© de ne pas reconduire l'abonnement.</p>
+<p>Le dÃ©bit correspondant Ã  la nouvelle pÃ©riode est automatiquement effectuÃ© Ã  la date d'anniversaire mensuelle, selon le mode de paiement choisi lors de la souscription.</p>
+<p>Pour les abonnements souscrits via Apple StoreKit ou Google Play Billing, le renouvellement automatique est gÃ©rÃ© directement par Apple ou Google selon leurs propres rÃ¨gles, que le Client est invitÃ© Ã  consulter sur leurs plateformes respectives.</p>
+<h3 class="legal-subtitle">4.3 RÃ©siliation Ã  l'initiative du Client</h3>
+<p>Le Client peut rÃ©silier son abonnement Ã  tout moment, sans pÃ©nalitÃ©, selon les modalitÃ©s suivantes :</p>
+<p>a) Via l'Application VIVE : en accÃ©dant Ã  la section Â« Mon Compte Â» > Â« Mon Abonnement Â» > Â« RÃ©silier mon abonnement Â», en suivant les instructions affichÃ©es Ã  l'Ã©cran ;</p>
+<p>b) Par e-mail : en adressant une demande de rÃ©siliation Ã  l'adresse notitiacorp@gmail.com, en indiquant les nom, prÃ©nom, adresse e-mail associÃ©e au Compte Client et le plan souscrit ;</p>
+<p>c) Via l'App Store Apple : en accÃ©dant aux paramÃ¨tres du compte Apple du Client > Â« Abonnements Â», puis en sÃ©lectionnant l'abonnement VIVE et en cliquant sur Â« Annuler l'abonnement Â». Cette procÃ©dure est la seule applicable et reconnue par Apple pour les abonnements souscrits via l'App Store ;</p>
+<p>d) Via Google Play Store : en accÃ©dant Ã  l'application Google Play Store > Â« Abonnements Â», puis en sÃ©lectionnant l'abonnement VIVE et en cliquant sur Â« Annuler Â». Cette procÃ©dure est la seule applicable et reconnue par Google pour les abonnements souscrits via Google Play.</p>
+<p>La rÃ©siliation prend effet Ã  la fin de la pÃ©riode d'abonnement en cours. Le Client continue Ã  bÃ©nÃ©ficier des services payants jusqu'au terme de la pÃ©riode pour laquelle il a acquittÃ© son paiement. Aucun remboursement proratisÃ© n'est effectuÃ© pour les jours restants de la pÃ©riode en cours, sauf dans les cas prÃ©vus Ã  l'Article 7 et Ã  l'Article 5 (droit de rÃ©tractation).</p>
+<h3 class="legal-subtitle">4.4 RÃ©siliation Ã  l'initiative de la SociÃ©tÃ©</h3>
+<p>La SociÃ©tÃ© se rÃ©serve le droit de rÃ©silier ou de suspendre l'abonnement du Client de plein droit, sans prÃ©avis ni indemnitÃ©, dans les cas suivants :</p>
+<ul>
+<li>Non-paiement ou Ã©chec de paiement persistant ;</li>
+<li>Violation des prÃ©sentes CGV ou des Conditions d'utilisation de l'Application ;</li>
+<li>Comportement frauduleux, abusif ou portant atteinte aux droits de la SociÃ©tÃ© ou de tiers ;</li>
+<li>Fourniture d'informations fausses ou trompeuses lors de la crÃ©ation du Compte Client.</li>
+</ul>
+<p>Dans ces hypothÃ¨ses, la SociÃ©tÃ© notifiera le Client par e-mail prÃ©alablement Ã  toute suspension, sauf en cas d'urgence ou de fraude avÃ©rÃ©e, et accordera au Client un dÃ©lai raisonnable pour rÃ©gulariser la situation.</p>
+<h3 class="legal-subtitle">4.5 Suspension temporaire</h3>
+<p>En cas d'incident de paiement isolÃ©, la SociÃ©tÃ© pourra suspendre temporairement l'accÃ¨s aux fonctionnalitÃ©s payantes de l'Application tout en conservant le Compte Client actif, afin de permettre au Client de rÃ©gulariser sa situation dans un dÃ©lai de sept (7) jours calendaires Ã  compter de la notification d'incident.</p>
+<h3 class="legal-subtitle">4.6 Effets de la rÃ©siliation</h3>
+<p>Ã compter de la date effective de rÃ©siliation, le Client perd l'accÃ¨s aux fonctionnalitÃ©s payantes de l'Application et, le cas Ã©chÃ©ant, cesse de recevoir les Box physiques mensuelles. Le Compte Client est conservÃ© avec un accÃ¨s au niveau du Plan Free. Les donnÃ©es du Client sont conservÃ©es conformÃ©ment aux dispositions de la Politique de ConfidentialitÃ© et des obligations lÃ©gales applicables.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 5 â DROIT DE RÃTRACTATION</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">5.1 Principe gÃ©nÃ©ral</h3>
+<p>ConformÃ©ment aux articles L221-18 et suivants du Code de la consommation, le Client consommateur dispose d'un dÃ©lai de quatorze (14) jours calendaires Ã  compter de la conclusion du contrat pour exercer son droit de rÃ©tractation, sans avoir Ã  motiver sa dÃ©cision ni Ã  supporter d'autres coÃ»ts que ceux prÃ©vus aux articles L221-23 Ã  L221-25 du Code de la consommation.</p>
+<p>Pour les abonnements aux services numÃ©riques (plans Plus, Premium Box, Founders), le dÃ©lai de rÃ©tractation court Ã  compter de la date de conclusion du contrat d'abonnement.</p>
+<p>Pour les Box physiques, le dÃ©lai de rÃ©tractation court Ã  compter du jour oÃ¹ le Client, ou un tiers dÃ©signÃ© par lui (autre que le transporteur), prend physiquement possession du bien, conformÃ©ment Ã  l'article L221-18, 2Â° du Code de la consommation.</p>
+<h3 class="legal-subtitle">5.2 Exception au droit de rÃ©tractation pour les services numÃ©riques â ExÃ©cution anticipÃ©e</h3>
+<p>ConformÃ©ment Ã  l'article L221-28, 1Â° du Code de la consommation, le droit de rÃ©tractation ne peut Ãªtre exercÃ© pour les contrats de fourniture de contenus numÃ©riques dont l'exÃ©cution a commencÃ© avant la fin du dÃ©lai de rÃ©tractation de quatorze (14) jours, lorsque :</p>
+<ul>
+<li>Le Client a expressÃ©ment consenti au dÃ©but de l'exÃ©cution avant la fin du dÃ©lai de rÃ©tractation ;</li>
+<li>Le Client a expressÃ©ment reconnu qu'il perdrait ainsi son droit de rÃ©tractation.</li>
+</ul>
+<p>Cette renonciation est recueillie lors du processus de souscription, par le biais d'une case Ã  cocher spÃ©cifique, distincte de l'acceptation des CGV, libellÃ©e comme suit : Â« Je demande expressÃ©ment que l'exÃ©cution du service numÃ©rique commence immÃ©diatement. Je reconnais renoncer Ã  mon droit de rÃ©tractation dÃ¨s lors que le service aura Ã©tÃ© pleinement exÃ©cutÃ©. Â»</p>
+<p>Si le Client n'a pas formulÃ© cette demande expresse d'exÃ©cution anticipÃ©e, il conserve son droit de rÃ©tractation de quatorze (14) jours, et l'accÃ¨s aux fonctionnalitÃ©s payantes ne sera activÃ© qu'Ã  l'expiration de ce dÃ©lai, sauf renonciation expresse.</p>
+<h3 class="legal-subtitle">5.3 Exception au droit de rÃ©tractation pour la Box physique â Produits ouverts ou expÃ©diÃ©s</h3>
+<p>ConformÃ©ment Ã  l'article L221-28, 6Â° du Code de la consommation, le droit de rÃ©tractation est exclu pour les Box physiques dont le contenu a Ã©tÃ© descellÃ© (ouvert) par le Client aprÃ¨s livraison et qui ne peuvent Ãªtre renvoyÃ©s pour des raisons d'hygiÃ¨ne ou de protection de la santÃ©. La SociÃ©tÃ© indiquera clairement, le cas Ã©chÃ©ant, les produits concernÃ©s par cette exclusion sur l'emballage ou dans la description du contenu de la Box.</p>
+<p>Par ailleurs, lorsqu'une Box physique a Ã©tÃ© expÃ©diÃ©e et est en cours d'acheminement, le droit de rÃ©tractation affÃ©rent Ã  la composante physique de l'abonnement (Box) ne peut Ãªtre exercÃ© pour cette livraison en cours. Seules les livraisons futures non encore expÃ©diÃ©es Ã  la date d'exercice du droit de rÃ©tractation peuvent Ãªtre annulÃ©es dans le cadre de la rÃ©siliation de l'abonnement.</p>
+<h3 class="legal-subtitle">5.4 Exercice du droit de rÃ©tractation</h3>
+<p>Pour exercer son droit de rÃ©tractation, le Client doit notifier sa dÃ©cision de se rÃ©tracter Ã  la SociÃ©tÃ© avant l'expiration du dÃ©lai de quatorze (14) jours, par l'un des moyens suivants :</p>
+<ul>
+<li>En utilisant le formulaire de rÃ©tractation type disponible en Annexe 1 des prÃ©sentes CGV ;</li>
+<li>En adressant une dÃ©claration dÃ©nuÃ©e d'ambiguÃ¯tÃ© exprimant sa volontÃ© de se rÃ©tracter par e-mail Ã  l'adresse notitiacorp@gmail.com ;</li>
+<li>Par lettre recommandÃ©e avec accusÃ© de rÃ©ception adressÃ©e Ã  : Notitia Corp, 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France.</li>
+</ul>
+<p>La date de la notification (date d'envoi de l'e-mail ou date d'expÃ©dition du courrier recommandÃ©) fait foi pour apprÃ©cier le respect du dÃ©lai de rÃ©tractation, conformÃ©ment Ã  l'article L221-20 du Code de la consommation.</p>
+<h3 class="legal-subtitle">5.5 Effets du droit de rÃ©tractation</h3>
+<p>En cas d'exercice valable du droit de rÃ©tractation :</p>
+<p>a) Pour les services numÃ©riques : la SociÃ©tÃ© remboursera le Client de l'intÃ©gralitÃ© des sommes versÃ©es, dÃ©duction faite, le cas Ã©chÃ©ant, d'une indemnitÃ© proportionnelle au service fourni jusqu'Ã  la communication de la rÃ©tractation si le Client avait expressÃ©ment demandÃ© que l'exÃ©cution commence avant la fin du dÃ©lai de rÃ©tractation, conformÃ©ment Ã  l'article L221-24 du Code de la consommation ;</p>
+<p>b) Pour la Box physique : le remboursement des sommes versÃ©es au titre de la Box intervient aprÃ¨s rÃ©ception de celle-ci par la SociÃ©tÃ© ou aprÃ¨s fourniture par le Client d'une preuve d'expÃ©dition de la Box, selon la date la plus proche, conformÃ©ment Ã  l'article L221-24 du Code de la consommation.</p>
+<p>Le remboursement est effectuÃ© dans un dÃ©lai de quatorze (14) jours Ã  compter de la date Ã  laquelle la SociÃ©tÃ© est informÃ©e de la dÃ©cision de rÃ©tractation, en utilisant le mÃªme moyen de paiement que celui utilisÃ© lors de la transaction initiale, sauf accord exprÃ¨s contraire du Client.</p>
+<p>Les frais de retour de la Box sont Ã  la charge du Client, conformÃ©ment Ã  l'article L221-23 du Code de la consommation, la SociÃ©tÃ© en ayant informÃ© le Client lors de la souscription et dans les prÃ©sentes CGV.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 6 â LIVRAISON DE LA BOX PHYSIQUE</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">6.1 Zone gÃ©ographique de livraison</h3>
+<p>Les Box physiques sont livrÃ©es exclusivement en France mÃ©tropolitaine (incluant la Corse). La livraison dans les dÃ©partements et rÃ©gions d'outre-mer (DROM), les collectivitÃ©s d'outre-mer (COM) et Ã  l'Ã©tranger n'est pas assurÃ©e Ã  la date d'entrÃ©e en vigueur des prÃ©sentes CGV, sauf annonce contraire de la SociÃ©tÃ© sur l'Application.</p>
+<h3 class="legal-subtitle">6.2 Adresse de livraison</h3>
+<p>Le Client est seul responsable de l'exactitude de l'adresse de livraison renseignÃ©e dans son Compte Client. L'adresse de livraison doit Ãªtre une adresse postale complÃ¨te et valide en France mÃ©tropolitaine. Toute modification de l'adresse de livraison doit Ãªtre effectuÃ©e dans le Compte Client au plus tard cinq (5) jours ouvrables avant la date d'expÃ©dition prÃ©vue. La SociÃ©tÃ© ne pourra Ãªtre tenue responsable d'une livraison non effectuÃ©e ou retardÃ©e en raison d'une adresse incorrecte ou incomplÃ¨te fournie par le Client.</p>
+<h3 class="legal-subtitle">6.3 DÃ©lais de livraison</h3>
+<p>Les Box sont expÃ©diÃ©es une fois par mois, Ã  une date indicative communiquÃ©e au Client par notification in-app ou par e-mail. Le dÃ©lai de livraison estimÃ© aprÃ¨s expÃ©dition est de deux (2) Ã  cinq (5) jours ouvrables en France mÃ©tropolitaine, selon le transporteur retenu par la SociÃ©tÃ©.</p>
+<p>ConformÃ©ment Ã  l'article L216-1 du Code de la consommation, la SociÃ©tÃ© s'engage Ã  livrer la Box dans un dÃ©lai maximal de trente (30) jours Ã  compter de la date d'expÃ©dition. En cas de retard de livraison, le Client peut contacter le service client Ã  l'adresse notitiacorp@gmail.com ou au 06 71 90 25 13.</p>
+<p>ConformÃ©ment Ã  l'article L216-2 du Code de la consommation, si la livraison n'est pas intervenue dans le dÃ©lai imparti, le Client peut rÃ©soudre le contrat (s'agissant de la livraison de la Box concernÃ©e) en adressant Ã  la SociÃ©tÃ©, par lettre recommandÃ©e avec accusÃ© de rÃ©ception ou sur un support durable, une mise en demeure d'effectuer la livraison dans un dÃ©lai supplÃ©mentaire raisonnable. Si la SociÃ©tÃ© n'a pas exÃ©cutÃ© son obligation dans ce dÃ©lai supplÃ©mentaire, le Client peut rÃ©soudre le contrat. Le contrat est considÃ©rÃ© rÃ©solu Ã  la rÃ©ception par la SociÃ©tÃ© de la lettre ou de l'Ã©crit l'informant de cette rÃ©solution, Ã  moins que la SociÃ©tÃ© ne se soit exÃ©cutÃ©e entre-temps.</p>
+<h3 class="legal-subtitle">6.4 Suivi de livraison</h3>
+<p>Le Client reÃ§oit un e-mail de confirmation d'expÃ©dition comportant, le cas Ã©chÃ©ant, un numÃ©ro de suivi permettant de suivre l'acheminement de sa Box via le site du transporteur. La SociÃ©tÃ© met en Åuvre ses meilleurs efforts pour assurer la traÃ§abilitÃ© de chaque envoi.</p>
+<h3 class="legal-subtitle">6.5 Transfert des risques</h3>
+<p>ConformÃ©ment Ã  l'article L216-4 du Code de la consommation, le risque de perte ou d'endommagement des biens est transfÃ©rÃ© au Client, ou Ã  un tiers dÃ©signÃ© par lui (autre que le transporteur), au moment oÃ¹ il prend physiquement possession du bien. Tant que la Box n'a pas Ã©tÃ© remise au Client ou Ã  la personne dÃ©signÃ©e par lui, les risques restent Ã  la charge de la SociÃ©tÃ©.</p>
+<p>En cas de perte ou d'endommagement survenu pendant le transport, le Client est invitÃ© Ã  contacter immÃ©diatement le service client de la SociÃ©tÃ© dans les conditions prÃ©vues Ã  l'Article 13 des prÃ©sentes.</p>
+<h3 class="legal-subtitle">6.6 Absence lors de la livraison</h3>
+<p>En cas d'absence du Client lors de la tentative de livraison, le transporteur laissera un avis de passage et la Box sera mise en instance selon les procÃ©dures du transporteur. Le Client dispose gÃ©nÃ©ralement d'un dÃ©lai de quinze (15) jours calendaires pour rÃ©cupÃ©rer son colis au bureau de poste ou au point relais dÃ©signÃ©. PassÃ© ce dÃ©lai, le colis peut Ãªtre retournÃ© Ã  la SociÃ©tÃ©. Dans ce cas, une nouvelle expÃ©dition peut Ãªtre arrangÃ©e sous rÃ©serve d'un Ã©ventuel remboursement partiel des frais de rÃ©expÃ©dition.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 7 â POLITIQUE DE RETOURS ET REMBOURSEMENTS</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">7.1 Principe gÃ©nÃ©ral</h3>
+<p>Hors exercice du droit de rÃ©tractation prÃ©vu Ã  l'Article 5, et hors application des garanties lÃ©gales prÃ©vues Ã  l'Article 8, les abonnements aux services numÃ©riques ne donnent pas droit Ã  remboursement une fois la pÃ©riode mensuelle commencÃ©e, compte tenu de la nature du service fourni.</p>
+<h3 class="legal-subtitle">7.2 Box physique dÃ©fectueuse ou non conforme</h3>
+<p>Si la Box physique reÃ§ue par le Client est dÃ©fectueuse, endommagÃ©e, incomplÃ¨te ou ne correspond pas Ã  la description qui en a Ã©tÃ© faite, le Client dispose des recours suivants :</p>
+<p>a) Signalement : le Client doit signaler le problÃ¨me Ã  la SociÃ©tÃ© dans un dÃ©lai de sept (7) jours calendaires Ã  compter de la rÃ©ception de la Box, par e-mail Ã  l'adresse notitiacorp@gmail.com, en fournissant une description dÃ©taillÃ©e du problÃ¨me et, si possible, des photographies permettant de constater le dÃ©faut ou la non-conformitÃ© ;</p>
+<p>b) Solutions proposÃ©es par la SociÃ©tÃ© : aprÃ¨s vÃ©rification du bien-fondÃ© de la rÃ©clamation, la SociÃ©tÃ© proposera au Client, selon sa convenance :</p>
+<ul>
+<li>L'envoi d'une Box de remplacement ou des produits manquants/dÃ©fectueux ;</li>
+<li>Un remboursement partiel ou total des sommes versÃ©es au titre de la Box concernÃ©e, selon la nature du problÃ¨me.</li>
+</ul>
+<p>Le remboursement, s'il est accordÃ©, sera effectuÃ© dans un dÃ©lai de quatorze (14) jours Ã  compter de la date d'accord entre les parties, par le mÃªme moyen de paiement que celui utilisÃ© lors de la transaction initiale.</p>
+<h3 class="legal-subtitle">7.3 Erreur de livraison</h3>
+<p>En cas de livraison d'une Box ne correspondant pas Ã  la commande du Client (erreur de contenu imputable Ã  la SociÃ©tÃ©), la SociÃ©tÃ© prend en charge les frais de retour et procÃ¨de, selon le choix du Client :</p>
+<ul>
+<li>Ã l'envoi de la Box correcte dans les meilleurs dÃ©lais ;</li>
+<li>Au remboursement intÃ©gral des sommes versÃ©es au titre de la Box concernÃ©e.</li>
+</ul>
+<p>La SociÃ©tÃ© fournira au Client une Ã©tiquette prÃ©payÃ©e pour le retour de la Box incorrectement livrÃ©e.</p>
+<h3 class="legal-subtitle">7.4 Retour de la Box</h3>
+<p>Tout retour de Box doit Ãªtre effectuÃ© dans son emballage d'origine ou dans un emballage garantissant la protection des produits, avec le bon de retour fourni par la SociÃ©tÃ©. Les produits retournÃ©s doivent Ãªtre en bon Ã©tat, non ouverts et non utilisÃ©s, sauf si la rÃ©clamation porte sur un dÃ©faut ou une non-conformitÃ© constatÃ©e Ã  l'ouverture.</p>
+<h3 class="legal-subtitle">7.5 Exclusions</h3>
+<p>La SociÃ©tÃ© ne procÃ¨de Ã  aucun remboursement pour les motifs suivants, sauf disposition lÃ©gale contraire :</p>
+<ul>
+<li>Changement d'avis du Client sur des produits conformes et non dÃ©fectueux, hors dÃ©lai de rÃ©tractation ;</li>
+<li>Produits consommables dÃ©jÃ  utilisÃ©s ou entamÃ©s ;</li>
+<li>Produits retournÃ©s incomplets ou endommagÃ©s du fait du Client.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 8 â GARANTIES LÃGALES</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">8.1 Garantie lÃ©gale de conformitÃ© pour les biens physiques</h3>
+<p>ConformÃ©ment aux articles L217-4 Ã  L217-14 du Code de la consommation (dans leur rÃ©daction issue de l'ordonnance nÂ° 2021-1247 du 29 septembre 2021), la SociÃ©tÃ© est tenue de livrer un bien conforme au contrat et rÃ©pond des dÃ©fauts de conformitÃ© existant lors de la dÃ©livrance.</p>
+<p>Pour Ãªtre conforme au contrat, le bien doit :</p>
+<ul>
+<li>Ãtre propre Ã  l'usage habituellement attendu d'un bien semblable ;</li>
+<li>PrÃ©senter les caractÃ©ristiques dÃ©finies d'un commun accord par les parties ou Ãªtre propre Ã  tout usage spÃ©cial recherchÃ© par l'acheteur, portÃ© Ã  la connaissance du vendeur et acceptÃ© par lui ;</li>
+<li>Correspondre Ã  la description donnÃ©e par le vendeur ;</li>
+<li>PrÃ©senter la qualitÃ© qu'un acheteur peut lÃ©gitimement attendre eu Ã©gard aux dÃ©clarations publiques faites par le vendeur.</li>
+</ul>
+<p>En cas de dÃ©faut de conformitÃ©, le Client peut :</p>
+<ul>
+<li>En premier lieu, demander la mise en conformitÃ© du bien par rÃ©paration ou remplacement, selon les conditions de l'article L217-9 du Code de la consommation ;</li>
+<li>En second lieu, sous les conditions prÃ©vues Ã  l'article L217-10 du Code de la consommation, obtenir une rÃ©duction du prix ou la rÃ©solution du contrat.</li>
+</ul>
+<p>Le Client est dispensÃ© de rapporter la preuve de l'existence du dÃ©faut de conformitÃ© pendant les vingt-quatre (24) mois suivant la dÃ©livrance du bien pour les biens neufs, conformÃ©ment Ã  l'article L217-7 du Code de la consommation (dÃ©lai de prÃ©somption).</p>
+<h3 class="legal-subtitle">8.2 Garantie lÃ©gale de conformitÃ© pour les contenus et services numÃ©riques</h3>
+<p>ConformÃ©ment aux articles L224-25-12 Ã  L224-25-26 du Code de la consommation (issus de l'ordonnance nÂ° 2021-1247 du 29 septembre 2021 transposant la Directive 2019/770/UE), la SociÃ©tÃ© est tenue de fournir un contenu ou un service numÃ©rique conforme au contrat et rÃ©pond des dÃ©fauts de conformitÃ© existant lors de la fourniture.</p>
+<p>La garantie lÃ©gale de conformitÃ© pour les contenus et services numÃ©riques fournis en continu (abonnements) couvre toute non-conformitÃ© qui apparaÃ®t pendant la durÃ©e de la fourniture du contenu ou du service numÃ©rique, selon les termes de l'article L224-25-14 du Code de la consommation.</p>
+<h3 class="legal-subtitle">8.3 Garantie des vices cachÃ©s</h3>
+<p>La SociÃ©tÃ© est tenue Ã  la garantie des vices cachÃ©s des biens physiques fournis (Box et produits contenus dans la Box) conformÃ©ment aux articles 1641 Ã  1649 du Code civil. Cette garantie est due lorsque le vice cache le bien impropre Ã  l'usage auquel on le destine, ou diminue tellement cet usage que l'acheteur ne l'aurait pas acquis, ou n'en aurait donnÃ© qu'un moindre prix, s'il les avait connus.</p>
+<p>Le Client dispose, en cas de vice cachÃ©, de la facultÃ© de choisir entre :</p>
+<ul>
+<li>La rÃ©dhibition : rendre la chose et se faire restituer le prix (action rÃ©dhibitoire) ;</li>
+<li>Garder la chose et se faire rendre une partie du prix (action estimatoire).</li>
+</ul>
+<p>L'action rÃ©sultant des vices rÃ©dhibitoires doit Ãªtre intentÃ©e par le Client dans un dÃ©lai de deux (2) ans Ã  compter de la dÃ©couverte du vice, conformÃ©ment Ã  l'article 1648 du Code civil.</p>
+<h3 class="legal-subtitle">8.4 Exclusions de garantie</h3>
+<p>Les garanties visÃ©es au prÃ©sent article ne couvrent pas les dÃ©fauts rÃ©sultant :</p>
+<ul>
+<li>D'une utilisation anormale ou non conforme aux instructions d'utilisation des produits ;</li>
+<li>D'une nÃ©gligence, d'un mauvais entretien ou de manipulations incorrectes du Client ;</li>
+<li>De modifications ou rÃ©parations effectuÃ©es par le Client ou un tiers non autorisÃ© par la SociÃ©tÃ© ;</li>
+<li>D'une usure normale des produits.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 9 â RESPONSABILITÃ ET LIMITATION DE RESPONSABILITÃ</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">9.1 Nature des services fournis â Avertissement mÃ©dical</h3>
+<p>L'Application VIVE est une application de type Â« health concierge Â» conÃ§ue pour accompagner le Client dans la gestion de son bien-Ãªtre gÃ©nÃ©ral au quotidien. Les informations, recommandations, contenus et fonctionnalitÃ©s fournis par l'Application VIVE ont une vocation exclusivement informative et de bien-Ãªtre. Ils ne constituent en aucun cas :</p>
+<ul>
+<li>Des conseils mÃ©dicaux, des diagnostics ou des prescriptions mÃ©dicales ;</li>
+<li>Une relation thÃ©rapeutique entre le Client et la SociÃ©tÃ© ou ses partenaires ;</li>
+<li>Un service de soins ou de santÃ© rÃ©glementÃ© au sens des dispositions du Code de la santÃ© publique.</li>
+</ul>
+<p>L'Application VIVE ne saurait se substituer Ã  une consultation mÃ©dicale professionnelle, Ã  l'avis d'un mÃ©decin, d'un pharmacien ou de tout autre professionnel de santÃ© qualifiÃ©. En cas de symptÃ´mes, de doutes sur son Ã©tat de santÃ© ou de toute urgence mÃ©dicale, le Client est expressÃ©ment invitÃ© Ã  consulter un professionnel de santÃ© qualifiÃ© ou, en cas d'urgence, Ã  contacter le 15 (SAMU), le 17 (Police) ou le 18 (Pompiers) ou le 112 (numÃ©ro d'urgence europÃ©en).</p>
+<p>La SociÃ©tÃ© dÃ©cline expressÃ©ment toute responsabilitÃ© pour tout dommage, prÃ©judice ou inconvÃ©nient de quelque nature que ce soit rÃ©sultant de l'utilisation ou de la non-utilisation des informations et recommandations fournies par l'Application en lieu et place d'un avis mÃ©dical professionnel.</p>
+<h3 class="legal-subtitle">9.2 Limitation de responsabilitÃ© â Services numÃ©riques</h3>
+<p>La SociÃ©tÃ© s'engage Ã  mettre en Åuvre tous les moyens raisonnables pour assurer la disponibilitÃ©, la continuitÃ© et la sÃ©curitÃ© de l'Application VIVE. Toutefois, la SociÃ©tÃ© ne peut garantir une disponibilitÃ© ininterrompue du service en raison de contraintes techniques inhÃ©rentes aux technologies internet et aux systÃ¨mes d'hÃ©bergement utilisÃ©s (notamment Supabase hÃ©bergÃ© en Irlande (EU), Vercel et GitHub Pages).</p>
+<p>La SociÃ©tÃ© ne saurait Ãªtre tenue responsable :</p>
+<ul>
+<li>Des interruptions temporaires de service dues Ã  des opÃ©rations de maintenance, Ã  des pannes techniques ou Ã  des Ã©vÃ©nements imprÃ©visibles ;</li>
+<li>Des dommages rÃ©sultant d'une utilisation non conforme de l'Application par le Client ;</li>
+<li>Des contenus publiÃ©s par des tiers accessibles via l'Application ;</li>
+<li>Des dysfonctionnements ou indisponibilitÃ©s imputables aux Partenaires de Paiement (Stripe, Apple, Google) ;</li>
+<li>Des pertes de donnÃ©es rÃ©sultant d'une dÃ©faillance du rÃ©seau internet ou des Ã©quipements du Client.</li>
+</ul>
+<h3 class="legal-subtitle">9.3 Limitation de responsabilitÃ© â Produits physiques</h3>
+<p>La responsabilitÃ© de la SociÃ©tÃ© au titre des Box physiques est limitÃ©e au prix payÃ© par le Client pour la Box concernÃ©e. La SociÃ©tÃ© ne saurait Ãªtre tenue responsable des dommages indirects, incidents, spÃ©ciaux ou consÃ©cutifs rÃ©sultant de l'utilisation des produits contenus dans les Box, dans les limites autorisÃ©es par le droit applicable.</p>
+<h3 class="legal-subtitle">9.4 ResponsabilitÃ© pleine et entiÃ¨re en cas de dol ou faute lourde</h3>
+<p>Aucune disposition des prÃ©sentes CGV n'a pour effet de limiter ou d'exclure la responsabilitÃ© de la SociÃ©tÃ© en cas de dol, de faute lourde, de dommage corporel ou de dÃ©cÃ¨s imputables Ã  sa faute, ni de priver le Client consommateur du bÃ©nÃ©fice des garanties lÃ©gales impÃ©ratives.</p>
+<h3 class="legal-subtitle">9.5 HÃ©bergement et sÃ©curitÃ© des donnÃ©es</h3>
+<p>L'Application VIVE utilise les infrastructures techniques suivantes :</p>
+<ul>
+<li>Supabase (base de donnÃ©es et authentification) : donnÃ©es hÃ©bergÃ©es dans un datacenter situÃ© en Irlande (UE), bÃ©nÃ©ficiant des garanties offertes par le RGPD ;</li>
+<li>Vercel (dÃ©ploiement front-end) : infrastructure conforme aux standards de sÃ©curitÃ© en vigueur ;</li>
+<li>GitHub Pages (documentation/pages statiques) : hÃ©bergement de pages statiques.</li>
+</ul>
+<p>La SociÃ©tÃ© met en Åuvre des mesures techniques et organisationnelles appropriÃ©es pour assurer la sÃ©curitÃ© et la confidentialitÃ© des donnÃ©es du Client, conformÃ©ment aux exigences de l'article 32 du RGPD.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 10 â FORCE MAJEURE</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">10.1 DÃ©finition</h3>
+<p>ConformÃ©ment Ã  l'article 1218 du Code civil, constitue un cas de force majeure, pour les besoins des prÃ©sentes CGV, tout Ã©vÃ©nement Ã©chappant au contrÃ´le de la SociÃ©tÃ©, qui ne pouvait Ãªtre raisonnablement prÃ©vu lors de la conclusion du contrat et dont les effets ne peuvent Ãªtre Ã©vitÃ©s par des mesures appropriÃ©es, et qui empÃªche l'exÃ©cution de ses obligations par la SociÃ©tÃ©.</p>
+<p>Sont notamment susceptibles d'Ãªtre qualifiÃ©s de cas de force majeure : les catastrophes naturelles, les Ã©pidÃ©mies ou pandÃ©mies dÃ©clarÃ©es par les autoritÃ©s sanitaires compÃ©tentes, les actes terroristes, les grÃ¨ves gÃ©nÃ©rales ou sectorielles affectant les transports ou les services postaux, les dÃ©cisions gouvernementales ou administratives, les pannes majeures de rÃ©seaux de tÃ©lÃ©communication ou d'internet indÃ©pendantes de la volontÃ© de la SociÃ©tÃ©, ou toute autre cause indÃ©pendante de la volontÃ© de la SociÃ©tÃ©.</p>
+<h3 class="legal-subtitle">10.2 Effets de la force majeure</h3>
+<p>En cas de survenance d'un cas de force majeure, les obligations de la SociÃ©tÃ© sont suspendues pour la durÃ©e de l'Ã©vÃ©nement de force majeure. La SociÃ©tÃ© informera le Client dÃ¨s que possible, par tout moyen appropriÃ©, de la survenance d'un tel Ã©vÃ©nement et de ses consÃ©quences sur l'exÃ©cution du contrat.</p>
+<p>Si la force majeure empÃªche l'exÃ©cution du contrat pendant une durÃ©e supÃ©rieure Ã  trente (30) jours consÃ©cutifs, chacune des parties pourra rÃ©silier le contrat de plein droit, sans indemnitÃ©, par notification Ã©crite Ã  l'autre partie. Dans cette hypothÃ¨se, la SociÃ©tÃ© procÃ©dera au remboursement des sommes payÃ©es par le Client pour des services non encore fournis (notamment les Box non expÃ©diÃ©es).</p>
+<h3 class="legal-subtitle">10.3 Obligations de la SociÃ©tÃ© en cas de force majeure</h3>
+<p>Pendant la pÃ©riode de force majeure, la SociÃ©tÃ© s'engage Ã  faire ses meilleurs efforts pour limiter les consÃ©quences de l'Ã©vÃ©nement sur ses obligations contractuelles et pour reprendre l'exÃ©cution normale de ses prestations dÃ¨s que possible.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 11 â PROPRIÃTÃ INTELLECTUELLE</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">11.1 PropriÃ©tÃ© de la SociÃ©tÃ©</h3>
+<p>L'Application VIVE, son contenu, son code source, ses interfaces graphiques, ses logos, marques, dÃ©nominations sociales, bases de donnÃ©es, textes, images, vidÃ©os, algorithmes, fonctionnalitÃ©s et tout autre Ã©lÃ©ment constitutif de l'Application sont la propriÃ©tÃ© exclusive de la SociÃ©tÃ© ou de ses concÃ©dants de licences, et sont protÃ©gÃ©s par les lois franÃ§aises et internationales relatives Ã  la propriÃ©tÃ© intellectuelle, notamment le Code de la propriÃ©tÃ© intellectuelle.</p>
+<p>Les marques, logos et signes distinctifs de l'Application VIVE, ainsi que ceux de la SociÃ©tÃ© Notitia Corp, sont des marques dÃ©posÃ©es ou en cours de dÃ©pÃ´t. Toute reproduction, imitation ou utilisation, totale ou partielle, de ces signes distinctifs sans l'autorisation expresse et prÃ©alable de la SociÃ©tÃ© est interdite et constitue une contrefaÃ§on sanctionnÃ©e pÃ©nalement et civilement, conformÃ©ment aux articles L713-1 et suivants du Code de la propriÃ©tÃ© intellectuelle.</p>
+<h3 class="legal-subtitle">11.2 Licence d'utilisation accordÃ©e au Client</h3>
+<p>La SociÃ©tÃ© concÃ¨de au Client, Ã  titre personnel, non exclusif, non transfÃ©rable et rÃ©vocable, une licence d'utilisation de l'Application VIVE pour la durÃ©e de son abonnement actif, Ã  des fins strictement personnelles et non commerciales. Cette licence ne confÃ¨re au Client aucun droit de propriÃ©tÃ© sur l'Application ou ses Ã©lÃ©ments constitutifs.</p>
+<p>Le Client s'interdit expressÃ©ment de :</p>
+<ul>
+<li>Reproduire, copier, distribuer, vendre ou exploiter commercialement tout ou partie de l'Application ;</li>
+<li>ProcÃ©der Ã  toute ingÃ©nierie inverse (reverse engineering), dÃ©compilation ou dÃ©sassemblage de l'Application ;</li>
+<li>Modifier, adapter ou crÃ©er des Åuvres dÃ©rivÃ©es Ã  partir de l'Application ;</li>
+<li>Utiliser l'Application Ã  des fins illicites ou contraires Ã  l'ordre public.</li>
+</ul>
+<h3 class="legal-subtitle">11.3 Contenu gÃ©nÃ©rÃ© par le Client</h3>
+<p>Si le Client gÃ©nÃ¨re du contenu au sein de l'Application (commentaires, informations de profil, donnÃ©es de bien-Ãªtre, etc.), il conserve la propriÃ©tÃ© de ce contenu. Il concÃ¨de toutefois Ã  la SociÃ©tÃ© une licence non exclusive, mondiale, gratuite et pour la durÃ©e lÃ©gale de protection, lui permettant d'utiliser, reproduire, traiter et analyser ce contenu aux fins exclusives de la fourniture des Services et de l'amÃ©lioration de l'Application, dans le respect de la Politique de ConfidentialitÃ©.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 12 â DONNÃES PERSONNELLES</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">12.1 Responsable de traitement</h3>
+<p>ConformÃ©ment au RÃ¨glement (UE) 2016/679 du 27 avril 2016 relatif Ã  la protection des donnÃ©es Ã  caractÃ¨re personnel (RGPD) et Ã  la loi nÂ° 78-17 du 6 janvier 1978 relative Ã  l'informatique, aux fichiers et aux libertÃ©s (dite Â« Loi Informatique et LibertÃ©s Â») dans sa version modifiÃ©e, la SociÃ©tÃ© Notitia Corp, dont le siÃ¨ge est situÃ© au 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France, agit en qualitÃ© de responsable de traitement des donnÃ©es personnelles collectÃ©es dans le cadre de l'utilisation de l'Application VIVE.</p>
+<h3 class="legal-subtitle">12.2 DonnÃ©es collectÃ©es</h3>
+<p>Dans le cadre de la fourniture de ses Services, la SociÃ©tÃ© est amenÃ©e Ã  collecter et traiter des donnÃ©es personnelles concernant le Client, notamment :</p>
+<ul>
+<li>Des donnÃ©es d'identification (nom, prÃ©nom, adresse e-mail) ;</li>
+<li>Des donnÃ©es de contact (adresse postale pour la livraison des Box) ;</li>
+<li>Des donnÃ©es de paiement (traitÃ©es et sÃ©curisÃ©es par les Partenaires de Paiement) ;</li>
+<li>Des donnÃ©es de santÃ© et de bien-Ãªtre saisies volontairement par le Client dans l'Application ;</li>
+<li>Des donnÃ©es de navigation et d'utilisation de l'Application.</li>
+</ul>
+<p>Les donnÃ©es de santÃ© constituent des donnÃ©es sensibles au sens de l'article 9 du RGPD. Leur collecte et leur traitement reposent sur le consentement explicite du Client, recueilli conformÃ©ment aux exigences du RGPD.</p>
+<h3 class="legal-subtitle">12.3 Renvoi Ã  la Politique de ConfidentialitÃ©</h3>
+<p>Les modalitÃ©s dÃ©taillÃ©es de collecte, de traitement, de conservation, de protection et de partage des DonnÃ©es Personnelles du Client sont dÃ©crites dans la Politique de ConfidentialitÃ© de la SociÃ©tÃ©, disponible Ã  tout moment dans l'Application VIVE et sur le site officiel de la SociÃ©tÃ©. La Politique de ConfidentialitÃ© fait partie intÃ©grante des prÃ©sentes CGV et est rÃ©putÃ©e acceptÃ©e par le Client en mÃªme temps que celles-ci.</p>
+<p>Le Client est invitÃ© Ã  lire attentivement la Politique de ConfidentialitÃ© avant tout usage de l'Application.</p>
+<h3 class="legal-subtitle">12.4 Droits du Client</h3>
+<p>ConformÃ©ment aux articles 15 Ã  22 du RGPD et aux articles 49 et suivants de la loi Informatique et LibertÃ©s, le Client dispose des droits suivants sur ses donnÃ©es personnelles :</p>
+<ul>
+<li>Droit d'accÃ¨s Ã  ses donnÃ©es personnelles ;</li>
+<li>Droit de rectification des donnÃ©es inexactes ou incomplÃ¨tes ;</li>
+<li>Droit Ã  l'effacement (Â« droit Ã  l'oubli Â») ;</li>
+<li>Droit Ã  la limitation du traitement ;</li>
+<li>Droit Ã  la portabilitÃ© de ses donnÃ©es ;</li>
+<li>Droit d'opposition au traitement ;</li>
+<li>Droit de ne pas faire l'objet d'une dÃ©cision entiÃ¨rement automatisÃ©e.</li>
+</ul>
+<p>Pour exercer ces droits, le Client peut adresser sa demande Ã  la SociÃ©tÃ© par e-mail Ã  l'adresse notitiacorp@gmail.com ou par courrier postal Ã  l'adresse du siÃ¨ge social de la SociÃ©tÃ©. La SociÃ©tÃ© s'engage Ã  rÃ©pondre Ã  toute demande dans un dÃ©lai d'un (1) mois Ã  compter de la rÃ©ception de celle-ci, dÃ©lai susceptible d'Ãªtre prolongÃ© de deux (2) mois supplÃ©mentaires en cas de demandes complexes ou nombreuses, conformÃ©ment Ã  l'article 12 du RGPD.</p>
+<p>Le Client dispose Ã©galement du droit d'introduire une rÃ©clamation auprÃ¨s de la Commission Nationale de l'Informatique et des LibertÃ©s (CNIL), autoritÃ© de contrÃ´le franÃ§aise compÃ©tente, dont le siÃ¨ge est situÃ© au 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 (www.cnil.fr).</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 13 â SERVICE CLIENT ET RÃCLAMATIONS</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">13.1 CoordonnÃ©es du service client</h3>
+<p>Le service client de la SociÃ©tÃ© est joignable :</p>
+<ul>
+<li>Par e-mail : notitiacorp@gmail.com</li>
+<li>Par tÃ©lÃ©phone : 06 71 90 25 13 (aux horaires communiquÃ©s sur l'Application)</li>
+<li>Par courrier postal : Notitia Corp, Service Client, 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</li>
+</ul>
+<h3 class="legal-subtitle">13.2 ProcÃ©dure de rÃ©clamation</h3>
+<p>Pour toute rÃ©clamation relative Ã  un service, une Box ou tout autre aspect de sa relation contractuelle avec la SociÃ©tÃ©, le Client est invitÃ© Ã  :</p>
+<h2 class="legal-article-title">1. Contacter le service client par l'un des moyens indiquÃ©s ci-dessus ;</h2>
+<p>2. DÃ©crire prÃ©cisÃ©ment l'objet de sa rÃ©clamation, en fournissant toutes les informations utiles (numÃ©ro de commande, date de livraison, nature du problÃ¨me, photographies le cas Ã©chÃ©ant) ;</p>
+<h2 class="legal-article-title">3. Indiquer la solution souhaitÃ©e.</h2>
+<p>La SociÃ©tÃ© s'engage Ã  accuser rÃ©ception de toute rÃ©clamation dans un dÃ©lai de deux (2) jours ouvrables et Ã  apporter une rÃ©ponse circonstanciÃ©e dans un dÃ©lai de quatorze (14) jours calendaires Ã  compter de la rÃ©ception de la rÃ©clamation. Ce dÃ©lai est portÃ© Ã  trente (30) jours pour les rÃ©clamations nÃ©cessitant une investigation approfondie, le Client Ã©tant informÃ© de ce dÃ©lai prolongÃ©.</p>
+<h3 class="legal-subtitle">13.3 RÃ©solution amiable</h3>
+<p>La SociÃ©tÃ© attache une importance particuliÃ¨re Ã  la satisfaction de ses Clients. Elle s'engage Ã  rechercher une solution amiable Ã  tout litige ou diffÃ©rend avant tout recours contentieux. Le Client est donc invitÃ© Ã  contacter le service client en premier lieu pour tenter de rÃ©soudre tout litige Ã  l'amiable.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 14 â MÃDIATION DES LITIGES</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">14.1 Droit au recours Ã  la mÃ©diation</h3>
+<p>ConformÃ©ment aux articles L612-1 et suivants du Code de la consommation, ainsi qu'Ã  l'ordonnance nÂ° 2015-1033 du 20 aoÃ»t 2015 et au dÃ©cret nÂ° 2015-1382 du 30 octobre 2015 relatifs Ã  la mÃ©diation des litiges de la consommation, le Client consommateur (au sens de l'article liminaire du Code de la consommation) a le droit de recourir gratuitement Ã  un mÃ©diateur de la consommation en vue de la rÃ©solution amiable de tout litige avec la SociÃ©tÃ© relatif Ã  l'exÃ©cution des prÃ©sentes CGV.</p>
+<p>Ce droit peut Ãªtre exercÃ© aprÃ¨s avoir tentÃ© de rÃ©soudre le litige directement avec le service client de la SociÃ©tÃ© dans les conditions prÃ©vues Ã  l'Article 13, et en l'absence de rÃ©ponse satisfaisante dans le dÃ©lai imparti.</p>
+<h3 class="legal-subtitle">14.2 MÃ©diateur compÃ©tent</h3>
+<p>Le Client peut saisir tout mÃ©diateur de la consommation compÃ©tent inscrit sur la liste des mÃ©diateurs agrÃ©Ã©s par la Commission d'Ã©valuation et de contrÃ´le de la mÃ©diation de la consommation (CECMC), accessible sur le site https://www.economie.gouv.fr/mediation-conso.</p>
+<p>La SociÃ©tÃ© communiquera au Client les coordonnÃ©es du mÃ©diateur auquel elle adhÃ¨re dÃ¨s que cette information sera disponible, et mettra Ã  jour la prÃ©sente clause en consÃ©quence.</p>
+<h3 class="legal-subtitle">14.3 Plateforme de rÃ¨glement en ligne des litiges</h3>
+<p>ConformÃ©ment au RÃ¨glement (UE) nÂ° 524/2013 du 21 mai 2013 relatif au rÃ¨glement en ligne des litiges de consommation, la Commission EuropÃ©enne a mis en place une plateforme de rÃ¨glement en ligne des litiges (plateforme RLL) accessible Ã  l'adresse https://ec.europa.eu/consumers/odr. Les clients rÃ©sidant dans un Ãtat membre de l'Union EuropÃ©enne peuvent utiliser cette plateforme pour tenter de rÃ©soudre Ã  l'amiable les litiges relatifs Ã  leurs achats en ligne.</p>
+<h3 class="legal-subtitle">14.4 Conditions et dÃ©lais de saisine du mÃ©diateur</h3>
+<p>ConformÃ©ment Ã  l'article R612-1 du Code de la consommation, pour Ãªtre recevable, la demande de mÃ©diation doit :</p>
+<ul>
+<li>Avoir fait l'objet d'une rÃ©clamation prÃ©alable Ã©crite auprÃ¨s de la SociÃ©tÃ© ;</li>
+<li>Ne pas Ãªtre manifestement infondÃ©e ou abusive ;</li>
+<li>Ãtre introduite dans un dÃ©lai infÃ©rieur Ã  un (1) an Ã  compter de la rÃ©clamation Ã©crite auprÃ¨s de la SociÃ©tÃ© ;</li>
+<li>Ne pas avoir Ã©tÃ© examinÃ©e prÃ©cÃ©demment par un autre mÃ©diateur ou par un tribunal.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 15 â DROIT APPLICABLE ET JURIDICTION COMPÃTENTE</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">15.1 Droit applicable</h3>
+<p>Les prÃ©sentes CGV et l'ensemble des relations contractuelles entre la SociÃ©tÃ© et le Client sont rÃ©gis par le droit franÃ§ais, Ã  l'exclusion de toute autre rÃ¨gle de conflit de lois.</p>
+<p>Pour les Clients consommateurs rÃ©sidant dans un Ãtat membre de l'Union EuropÃ©enne autre que la France, les dispositions d'ordre public du droit de leur pays de rÃ©sidence qui leur sont plus favorables demeurent applicables, conformÃ©ment Ã  l'article 6 du RÃ¨glement (CE) nÂ° 593/2008 du 17 juin 2008 sur la loi applicable aux obligations contractuelles (Rome I) et aux directives europÃ©ennes de protection des consommateurs.</p>
+<h3 class="legal-subtitle">15.2 Juridiction compÃ©tente</h3>
+<p>En cas de litige nÃ© de l'interprÃ©tation, de l'exÃ©cution ou de la rÃ©siliation des prÃ©sentes CGV, les parties s'efforceront de le rÃ©soudre amiablement. Ã dÃ©faut de rÃ¨glement amiable dans le dÃ©lai prÃ©vu Ã  l'Article 13 et en l'absence de recours Ã  la mÃ©diation selon les conditions prÃ©vues Ã  l'Article 14, tout litige relatif Ã  l'interprÃ©tation, Ã  la formation, Ã  la validitÃ©, Ã  l'exÃ©cution ou Ã  la rÃ©siliation des prÃ©sentes CGV sera soumis Ã  la compÃ©tence exclusive des tribunaux du ressort du Tribunal Judiciaire de BÃ©ziers, sauf disposition lÃ©gale impÃ©rative contraire.</p>
+<p>ConformÃ©ment aux dispositions de l'article R631-3 du Code de la consommation, pour les litiges impliquant un Client consommateur, ce dernier peut saisir, Ã  son choix :</p>
+<ul>
+<li>La juridiction du lieu oÃ¹ il demeurait au moment de la conclusion du contrat ;</li>
+<li>La juridiction du lieu oÃ¹ il demeurait au moment du fait dommageable ;</li>
+<li>Ou toute autre juridiction compÃ©tente en application des rÃ¨gles gÃ©nÃ©rales de procÃ©dure civile.</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 16 â DISPOSITIONS GÃNÃRALES</h2>
+<hr class="legal-separator">
+<h3 class="legal-subtitle">16.1 NullitÃ© partielle</h3>
+<p>Si l'une quelconque des clauses des prÃ©sentes CGV Ã©tait dÃ©clarÃ©e nulle, non Ã©crite, illicite ou inapplicable par une dÃ©cision de justice dÃ©finitive, les autres clauses demeurent pleinement en vigueur et applicables. La clause dÃ©clarÃ©e nulle ou inapplicable sera remplacÃ©e par une clause valide qui se rapprochera le plus possible de l'intention initiale des parties, dans les limites permises par le droit applicable.</p>
+<h3 class="legal-subtitle">16.2 Non-renonciation</h3>
+<p>Le fait pour la SociÃ©tÃ© de ne pas se prÃ©valoir Ã  un moment donnÃ© d'une clause des prÃ©sentes CGV ne peut Ãªtre interprÃ©tÃ© comme une renonciation Ã  se prÃ©valoir ultÃ©rieurement de cette mÃªme clause ou d'une autre clause des prÃ©sentes CGV. Toute tolÃ©rance de la SociÃ©tÃ© Ã  l'Ã©gard d'un manquement du Client Ã  ses obligations ne vaut pas renonciation Ã  exiger Ã  l'avenir le respect de ces obligations.</p>
+<h3 class="legal-subtitle">16.3 IntÃ©gralitÃ© de l'accord</h3>
+<p>Les prÃ©sentes CGV, avec leurs Ã©ventuelles annexes (dont le formulaire de rÃ©tractation) et la Politique de ConfidentialitÃ©, constituent l'intÃ©gralitÃ© de l'accord entre la SociÃ©tÃ© et le Client concernant l'objet dÃ©fini Ã  l'Article 1. Elles remplacent et annulent tous accords, dÃ©clarations, engagements, nÃ©gociations et correspondances antÃ©rieurs relatifs Ã  cet objet.</p>
+<h3 class="legal-subtitle">16.4 Cession</h3>
+<p>Le Client ne peut cÃ©der tout ou partie des droits et obligations dÃ©coulant des prÃ©sentes CGV sans l'accord prÃ©alable et Ã©crit de la SociÃ©tÃ©. La SociÃ©tÃ© se rÃ©serve le droit de cÃ©der tout ou partie des prÃ©sentes CGV et des droits et obligations y affÃ©rents Ã  tout tiers de son choix, notamment dans le cadre d'une fusion, d'une acquisition ou d'une cession d'actifs, sous rÃ©serve d'en informer le Client prÃ©alablement par tout moyen Ã©crit.</p>
+<h3 class="legal-subtitle">16.5 Mise Ã  jour des CGV</h3>
+<p>La SociÃ©tÃ© se rÃ©serve le droit de modifier les prÃ©sentes CGV Ã  tout moment, notamment pour se conformer Ã  une Ã©volution lÃ©gislative ou rÃ©glementaire, Ã  une dÃ©cision de justice ou Ã  une Ã©volution de ses services. Les nouvelles CGV seront portÃ©es Ã  la connaissance du Client par notification in-app et/ou par e-mail, au moins trente (30) jours avant leur entrÃ©e en vigueur, pour les modifications substantielles affectant les droits du Client. Le Client sera invitÃ© Ã  les accepter lors de sa prochaine connexion Ã  l'Application. En cas de refus, le Client pourra rÃ©silier son abonnement dans les conditions prÃ©vues Ã  l'Article 4.</p>
+<h3 class="legal-subtitle">16.6 Langue</h3>
+<p>Les prÃ©sentes CGV sont rÃ©digÃ©es en langue franÃ§aise. En cas de traduction dans une autre langue, la version franÃ§aise prÃ©vaut en cas de contradiction.</p>
+<h3 class="legal-subtitle">16.7 IdentitÃ© de l'Ã©diteur</h3>
+<p>ConformÃ©ment Ã  l'article 6 de la loi nÂ° 2004-575 du 21 juin 2004 pour la confiance dans l'Ã©conomie numÃ©rique (LCEN), les informations relatives Ã  l'Ã©diteur de l'Application VIVE sont les suivantes :</p>
+<ul>
+<li>Raison sociale : Notitia Corp</li>
+<li>Forme juridique : SociÃ©tÃ© par actions simplifiÃ©e (SAS)</li>
+<li>NumÃ©ro SIRET : 99536720800015</li>
+<li>SiÃ¨ge social : 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</li>
+<li>E-mail : notitiacorp@gmail.com</li>
+<li>TÃ©lÃ©phone : 06 71 90 25 13</li>
+</ul>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ANNEXE 1 â FORMULAIRE TYPE DE RÃTRACTATION</h2>
+<p>(ConformÃ©ment Ã  l'article R221-1 du Code de la consommation)</p>
+<hr class="legal-separator">
+<p>Veuillez complÃ©ter et retourner le prÃ©sent formulaire uniquement si vous souhaitez vous rÃ©tracter du contrat.</p>
+<p>Ã l'attention de :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>15Bis Boulevard de Strasbourg</p>
+<p>34500 BÃ©ziers, France</p>
+<p>E-mail : notitiacorp@gmail.com</p>
+<p>Je/Nous (*) vous notifie/notifions (*) par la prÃ©sente ma/notre (*) rÃ©tractation du contrat portant sur la vente du bien (*) / la prestation de services (*) ci-dessous :</p>
+<p>CommandÃ©(e) le (*) / reÃ§u(e) le (*) : _______________________________________________</p>
+<p>Nom du/des consommateur(s) : _____________________________________________________</p>
+<p>Adresse du/des consommateur(s) : __________________________________________________</p>
+<p>Signature du/des consommateur(s) (uniquement en cas de notification du prÃ©sent formulaire sur papier) :</p>
+<p>Date : _______________________________________________</p>
+<p>(*) Rayez la mention inutile.</p>
+<hr class="legal-separator">
+<p class="legal-version">Date d'entrÃ©e en vigueur des prÃ©sentes Conditions GÃ©nÃ©rales de Vente : 1er mars 2025</p>
+<p class="legal-version">Version 1.0 â Â© Notitia Corp 2025. Tous droits rÃ©servÃ©s.</p>
+<p>---</p>
+<div class="legal-section-break"></div>
+<h1 class="legal-title font-cormorant">CONDITIONS GÃNÃRALES D'UTILISATION (CGU)</h1>
+<p class="legal-version">Application VIVE</p>
+<p class="legal-version">Version en vigueur au 1er mars 2025</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">PRÃAMBULE</h2>
+<p>Les prÃ©sentes Conditions GÃ©nÃ©rales d'Utilisation (ci-aprÃ¨s Â« CGU Â») rÃ©gissent l'accÃ¨s et l'utilisation de l'application mobile VIVE (ci-aprÃ¨s Â« l'Application Â») Ã©ditÃ©e par la sociÃ©tÃ© Notitia Corp. VIVE est une application de concierge de santÃ© (health concierge) proposant des services d'intelligence artificielle dÃ©diÃ©s au bien-Ãªtre, Ã  la nutrition, au fitness et au suivi de santÃ© personnel.</p>
+<p>L'utilisation de l'Application implique l'acceptation pleine, entiÃ¨re et sans rÃ©serve des prÃ©sentes CGU. Tout utilisateur qui n'accepte pas les prÃ©sentes conditions doit cesser immÃ©diatement d'utiliser l'Application.</p>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de modifier Ã  tout moment les prÃ©sentes CGU dans les conditions prÃ©vues Ã  l'article 13.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 1 â OBJET ET ACCEPTATION DES CONDITIONS GÃNÃRALES D'UTILISATION</h2>
+<h3 class="legal-subtitle">1.1 Objet</h3>
+<p>Les prÃ©sentes CGU ont pour objet de dÃ©finir les modalitÃ©s et conditions d'accÃ¨s et d'utilisation de l'Application VIVE mise Ã  disposition par la sociÃ©tÃ© Notitia Corp, ainsi que les droits et obligations de chacune des parties dans ce cadre.</p>
+<p>Elles s'appliquent Ã  l'ensemble des services proposÃ©s par l'Application, qu'il s'agisse de fonctionnalitÃ©s gratuites ou payantes, accessibles depuis tout terminal compatible (smartphone, tablette).</p>
+<h3 class="legal-subtitle">1.2 Acceptation</h3>
+<p>En tÃ©lÃ©chargeant, installant ou utilisant l'Application VIVE, l'Utilisateur reconnaÃ®t avoir lu, compris et acceptÃ© sans rÃ©serve l'intÃ©gralitÃ© des prÃ©sentes CGU, ainsi que la Politique de ConfidentialitÃ© qui en est indissociable.</p>
+<p>L'acceptation des prÃ©sentes CGU est matÃ©rialisÃ©e par une action positive de l'Utilisateur lors de la crÃ©ation de son compte, par le biais d'une case Ã  cocher ou d'un bouton de validation explicite, conformÃ©ment aux exigences de l'article L.221-5 du Code de la consommation et de l'article 1125 du Code civil.</p>
+<p>L'Utilisateur qui agit dans le cadre de son activitÃ© professionnelle reconnaÃ®t Ã©galement Ãªtre habilitÃ© Ã  engager la personne morale qu'il reprÃ©sente le cas Ã©chÃ©ant.</p>
+<h3 class="legal-subtitle">1.3 Droit applicable Ã  la formation du contrat</h3>
+<p>ConformÃ©ment aux articles 1366 et 1367 du Code civil, l'acceptation Ã©lectronique des prÃ©sentes CGU a la mÃªme valeur juridique qu'une signature manuscrite. L'Utilisateur reconnaÃ®t que les registres informatisÃ©s conservÃ©s par Notitia Corp dans ses systÃ¨mes d'information constituent la preuve des communications, commandes et paiements intervenus entre les parties.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 2 â DÃFINITIONS</h2>
+<p>Pour l'application et l'interprÃ©tation des prÃ©sentes CGU, les termes ci-aprÃ¨s auront la signification suivante :</p>
+<p>Â« Application Â» ou Â« VIVE Â» : dÃ©signe l'application mobile health concierge Ã©ditÃ©e par Notitia Corp, accessible sur les plateformes iOS et Android, comprenant l'ensemble de ses fonctionnalitÃ©s, interfaces, contenus, services et mises Ã  jour.</p>
+<p>Â« Contenu Utilisateur Â» : dÃ©signe l'ensemble des informations, donnÃ©es, textes, prÃ©fÃ©rences, objectifs de santÃ© et autres Ã©lÃ©ments communiquÃ©s ou saisis par l'Utilisateur dans l'Application.</p>
+<p>Â« Compte Â» : dÃ©signe l'espace personnel crÃ©Ã© par l'Utilisateur lors de son inscription Ã  l'Application, permettant l'accÃ¨s Ã  l'ensemble des services auxquels il a souscrit.</p>
+<p>Â« DonnÃ©es de SantÃ© Â» : dÃ©signe les donnÃ©es Ã  caractÃ¨re personnel relatives Ã  la santÃ© physique ou mentale d'une personne physique, au sens de l'article 4(15) du RÃ¨glement (UE) 2016/679 du Parlement europÃ©en et du Conseil du 27 avril 2016 (RGPD), notamment les donnÃ©es nutritionnelles, les donnÃ©es de condition physique, les indicateurs de bien-Ãªtre, les objectifs de santÃ© et toute autre information relative Ã  l'Ã©tat de santÃ© saisie par l'Utilisateur.</p>
+<p>Â« IA Â» ou Â« Intelligence Artificielle Â» : dÃ©signe les algorithmes, modÃ¨les d'apprentissage automatique et systÃ¨mes d'intelligence artificielle intÃ©grÃ©s Ã  l'Application qui gÃ©nÃ¨rent des recommandations personnalisÃ©es en matiÃ¨re de bien-Ãªtre, nutrition et fitness.</p>
+<p>Â« Notitia Corp Â» ou Â« l'Ãditeur Â» : dÃ©signe la sociÃ©tÃ© Notitia Corp, SIRET 99536720800015, dont le siÃ¨ge social est situÃ© au 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France, Ã©ditrice de l'Application VIVE.</p>
+<p>Â« Plan Â» ou Â« Abonnement Â» : dÃ©signe le niveau de service souscrit par l'Utilisateur parmi les offres proposÃ©es : Free, Plus, Premium Box ou Founders, telles que dÃ©finies Ã  l'article 4 des prÃ©sentes.</p>
+<p>Â« Politique de ConfidentialitÃ© Â» : dÃ©signe le document distinct dÃ©finissant les modalitÃ©s de collecte, de traitement et de protection des donnÃ©es personnelles de l'Utilisateur, disponible dans l'Application et sur le site web de Notitia Corp.</p>
+<p>Â« Service Â» : dÃ©signe l'ensemble des fonctionnalitÃ©s, contenus, outils et services proposÃ©s par l'Application VIVE dans le cadre des diffÃ©rents plans d'abonnement.</p>
+<p>Â« Tiers Â» : dÃ©signe toute personne physique ou morale qui n'est ni Notitia Corp ni l'Utilisateur.</p>
+<p>Â« Utilisateur Â» : dÃ©signe toute personne physique ayant crÃ©Ã© un Compte sur l'Application VIVE et acceptÃ© les prÃ©sentes CGU, quel que soit le Plan souscrit.</p>
+<p>Â« Box Bien-Ãªtre Â» : dÃ©signe le colis physique mensuel de produits de bien-Ãªtre soigneusement sÃ©lectionnÃ©s, inclus dans le Plan Premium Box, expÃ©diÃ© Ã  l'adresse de livraison renseignÃ©e par l'Utilisateur.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 3 â ACCÃS AU SERVICE ET INSCRIPTION</h2>
+<h3 class="legal-subtitle">3.1 Conditions d'accÃ¨s</h3>
+<p>L'accÃ¨s Ã  l'Application VIVE est rÃ©servÃ© aux personnes physiques remplissant cumulativement les conditions suivantes :</p>
+<p>a) Ãtre Ã¢gÃ© d'au moins seize (16) ans rÃ©volus Ã  la date de crÃ©ation du Compte. ConformÃ©ment Ã  l'article 8 du RGPD et Ã  l'article 45 de la loi nÂ°78-17 du 6 janvier 1978 modifiÃ©e relative Ã  l'informatique, aux fichiers et aux libertÃ©s (ci-aprÃ¨s Â« Loi Informatique et LibertÃ©s Â»), le traitement des donnÃ©es Ã  caractÃ¨re personnel des mineurs Ã¢gÃ©s de 15 ans et moins nÃ©cessite le consentement conjoint du titulaire de l'autoritÃ© parentale. En consÃ©quence, l'Application n'est pas destinÃ©e aux personnes Ã¢gÃ©es de moins de 16 ans. Tout Utilisateur qui dÃ©clare Ãªtre Ã¢gÃ© d'au moins 16 ans atteste de l'exactitude de cette information sous sa seule responsabilitÃ© ;</p>
+<p>b) Disposer d'une adresse Ã©lectronique (email) valide et active ;</p>
+<p>c) Disposer d'un terminal compatible (smartphone ou tablette fonctionnant sous iOS version 14 ou supÃ©rieure, ou Android version 8.0 ou supÃ©rieure) et d'une connexion internet active ;</p>
+<p>d) Avoir acceptÃ© les prÃ©sentes CGU et la Politique de ConfidentialitÃ©.</p>
+<h3 class="legal-subtitle">3.2 Processus d'inscription</h3>
+<p>L'inscription Ã  l'Application s'effectue selon le processus suivant :</p>
+<p>a) TÃ©lÃ©chargement de l'Application depuis l'App Store (Apple) ou le Google Play Store (Google) ;</p>
+<p>b) CrÃ©ation d'un Compte en renseignant les informations requises, notamment : une adresse Ã©lectronique valide, un mot de passe sÃ©curisÃ© conforme aux exigences de sÃ©curitÃ© dÃ©finies par l'Application, ainsi que les informations personnelles nÃ©cessaires Ã  la personnalisation du Service ;</p>
+<p>c) VÃ©rification de l'adresse Ã©lectronique : un email de confirmation est automatiquement adressÃ© Ã  l'adresse renseignÃ©e par l'Utilisateur. L'activation du Compte est conditionnÃ©e au clic sur le lien de confirmation contenu dans cet email. Ce lien de validation est valable pendant une durÃ©e de 72 heures Ã  compter de son envoi ;</p>
+<p>d) Acceptation explicite des prÃ©sentes CGU et de la Politique de ConfidentialitÃ© lors de la finalisation de l'inscription.</p>
+<p>L'Utilisateur s'engage Ã  fournir des informations exactes, complÃ¨tes et sincÃ¨res lors de son inscription et Ã  les maintenir Ã  jour pendant toute la durÃ©e d'utilisation de l'Application.</p>
+<h3 class="legal-subtitle">3.3 GratuitÃ© et conditions techniques</h3>
+<p>L'accÃ¨s Ã  la version Free de l'Application est gratuit. Les coÃ»ts de connexion Ã  internet et les frais liÃ©s Ã  l'utilisation du terminal restent Ã  la charge exclusive de l'Utilisateur.</p>
+<p class="legal-version">Notitia Corp ne garantit pas la compatibilitÃ© de l'Application avec l'ensemble des terminaux existants sur le marchÃ©. L'Ãditeur se rÃ©serve le droit de faire Ã©voluer les configurations techniques minimales requises pour accÃ©der au Service.</p>
+<h3 class="legal-subtitle">3.4 DisponibilitÃ© du Service</h3>
+<p>L'Application est en principe accessible 24 heures sur 24, 7 jours sur 7, sous rÃ©serve des opÃ©rations de maintenance, des mises Ã  jour et des cas de force majeure visÃ©s Ã  l'article 11 des prÃ©sentes. Notitia Corp s'efforce de rÃ©aliser les opÃ©rations de maintenance dans des plages horaires Ã  faible frÃ©quentation et d'en informer prÃ©alablement les Utilisateurs lorsque cela est possible.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 4 â DESCRIPTION DES PLANS ET FONCTIONNALITÃS</h2>
+<h3 class="legal-subtitle">4.1 GÃ©nÃ©ralitÃ©s</h3>
+<p>L'Application VIVE propose quatre (4) niveaux de service (ci-aprÃ¨s Â« Plans Â») rÃ©pondant Ã  diffÃ©rents besoins et budgets. Chaque Plan donne accÃ¨s Ã  un ensemble de fonctionnalitÃ©s dÃ©crit ci-aprÃ¨s. Les fonctionnalitÃ©s de chaque Plan sont susceptibles d'Ã©voluer ; Notitia Corp s'engage Ã  informer les Utilisateurs de toute modification substantielle conformÃ©ment aux modalitÃ©s prÃ©vues Ã  l'article 13.</p>
+<h3 class="legal-subtitle">4.2 Plan Free (Gratuit â 0 â¬/mois)</h3>
+<p>Le Plan Free est accessible gratuitement Ã  tout Utilisateur ayant crÃ©Ã© un Compte. Il comprend notamment :</p>
+<ul>
+<li>L'accÃ¨s Ã  l'interface principale de l'Application VIVE ;</li>
+<li>La crÃ©ation d'un profil de bien-Ãªtre personnel ;</li>
+<li>L'accÃ¨s aux fonctionnalitÃ©s de base de suivi de santÃ© (journalisation manuelle d'activitÃ©s, d'apports nutritionnels et d'objectifs de bien-Ãªtre) ;</li>
+<li>L'accÃ¨s Ã  un contenu Ã©ditorial limitÃ© (articles, conseils gÃ©nÃ©raux) ;</li>
+<li>Des recommandations gÃ©nÃ©riques en matiÃ¨re de bien-Ãªtre, nutrition et fitness non personnalisÃ©es par l'IA avancÃ©e ;</li>
+<li>Un accÃ¨s limitÃ© aux interactions avec l'assistant IA.</li>
+</ul>
+<p>Le Plan Free ne comprend pas les fonctionnalitÃ©s avancÃ©es d'intelligence artificielle, les plans personnalisÃ©s, ni la Box bien-Ãªtre mensuelle.</p>
+<h3 class="legal-subtitle">4.3 Plan Plus (20 â¬/mois, toutes taxes comprises)</h3>
+<p>Le Plan Plus est un abonnement mensuel payant donnant accÃ¨s, en sus des fonctionnalitÃ©s du Plan Free, Ã  :</p>
+<ul>
+<li>L'accÃ¨s complet aux fonctionnalitÃ©s d'IA avancÃ©e de l'Application ;</li>
+<li>La gÃ©nÃ©ration de plans nutritionnels personnalisÃ©s basÃ©s sur le profil et les objectifs de l'Utilisateur ;</li>
+<li>La gÃ©nÃ©ration de programmes de fitness personnalisÃ©s ;</li>
+<li>Un suivi de santÃ© approfondi avec analyses et visualisations avancÃ©es ;</li>
+<li>Des recommandations de bien-Ãªtre personnalisÃ©es et actualisÃ©es rÃ©guliÃ¨rement par l'IA ;</li>
+<li>Un support client prioritaire par email ;</li>
+<li>L'accÃ¨s aux nouvelles fonctionnalitÃ©s du Plan Plus en avant-premiÃ¨re.</li>
+</ul>
+<p>Le Plan Plus ne comprend pas la Box bien-Ãªtre mensuelle.</p>
+<h3 class="legal-subtitle">4.4 Plan Premium Box (169 â¬/mois, toutes taxes comprises)</h3>
+<p>Le Plan Premium Box est un abonnement mensuel payant comprenant l'intÃ©gralitÃ© des fonctionnalitÃ©s du Plan Plus, augmentÃ© de :</p>
+<ul>
+<li>La livraison mensuelle d'une Box bien-Ãªtre physique Ã  l'adresse de livraison renseignÃ©e par l'Utilisateur, comprenant une sÃ©lection de produits de bien-Ãªtre (complÃ©ments alimentaires, cosmÃ©tiques bien-Ãªtre, accessoires fitness, produits de relaxation, etc.) choisis en fonction du profil et des prÃ©fÃ©rences de l'Utilisateur ;</li>
+<li>Un accompagnement personnalisÃ© renforcÃ© ;</li>
+<li>Un accÃ¨s prioritaire au support client.</li>
+</ul>
+<p>S'agissant de la Box bien-Ãªtre, l'Utilisateur est informÃ© que :</p>
+<p>a) La composition de la Box est susceptible de varier chaque mois et n'est pas garantie contractuellement dans son contenu prÃ©cis ;</p>
+<p>b) L'Utilisateur est tenu de renseigner avec exactitude et de maintenir Ã  jour son adresse de livraison. Notitia Corp dÃ©cline toute responsabilitÃ© en cas d'adresse de livraison erronÃ©e ou obsolÃ¨te renseignÃ©e par l'Utilisateur ;</p>
+<p>c) En cas de rÃ©siliation du Plan Premium Box, l'Utilisateur perd le droit Ã  la livraison des Boxes suivantes. Aucun remboursement partiel n'est accordÃ© pour le mois en cours, sous rÃ©serve du droit de rÃ©tractation prÃ©vu Ã  l'article 10.3 ;</p>
+<p>d) Les produits contenus dans la Box sont des produits de bien-Ãªtre grand public. Ils ne constituent pas des mÃ©dicaments, des dispositifs mÃ©dicaux ou des prescriptions mÃ©dicales, et ne sauraient en aucun cas remplacer un avis ou un traitement mÃ©dical.</p>
+<h3 class="legal-subtitle">4.5 Plan Founders (149 â¬/mois, toutes taxes comprises)</h3>
+<p>Le Plan Founders est un abonnement mensuel payant Ã  tarif prÃ©fÃ©rentiel, destinÃ© aux Utilisateurs ayant adhÃ©rÃ© en qualitÃ© de membres fondateurs (Early Adopters). Il comprend :</p>
+<ul>
+<li>Un accÃ¨s anticipÃ© (early access) Ã  toutes les nouvelles fonctionnalitÃ©s de l'Application avant leur dÃ©ploiement gÃ©nÃ©ral ;</li>
+<li>L'intÃ©gralitÃ© des fonctionnalitÃ©s du Plan Plus ;</li>
+<li>Des avantages exclusifs rÃ©servÃ©s aux membres fondateurs (accÃ¨s Ã  des contenus exclusifs, participation Ã  des sessions de feedback produit, badges et distinctions numÃ©riques dÃ©diÃ©s, et tout autre avantage annoncÃ© par Notitia Corp aux membres Founders) ;</li>
+<li>Un tarif prÃ©fÃ©rentiel garanti pendant toute la durÃ©e continue de l'abonnement Founders, sans augmentation de prix dans les conditions prÃ©vues Ã  l'article 4.6 ;</li>
+<li>Un support client dÃ©diÃ© et prioritaire.</li>
+</ul>
+<p>Le Plan Founders peut Ãªtre limitÃ© Ã  un nombre restreint de membres. Notitia Corp se rÃ©serve le droit de clore les inscriptions Ã  ce Plan sans prÃ©avis une fois le quota atteint. Les membres Founders dÃ©jÃ  inscrits ne sont pas affectÃ©s par cette clÃ´ture.</p>
+<h3 class="legal-subtitle">4.6 Conditions tarifaires et paiement</h3>
+<p>a) Prix : les tarifs des Plans payants sont indiquÃ©s toutes taxes comprises (TTC) au sens de l'article L.112-1 du Code de la consommation. Ils sont susceptibles d'Ã©voluer conformÃ©ment Ã  l'article 13 des prÃ©sentes.</p>
+<p>b) Facturation : les abonnements sont facturÃ©s mensuellement, Ã  terme Ã  Ã©choir, Ã  la date anniversaire de la souscription ou Ã  toute autre date indiquÃ©e lors de la souscription.</p>
+<p>c) Paiement : le paiement est effectuÃ© par les moyens de paiement acceptÃ©s par l'Application (carte bancaire, ou tout autre moyen indiquÃ© lors de la souscription), via un prestataire de paiement sÃ©curisÃ© tiers. Notitia Corp ne stocke pas les donnÃ©es bancaires de l'Utilisateur.</p>
+<p>d) Reconduction : les abonnements sont tacitement reconduits Ã  chaque Ã©chÃ©ance mensuelle, jusqu'Ã  rÃ©siliation par l'Utilisateur dans les conditions prÃ©vues Ã  l'article 10.</p>
+<p>e) En cas d'Ã©chec du paiement, Notitia Corp se rÃ©serve le droit de suspendre l'accÃ¨s aux fonctionnalitÃ©s payantes dans l'attente de la rÃ©gularisation, puis de rÃ©silier l'abonnement aprÃ¨s mise en demeure restÃ©e sans effet pendant dix (10) jours.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 5 â CRÃATION ET GESTION DU COMPTE UTILISATEUR</h2>
+<h3 class="legal-subtitle">5.1 CrÃ©ation du Compte</h3>
+<p>Chaque Utilisateur ne peut crÃ©er qu'un seul (1) Compte personnel sur l'Application VIVE. Toute crÃ©ation de compte multiple par un mÃªme Utilisateur est interdite, sauf autorisation expresse de Notitia Corp.</p>
+<p>Le Compte est strictement personnel et incessible. L'Utilisateur ne peut en aucun cas transfÃ©rer, cÃ©der ou partager son Compte avec des tiers.</p>
+<h3 class="legal-subtitle">5.2 Identifiants et sÃ©curitÃ©</h3>
+<p>L'Utilisateur est seul responsable de la confidentialitÃ© de ses identifiants de connexion (adresse email et mot de passe). Il s'engage Ã  :</p>
+<p>a) Choisir un mot de passe robuste, conformÃ©ment aux recommandations de l'Agence Nationale de la SÃ©curitÃ© des SystÃ¨mes d'Information (ANSSI), et Ã  le renouveler rÃ©guliÃ¨rement ;</p>
+<p>b) Ne pas communiquer ses identifiants Ã  des tiers ;</p>
+<p>c) Informer sans dÃ©lai Notitia Corp de toute utilisation non autorisÃ©e de son Compte ou de toute violation de la sÃ©curitÃ© de ses identifiants, en contactant l'Ãditeur Ã  l'adresse notitiacorp@gmail.com.</p>
+<p class="legal-version">Notitia Corp ne saurait Ãªtre tenue responsable des consÃ©quences d'une utilisation frauduleuse du Compte rÃ©sultant d'une nÃ©gligence ou d'une faute de l'Utilisateur dans la protection de ses identifiants.</p>
+<h3 class="legal-subtitle">5.3 Exactitude des informations</h3>
+<p>L'Utilisateur s'engage Ã  fournir et Ã  maintenir des informations exactes, complÃ¨tes et Ã  jour dans son profil. Toute inexactitude dans les informations communiquÃ©es, notamment les donnÃ©es de santÃ©, est susceptible de dÃ©grader la qualitÃ© des recommandations gÃ©nÃ©rÃ©es par l'IA et engage la seule responsabilitÃ© de l'Utilisateur.</p>
+<h3 class="legal-subtitle">5.4 Mise Ã  jour du profil</h3>
+<p>L'Utilisateur peut Ã  tout moment accÃ©der Ã  son Compte, modifier ses informations personnelles, ses prÃ©fÃ©rences et ses objectifs de bien-Ãªtre depuis les paramÃ¨tres de l'Application. Il lui appartient de maintenir ces informations Ã  jour afin de bÃ©nÃ©ficier de recommandations pertinentes.</p>
+<h3 class="legal-subtitle">5.5 Suppression du Compte par l'Utilisateur</h3>
+<p>L'Utilisateur peut demander la suppression de son Compte Ã  tout moment depuis les paramÃ¨tres de l'Application ou en adressant une demande Ã  notitiacorp@gmail.com. La suppression du Compte entraÃ®ne la rÃ©siliation de tout abonnement en cours, dans les conditions prÃ©vues Ã  l'article 10, et la suppression dÃ©finitive des DonnÃ©es Personnelles dans les dÃ©lais prÃ©vus par la Politique de ConfidentialitÃ©.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 6 â OBLIGATIONS DE L'UTILISATEUR</h2>
+<h3 class="legal-subtitle">6.1 Exactitude des informations</h3>
+<p>L'Utilisateur s'engage Ã  fournir des informations exactes, sincÃ¨res et complÃ¨tes lors de son inscription et tout au long de l'utilisation de l'Application. Il reconnaÃ®t que l'exactitude des informations communiquÃ©es conditionne directement la pertinence des recommandations gÃ©nÃ©rÃ©es par le Service.</p>
+<h3 class="legal-subtitle">6.2 Usage strictement personnel</h3>
+<p>L'Application VIVE est destinÃ©e Ã  un usage strictement personnel et non commercial. L'Utilisateur s'interdit notamment de :</p>
+<p>a) Utiliser l'Application Ã  des fins professionnelles, commerciales, de revente ou de prestation de services Ã  des tiers sans l'accord prÃ©alable et Ã©crit de Notitia Corp ;</p>
+<p>b) CÃ©der, sous-licencier ou mettre Ã  disposition tout ou partie du Service Ã  des tiers ;</p>
+<p>c) CrÃ©er des comptes multiples pour un mÃªme individu ;</p>
+<p>d) Utiliser des scripts automatisÃ©s, bots ou tout autre outil automatisÃ© pour accÃ©der au Service.</p>
+<h3 class="legal-subtitle">6.3 Comportement gÃ©nÃ©ral</h3>
+<p>L'Utilisateur s'engage Ã  utiliser l'Application dans le respect des lois et rÃ©glementations en vigueur et des droits des tiers. Ã ce titre, il s'engage Ã  ne pas :</p>
+<p>a) Porter atteinte Ã  l'ordre public, aux bonnes mÅurs ou aux droits fondamentaux de toute personne ;</p>
+<p>b) Diffuser, tÃ©lÃ©charger ou partager tout contenu illicite, notamment contenu Ã  caractÃ¨re diffamatoire, injurieux, discriminatoire, pornographique, ou portant atteinte Ã  la vie privÃ©e de tiers ;</p>
+<p>c) Tenter d'accÃ©der, sans autorisation, aux systÃ¨mes informatiques de Notitia Corp ou de tiers ;</p>
+<p>d) ProcÃ©der Ã  toute tentative de dÃ©compilation, de rÃ©tro-ingÃ©nierie, de dÃ©sassemblage ou de modification de l'Application, en violation de l'article L.122-6-1 du Code de la propriÃ©tÃ© intellectuelle ;</p>
+<p>e) Utiliser l'Application pour diffuser des virus informatiques ou tout autre code malveillant ;</p>
+<p>f) Perturber ou interrompre l'intÃ©gritÃ© ou les performances du Service ;</p>
+<p>g) Collecter ou extraire, sans autorisation, des donnÃ©es relatives Ã  d'autres Utilisateurs.</p>
+<h3 class="legal-subtitle">6.4 Respect des recommandations de santÃ©</h3>
+<p>L'Utilisateur reconnaÃ®t et accepte que les recommandations gÃ©nÃ©rÃ©es par l'IA de l'Application sont donnÃ©es Ã  titre informatif et de bien-Ãªtre gÃ©nÃ©ral. Il demeure seul responsable des dÃ©cisions qu'il prend concernant sa santÃ© sur la base de ces recommandations, conformÃ©ment Ã  l'article 7 des prÃ©sentes.</p>
+<h3 class="legal-subtitle">6.5 Signalement d'anomalies</h3>
+<p>L'Utilisateur s'engage Ã  signaler sans dÃ©lai Ã  Notitia Corp, Ã  l'adresse notitiacorp@gmail.com, toute anomalie, dysfonctionnement ou utilisation abusive de l'Application dont il aurait connaissance.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 7 â CONTENU GÃNÃRÃ PAR L'INTELLIGENCE ARTIFICIELLE ET DONNÃES DE SANTÃ â AVERTISSEMENT MÃDICAL</h2>
+<h3 class="legal-subtitle">7.1 Nature des recommandations de l'Application</h3>
+<p>â  AVERTISSEMENT MÃDICAL IMPORTANT â Ã LIRE ATTENTIVEMENT</p>
+<p>L'Application VIVE est un outil de bien-Ãªtre personnel et d'accompagnement lifestyle Ã  vocation informative et Ã©ducative. Elle N'EST PAS un dispositif mÃ©dical au sens de la directive 93/42/CEE ou du RÃ¨glement (UE) 2017/745 relatif aux dispositifs mÃ©dicaux. Elle ne constitue PAS un service mÃ©dical, paramÃ©dical ou de tÃ©lÃ©consultation mÃ©dicale au sens du Code de la santÃ© publique.</p>
+<p>Les recommandations, analyses, plans nutritionnels, programmes fitness et tout autre contenu gÃ©nÃ©rÃ© par l'intelligence artificielle de l'Application sont fournis EXCLUSIVEMENT Ã TITRE INFORMATIF ET DE BIEN-ÃTRE GÃNÃRAL. Ils ne sauraient en aucun cas Ãªtre assimilÃ©s Ã  :</p>
+<ul>
+<li>Un avis, un diagnostic ou une prescription mÃ©dicale ;</li>
+<li>Un acte de soins ou un traitement mÃ©dical ;</li>
+<li>Un suivi mÃ©dical ou paramÃ©dical professionnel ;</li>
+<li>Une recommandation nutritionnelle mÃ©dicalisÃ©e.</li>
+</ul>
+<p>L'APPLICATION VIVE NE REMPLACE PAS LA CONSULTATION D'UN MÃDECIN, D'UN DIÃTÃTICIEN-NUTRITIONNISTE, D'UN PROFESSIONNEL DE SANTÃ QUALIFIÃ OU DE TOUT AUTRE EXPERT COMPÃTENT.</p>
+<h3 class="legal-subtitle">7.2 Consultation mÃ©dicale obligatoire</h3>
+<p>L'Utilisateur est expressÃ©ment invitÃ© et encouragÃ© Ã  consulter un professionnel de santÃ© qualifiÃ© :</p>
+<ul>
+<li>Avant d'entreprendre tout rÃ©gime alimentaire ou programme d'exercices physiques, en particulier en cas de pathologie prÃ©existante ;</li>
+<li>En cas de symptÃ´mes, malaise, douleur ou toute dÃ©gradation de son Ã©tat de santÃ© ;</li>
+<li>En cas de grossesse, allaitement, pathologie chronique ou traitement mÃ©dical en cours ;</li>
+<li>Avant de modifier tout traitement mÃ©dical en cours.</li>
+</ul>
+<p>En cas d'urgence mÃ©dicale, l'Utilisateur doit immÃ©diatement contacter les services d'urgence (15 â SAMU, 15 pour les urgences mÃ©dicales, 18 â Pompiers, 112 â NumÃ©ro d'urgence europÃ©en).</p>
+<h3 class="legal-subtitle">7.3 Limites de l'Intelligence Artificielle</h3>
+<p>L'Utilisateur reconnaÃ®t et accepte que :</p>
+<p>a) Les systÃ¨mes d'intelligence artificielle intÃ©grÃ©s Ã  l'Application, aussi sophistiquÃ©s soient-ils, sont susceptibles de produire des recommandations imprÃ©cises, incomplÃ¨tes ou inadaptÃ©es Ã  la situation personnelle spÃ©cifique de l'Utilisateur ;</p>
+<p>b) La qualitÃ© des recommandations dÃ©pend directement de l'exactitude et de l'exhaustivitÃ© des informations communiquÃ©es par l'Utilisateur ;</p>
+<p>c) L'IA ne dispose pas de la connaissance globale de l'Ã©tat de santÃ© de l'Utilisateur, de ses antÃ©cÃ©dents mÃ©dicaux, de ses contre-indications ou de ses interactions mÃ©dicamenteuses ;</p>
+<p>d) Notitia Corp ne garantit pas l'exactitude, l'exhaustivitÃ© ou l'adÃ©quation des recommandations gÃ©nÃ©rÃ©es par l'IA Ã  la situation individuelle de chaque Utilisateur.</p>
+<h3 class="legal-subtitle">7.4 DonnÃ©es de santÃ©</h3>
+<p>Les donnÃ©es de santÃ© saisies par l'Utilisateur dans l'Application constituent des donnÃ©es sensibles au sens de l'article 9 du RGPD. Leur traitement est soumis aux garanties renforcÃ©es dÃ©crites dans la Politique de ConfidentialitÃ© de l'Application, Ã  laquelle l'Utilisateur est invitÃ© Ã  se rÃ©fÃ©rer.</p>
+<p>L'Utilisateur consent expressÃ©ment au traitement de ses donnÃ©es de santÃ© par Notitia Corp aux fins de personnalisation du Service, dans les conditions et limites dÃ©crites dans la Politique de ConfidentialitÃ©, et ce en application de l'article 9.2(a) du RGPD (consentement explicite de la personne concernÃ©e).</p>
+<h3 class="legal-subtitle">7.5 ResponsabilitÃ© de l'Utilisateur</h3>
+<p>L'Utilisateur assume l'entiÃ¨re responsabilitÃ© des dÃ©cisions qu'il prend concernant sa santÃ©, son alimentation et sa condition physique sur la base des informations fournies par l'Application. Notitia Corp ne saurait Ãªtre tenue responsable des consÃ©quences directes ou indirectes rÃ©sultant de l'utilisation ou de la non-utilisation des recommandations gÃ©nÃ©rÃ©es par le Service, dans les limites prÃ©vues Ã  l'article 11 des prÃ©sentes.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 8 â PROPRIÃTÃ INTELLECTUELLE</h2>
+<h3 class="legal-subtitle">8.1 Droits de Notitia Corp</h3>
+<p>L'Application VIVE, la marque VIVE et l'ensemble des Ã©lÃ©ments constitutifs de l'Application sont la propriÃ©tÃ© exclusive de Notitia Corp ou font l'objet d'une licence accordÃ©e Ã  Notitia Corp. Sont notamment protÃ©gÃ©s par le droit de la propriÃ©tÃ© intellectuelle :</p>
+<p>a) La marque VIVE et tous les signes distinctifs associÃ©s (noms de domaine, logos, chartes graphiques, slogans), protÃ©gÃ©s en vertu des articles L.711-1 et suivants du Code de la propriÃ©tÃ© intellectuelle ;</p>
+<p>b) Le code source, les interfaces utilisateur, les architectures logicielles et les algorithmes de l'Application, protÃ©gÃ©s en tant qu'Åuvres de l'esprit en vertu des articles L.111-1 et L.112-2 du Code de la propriÃ©tÃ© intellectuelle ;</p>
+<p>c) Les algorithmes et modÃ¨les d'intelligence artificielle dÃ©veloppÃ©s ou licenciÃ©s par Notitia Corp, qui constituent le cÅur technologique du Service ;</p>
+<p>d) Les contenus Ã©ditoriaux publiÃ©s sur l'Application (articles, guides, illustrations, vidÃ©os, conseils), protÃ©gÃ©s par le droit d'auteur en vertu des articles L.111-1 et suivants du Code de la propriÃ©tÃ© intellectuelle ;</p>
+<p>e) Les bases de donnÃ©es constituÃ©es dans le cadre de l'Application, protÃ©gÃ©es en vertu des articles L.341-1 et suivants du Code de la propriÃ©tÃ© intellectuelle (droit sui generis du producteur de bases de donnÃ©es).</p>
+<h3 class="legal-subtitle">8.2 Licence d'utilisation accordÃ©e Ã  l'Utilisateur</h3>
+<p class="legal-version">Notitia Corp accorde Ã  l'Utilisateur une licence personnelle, non exclusive, non transfÃ©rable, non sous-licenciable et rÃ©vocable, limitÃ©e Ã  l'accÃ¨s et Ã  l'utilisation de l'Application pour ses besoins personnels, dans le cadre et aux fins prÃ©vus par les prÃ©sentes CGU.</p>
+<p>Cette licence ne comprend en aucun cas le droit de :</p>
+<ul>
+<li>Reproduire, copier, distribuer ou commercialiser tout ou partie de l'Application ;</li>
+<li>Modifier, adapter, traduire ou crÃ©er des Åuvres dÃ©rivÃ©es de l'Application ;</li>
+<li>ProcÃ©der Ã  la dÃ©compilation ou au dÃ©sassemblage de l'Application ;</li>
+<li>Supprimer ou modifier les mentions de propriÃ©tÃ© intellectuelle figurant sur l'Application.</li>
+</ul>
+<h3 class="legal-subtitle">8.3 Signalement de violations</h3>
+<p>Toute violation des droits de propriÃ©tÃ© intellectuelle de Notitia Corp doit Ãªtre signalÃ©e Ã  l'adresse notitiacorp@gmail.com. Notitia Corp se rÃ©serve le droit d'engager toute action judiciaire et/ou extrajudiciaire appropriÃ©e pour faire valoir ses droits de propriÃ©tÃ© intellectuelle.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 9 â CONTENU UTILISATEUR</h2>
+<h3 class="legal-subtitle">9.1 ResponsabilitÃ© de l'Utilisateur sur ses contenus</h3>
+<p>L'Utilisateur est seul responsable des informations, donnÃ©es, contenus et Contenu Utilisateur qu'il saisit, communique ou publie dans l'Application. Il garantit Ã  Notitia Corp que ces contenus :</p>
+<p>a) Sont exacts et ne sont pas trompeurs ;</p>
+<p>b) Ne portent pas atteinte aux droits de tiers (droits de propriÃ©tÃ© intellectuelle, droit Ã  l'image, droit Ã  la vie privÃ©e, etc.) ;</p>
+<p>c) Ne sont pas illicites, diffamatoires, injurieux, obscÃ¨nes, violents ou contraires Ã  l'ordre public et aux bonnes mÅurs ;</p>
+<p>d) Sont conformes aux lois et rÃ©glementations applicables.</p>
+<p>L'Utilisateur garantit et indemnise Notitia Corp contre toute rÃ©clamation, plainte ou action judiciaire de tiers rÃ©sultant des contenus qu'il a communiquÃ©s.</p>
+<h3 class="legal-subtitle">9.2 Licence sur le Contenu Utilisateur</h3>
+<p>En saisissant des donnÃ©es et informations dans l'Application, l'Utilisateur accorde Ã  Notitia Corp une licence non exclusive, mondiale, gratuite, sous-licenciable et transfÃ©rable d'utilisation, de traitement et d'exploitation de ces donnÃ©es aux fins exclusives suivantes :</p>
+<p>a) Fournir, amÃ©liorer et personnaliser le Service conformÃ©ment aux prÃ©sentes CGU ;</p>
+<p>b) EntraÃ®ner et amÃ©liorer les modÃ¨les d'intelligence artificielle de l'Application, sous rÃ©serve du respect du RGPD et des conditions dÃ©finies dans la Politique de ConfidentialitÃ© ;</p>
+<p>c) GÃ©nÃ©rer des statistiques agrÃ©gÃ©es et anonymisÃ©es aux fins d'amÃ©lioration du Service.</p>
+<p>Cette licence est accordÃ©e pour la durÃ©e nÃ©cessaire Ã  la fourniture du Service et est automatiquement rÃ©voquÃ©e lors de la suppression du Compte, sous rÃ©serve des dÃ©lais de conservation lÃ©gaux applicables.</p>
+<h3 class="legal-subtitle">9.3 DonnÃ©es agrÃ©gÃ©es et anonymisÃ©es</h3>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit d'utiliser des donnÃ©es agrÃ©gÃ©es et irrÃ©mÃ©diablement anonymisÃ©es, issues de l'utilisation de l'Application par l'ensemble des Utilisateurs, Ã  des fins d'analyse, d'amÃ©lioration du Service, de recherche sur le bien-Ãªtre et Ã  des fins commerciales gÃ©nÃ©rales, sans que ces utilisations ne constituent un traitement de donnÃ©es Ã  caractÃ¨re personnel au sens du RGPD.</p>
+<h3 class="legal-subtitle">9.4 Suppression des contenus</h3>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de supprimer ou dÃ©sactiver, sans prÃ©avis ni indemnitÃ©, tout Contenu Utilisateur qui serait contraire aux prÃ©sentes CGU, Ã  la loi ou aux droits de tiers, aprÃ¨s en avoir informÃ© l'Utilisateur dans la mesure du possible.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 10 â SUSPENSION ET RÃSILIATION DU COMPTE</h2>
+<h3 class="legal-subtitle">10.1 RÃ©siliation par l'Utilisateur</h3>
+<p>L'Utilisateur titulaire d'un Plan payant peut rÃ©silier son abonnement Ã  tout moment, sans pÃ©nalitÃ©, depuis les paramÃ¨tres de son Compte dans l'Application ou en adressant sa demande Ã  notitiacorp@gmail.com.</p>
+<p>La rÃ©siliation prend effet Ã  l'issue de la pÃ©riode d'abonnement en cours, l'Utilisateur conservant l'accÃ¨s aux fonctionnalitÃ©s de son Plan jusqu'Ã  la date d'expiration de la pÃ©riode dÃ©jÃ  rÃ©glÃ©e. Aucun remboursement proratisÃ© n'est accordÃ© pour la pÃ©riode d'abonnement entamÃ©e, sous rÃ©serve du droit de rÃ©tractation prÃ©vu Ã  l'article 10.3.</p>
+<p>L'Utilisateur titulaire du Plan Free peut supprimer son Compte Ã  tout moment depuis les paramÃ¨tres de l'Application.</p>
+<h3 class="legal-subtitle">10.2 RÃ©siliation ou suspension par Notitia Corp</h3>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de suspendre ou de rÃ©silier le Compte d'un Utilisateur, de plein droit et sans indemnitÃ©, dans les cas suivants :</p>
+<p>a) Non-respect des prÃ©sentes CGU ;</p>
+<p>b) Fourniture d'informations fausses ou inexactes lors de l'inscription ou pendant l'utilisation du Service ;</p>
+<p>c) Utilisation frauduleuse ou abusive du Service ;</p>
+<p>d) Non-paiement des sommes dues dans les dÃ©lais prÃ©vus Ã  l'article 4.6 ;</p>
+<p>e) Comportement portant atteinte aux intÃ©rÃªts de Notitia Corp, d'autres Utilisateurs ou de tiers ;</p>
+<p>f) Violation des droits de propriÃ©tÃ© intellectuelle de Notitia Corp ;</p>
+<p>g) En cas d'inactivitÃ© prolongÃ©e du Compte (aucune connexion sur une pÃ©riode supÃ©rieure Ã  vingt-quatre (24) mois consÃ©cutifs), aprÃ¨s notification prÃ©alable par email.</p>
+<p>En cas de manquement grave ou rÃ©pÃ©tÃ©, la rÃ©siliation peut intervenir sans prÃ©avis ni mise en demeure prÃ©alable. Dans les autres cas, Notitia Corp adressera un avertissement par email Ã  l'Utilisateur, qui disposera d'un dÃ©lai de quinze (15) jours calendaires pour remÃ©dier au manquement constatÃ©.</p>
+<p>En cas de suspension ou de rÃ©siliation du Compte Ã  l'initiative de Notitia Corp pour manquement de l'Utilisateur, aucun remboursement des sommes versÃ©es ne sera effectuÃ©.</p>
+<h3 class="legal-subtitle">10.3 Droit de rÃ©tractation</h3>
+<p>ConformÃ©ment aux articles L.221-18 et suivants du Code de la consommation, l'Utilisateur consommateur (c'est-Ã -dire agissant en dehors de toute activitÃ© professionnelle) dispose d'un dÃ©lai de quatorze (14) jours calendaires Ã  compter de la date de souscription Ã  un Plan payant pour exercer son droit de rÃ©tractation, sans avoir Ã  justifier de motifs ni Ã  payer de pÃ©nalitÃ©s.</p>
+<p>Toutefois, conformÃ©ment Ã  l'article L.221-28, 1Â° du Code de la consommation, le droit de rÃ©tractation ne peut Ãªtre exercÃ© pour les contrats de prestation de services pleinement exÃ©cutÃ©s avant la fin du dÃ©lai de rÃ©tractation et dont l'exÃ©cution a commencÃ© avec l'accord prÃ©alable exprÃ¨s du consommateur et renoncement exprÃ¨s Ã  son droit de rÃ©tractation.</p>
+<p>Pour exercer ce droit, l'Utilisateur doit notifier sa dÃ©cision par email Ã  notitiacorp@gmail.com, en indiquant son nom, son adresse email de Compte et la date de souscription. En cas d'exercice valide du droit de rÃ©tractation, Notitia Corp procÃ¨dera au remboursement de la totalitÃ© des sommes versÃ©es dans un dÃ©lai de quatorze (14) jours Ã  compter de la rÃ©ception de la notification, par le mÃªme moyen de paiement que celui utilisÃ© pour la transaction initiale, sauf accord exprÃ¨s de l'Utilisateur pour un autre moyen.</p>
+<h3 class="legal-subtitle">10.4 ConsÃ©quences de la rÃ©siliation</h3>
+<p>En cas de rÃ©siliation du Compte, pour quelque cause que ce soit :</p>
+<p>a) L'Utilisateur perd immÃ©diatement (ou Ã  l'issue de la pÃ©riode payÃ©e en cours) l'accÃ¨s Ã  l'ensemble des fonctionnalitÃ©s de son Plan ;</p>
+<p>b) Le Contenu Utilisateur est supprimÃ© dans les conditions et dÃ©lais prÃ©vus par la Politique de ConfidentialitÃ© ;</p>
+<p>c) Les dispositions des prÃ©sentes CGU qui, par nature, ont vocation Ã  survivre Ã  la rÃ©siliation (notamment les articles 7, 8, 11 et 15) demeurent en vigueur.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 11 â LIMITATION DE RESPONSABILITÃ</h2>
+<h3 class="legal-subtitle">11.1 DisponibilitÃ© du Service</h3>
+<p class="legal-version">Notitia Corp s'efforce de maintenir le Service accessible en permanence. Toutefois, l'Ãditeur ne garantit pas une disponibilitÃ© ininterrompue du Service et ne saurait Ãªtre tenu responsable des interruptions, ralentissements ou indisponibilitÃ©s rÃ©sultant notamment :</p>
+<p>a) D'opÃ©rations de maintenance, de mise Ã  jour ou d'amÃ©lioration du Service, pour lesquelles Notitia Corp s'efforce d'informer prÃ©alablement les Utilisateurs ;</p>
+<p>b) D'une panne ou d'une interruption des rÃ©seaux de tÃ©lÃ©communication ou d'internet ;</p>
+<p>c) D'un dysfonctionnement du terminal de l'Utilisateur ;</p>
+<p>d) D'un cas de force majeure au sens de l'article 1218 du Code civil (notamment : catastrophes naturelles, actes de terrorisme, guerres, pannes gÃ©nÃ©ralisÃ©es de rÃ©seau, cyberattaques de grande envergure, Ã©pidÃ©mies) ;</p>
+<p>e) D'un acte malveillant de tiers (piratage informatique, attaque par dÃ©ni de service, etc.) ;</p>
+<p>f) D'une interruption ou dÃ©faillance des services d'hÃ©bergement fournis par des prestataires tiers (notamment Supabase, Vercel, GitHub Pages).</p>
+<h3 class="legal-subtitle">11.2 Exactitude des recommandations de l'IA</h3>
+<p>Comme prÃ©cisÃ© Ã  l'article 7, Notitia Corp ne garantit pas l'exactitude, l'exhaustivitÃ©, la pertinence ou l'adÃ©quation des recommandations gÃ©nÃ©rÃ©es par l'intelligence artificielle de l'Application Ã  la situation personnelle de chaque Utilisateur.</p>
+<p class="legal-version">Notitia Corp ne saurait Ãªtre tenue responsable de tout dommage, prÃ©judice ou consÃ©quence nÃ©faste rÃ©sultant directement ou indirectement de l'utilisation ou de la non-utilisation des recommandations gÃ©nÃ©rÃ©es par l'IA, notamment en matiÃ¨re de santÃ©, de nutrition ou de pratique sportive.</p>
+<h3 class="legal-subtitle">11.3 Plafond de responsabilitÃ©</h3>
+<p>Dans toute la mesure permise par le droit applicable, la responsabilitÃ© totale de Notitia Corp envers un Utilisateur, toutes causes confondues, est expressÃ©ment limitÃ©e au montant total des sommes effectivement versÃ©es par l'Utilisateur Ã  Notitia Corp au cours des douze (12) mois prÃ©cÃ©dant la survenance du dommage.</p>
+<p class="legal-version">Notitia Corp ne saurait en aucun cas Ãªtre tenue responsable de dommages indirects, immatÃ©riels, consÃ©cutifs ou punitifs, tels que notamment : perte de chance, perte de donnÃ©es, perte de revenus, prÃ©judice commercial ou atteinte Ã  la rÃ©putation, mÃªme si Notitia Corp avait Ã©tÃ© informÃ©e de la possibilitÃ© de tels dommages.</p>
+<h3 class="legal-subtitle">11.4 ResponsabilitÃ© de l'Utilisateur</h3>
+<p>L'Utilisateur est seul responsable de l'utilisation qu'il fait de l'Application et de ses fonctionnalitÃ©s. Il garantit et indemnise Notitia Corp contre tout recours, rÃ©clamation ou condamnation rÃ©sultant d'une utilisation non conforme des prÃ©sentes CGU.</p>
+<h3 class="legal-subtitle">11.5 RÃ©serve concernant les consommateurs</h3>
+<p>Les limitations de responsabilitÃ© prÃ©vues au prÃ©sent article s'appliquent dans toute la mesure permise par le droit applicable. Elles ne sauraient avoir pour effet de priver les Utilisateurs consommateurs des droits lÃ©gaux impÃ©ratifs dont ils bÃ©nÃ©ficient en vertu du droit franÃ§ais de la consommation (notamment en vertu des articles L.217-1 et suivants du Code de la consommation relatifs Ã  la garantie de conformitÃ©, et des articles 1641 et suivants du Code civil relatifs Ã  la garantie des vices cachÃ©s).</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 12 â LIENS HYPERTEXTES ET SERVICES TIERS</h2>
+<h3 class="legal-subtitle">12.1 Liens vers des sites tiers</h3>
+<p>L'Application VIVE peut contenir des liens hypertextes renvoyant vers des sites internet ou des services de tiers. Ces liens sont fournis Ã  titre informatif et de commoditÃ© pour l'Utilisateur. Notitia Corp n'exerce aucun contrÃ´le sur le contenu, les politiques de confidentialitÃ© ou les pratiques de ces sites et services tiers.</p>
+<p>L'insertion d'un lien vers un site tiers ne constitue en aucun cas une approbation, un partenariat ou une recommandation par Notitia Corp du contenu ou des services proposÃ©s par ledit site. Notitia Corp dÃ©cline toute responsabilitÃ© quant au contenu, Ã  la disponibilitÃ© et aux pratiques des sites tiers vers lesquels l'Application renvoie.</p>
+<h3 class="legal-subtitle">12.2 Services d'hÃ©bergement et infrastructure</h3>
+<p>L'Application VIVE repose notamment sur les services d'infrastructure et d'hÃ©bergement suivants :</p>
+<ul>
+<li>Supabase (hÃ©bergement des donnÃ©es, base de donnÃ©es) : les serveurs sont localisÃ©s dans l'Union EuropÃ©enne (Irlande), garantissant un haut niveau de protection des donnÃ©es conformÃ©ment au RGPD ;</li>
+</ul>
+<ul>
+<li>Vercel (hÃ©bergement de l'interface web et dÃ©ploiement continu) ;</li>
+</ul>
+<ul>
+<li>GitHub Pages (hÃ©bergement de pages statiques).</li>
+</ul>
+<p>Ces prestataires sont soumis Ã  leurs propres conditions gÃ©nÃ©rales et politiques de confidentialitÃ©. L'Utilisateur est invitÃ© Ã  en prendre connaissance. Notitia Corp s'assure que ses prestataires d'hÃ©bergement offrent des garanties suffisantes au regard des exigences du RGPD et conclut avec eux des accords de traitement des donnÃ©es conformÃ©ment Ã  l'article 28 du RGPD lorsqu'ils agissent en qualitÃ© de sous-traitants.</p>
+<h3 class="legal-subtitle">12.3 IntÃ©grations et services tiers</h3>
+<p>L'Application peut permettre des intÃ©grations avec des services tiers (applications de fitness, plateformes de bien-Ãªtre, etc.). L'utilisation de ces intÃ©grations est soumise aux conditions gÃ©nÃ©rales propres Ã  chaque service tiers. Notitia Corp n'est pas responsable des dysfonctionnements, indisponibilitÃ©s ou pratiques des services tiers intÃ©grÃ©s.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 13 â MODIFICATION DES CONDITIONS GÃNÃRALES D'UTILISATION</h2>
+<h3 class="legal-subtitle">13.1 Droit de modification</h3>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de modifier les prÃ©sentes CGU Ã  tout moment, afin notamment de les adapter aux Ã©volutions lÃ©gales et rÃ©glementaires, aux Ã©volutions du Service ou aux pratiques du secteur.</p>
+<h3 class="legal-subtitle">13.2 Notification prÃ©alable</h3>
+<p>Toute modification substantielle des prÃ©sentes CGU sera notifiÃ©e Ã  l'Utilisateur par email, Ã  l'adresse renseignÃ©e lors de la crÃ©ation de son Compte, ou par tout autre moyen appropriÃ© (notification in-app, message sur la page d'accueil), dans un dÃ©lai minimum de trente (30) jours calendaires avant l'entrÃ©e en vigueur des modifications.</p>
+<p>Sont considÃ©rÃ©es comme modifications substantielles, notamment : toute modification des conditions tarifaires, du pÃ©rimÃ¨tre des fonctionnalitÃ©s offertes, des conditions de rÃ©siliation ou des rÃ¨gles relatives Ã  la protection des donnÃ©es.</p>
+<h3 class="legal-subtitle">13.3 Acceptation des modifications</h3>
+<p>L'Utilisateur qui continue d'utiliser l'Application aprÃ¨s l'entrÃ©e en vigueur des nouvelles CGU est rÃ©putÃ© les avoir acceptÃ©es sans rÃ©serve. En cas de refus des nouvelles CGU, l'Utilisateur doit cesser d'utiliser l'Application et rÃ©silier son abonnement dans les conditions prÃ©vues Ã  l'article 10.1, avant la date d'entrÃ©e en vigueur des modifications.</p>
+<p>Pour les abonnements payants en cours, si les modifications emportent une augmentation tarifaire, l'Utilisateur dispose du droit de rÃ©silier son abonnement sans pÃ©nalitÃ©, dans un dÃ©lai de trente (30) jours Ã  compter de la notification de la modification.</p>
+<h3 class="legal-subtitle">13.4 Archivage des versions</h3>
+<p>Chaque version des CGU est identifiÃ©e par sa date d'entrÃ©e en vigueur. Les versions antÃ©rieures sont archivÃ©es par Notitia Corp et peuvent Ãªtre communiquÃ©es Ã  l'Utilisateur sur demande adressÃ©e Ã  notitiacorp@gmail.com.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 14 â PROTECTION DES DONNÃES PERSONNELLES</h2>
+<h3 class="legal-subtitle">14.1 Renvoi Ã  la Politique de ConfidentialitÃ©</h3>
+<p class="legal-version">Notitia Corp attache une importance primordiale Ã  la protection des donnÃ©es personnelles de ses Utilisateurs. Le traitement des donnÃ©es personnelles collectÃ©es dans le cadre de l'utilisation de l'Application VIVE est rÃ©gi par la Politique de ConfidentialitÃ© de Notitia Corp, accessible depuis l'Application et sur le site web de l'Ãditeur.</p>
+<p>La Politique de ConfidentialitÃ© fait partie intÃ©grante des prÃ©sentes CGU et en est indissociable. L'Utilisateur est expressÃ©ment invitÃ© Ã  la lire attentivement avant de crÃ©er son Compte.</p>
+<h3 class="legal-subtitle">14.2 Cadre lÃ©gal</h3>
+<p>Le traitement des donnÃ©es personnelles des Utilisateurs est effectuÃ© en conformitÃ© avec :</p>
+<ul>
+<li>Le RÃ¨glement (UE) 2016/679 du Parlement europÃ©en et du Conseil du 27 avril 2016 relatif Ã  la protection des personnes physiques Ã  l'Ã©gard du traitement des donnÃ©es Ã  caractÃ¨re personnel et Ã  la libre circulation de ces donnÃ©es (RGPD) ;</li>
+</ul>
+<ul>
+<li>La loi nÂ°78-17 du 6 janvier 1978 relative Ã  l'informatique, aux fichiers et aux libertÃ©s, telle que modifiÃ©e.</li>
+</ul>
+<h3 class="legal-subtitle">14.3 Responsable de traitement</h3>
+<p>Le responsable du traitement des donnÃ©es personnelles collectÃ©es via l'Application est :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>SIRET : 99536720800015</p>
+<p>15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Email : notitiacorp@gmail.com</p>
+<h3 class="legal-subtitle">14.4 Droits des personnes concernÃ©es</h3>
+<p>ConformÃ©ment aux articles 15 Ã  22 du RGPD et aux articles 49 et suivants de la loi Informatique et LibertÃ©s, l'Utilisateur dispose des droits suivants sur ses donnÃ©es personnelles :</p>
+<ul>
+<li>Droit d'accÃ¨s (article 15 RGPD) ;</li>
+<li>Droit de rectification (article 16 RGPD) ;</li>
+<li>Droit Ã  l'effacement / Â« droit Ã  l'oubli Â» (article 17 RGPD) ;</li>
+<li>Droit Ã  la limitation du traitement (article 18 RGPD) ;</li>
+<li>Droit Ã  la portabilitÃ© des donnÃ©es (article 20 RGPD) ;</li>
+<li>Droit d'opposition (article 21 RGPD) ;</li>
+<li>Droit de ne pas faire l'objet d'une dÃ©cision individuelle automatisÃ©e, y compris le profilage (article 22 RGPD) ;</li>
+<li>Droit de retirer son consentement Ã  tout moment, sans que cela n'affecte la licÃ©itÃ© des traitements fondÃ©s sur le consentement effectuÃ©s avant ce retrait.</li>
+</ul>
+<p>Ces droits peuvent Ãªtre exercÃ©s en adressant une demande Ã  notitiacorp@gmail.com.</p>
+<p>L'Utilisateur dispose Ã©galement du droit d'introduire une rÃ©clamation auprÃ¨s de la Commission Nationale de l'Informatique et des LibertÃ©s (CNIL), autoritÃ© de contrÃ´le compÃ©tente en France, dont les coordonnÃ©es sont disponibles sur www.cnil.fr.</p>
+<h3 class="legal-subtitle">14.5 Traitement des donnÃ©es de santÃ©</h3>
+<p>Les donnÃ©es de santÃ© constituent des donnÃ©es sensibles au sens de l'article 9 du RGPD. Leur traitement est fondÃ© sur le consentement explicite de l'Utilisateur, recueilli lors de la crÃ©ation du Compte. L'Utilisateur peut retirer ce consentement Ã  tout moment, ce qui peut avoir pour consÃ©quence de limiter la personnalisation du Service.</p>
+<p>Les donnÃ©es de santÃ© hÃ©bergÃ©es par l'Application sont stockÃ©es sur des serveurs situÃ©s dans l'Union EuropÃ©enne (Supabase, Irlande), garantissant leur soumission au rÃ©gime de protection du RGPD.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 15 â DROIT APPLICABLE ET RÃGLEMENT DES LITIGES</h2>
+<h3 class="legal-subtitle">15.1 Droit applicable</h3>
+<p>Les prÃ©sentes CGU sont soumises au droit franÃ§ais. Elles sont rÃ©digÃ©es en langue franÃ§aise, qui fait foi en cas de traduction dans une autre langue.</p>
+<h3 class="legal-subtitle">15.2 MÃ©diation de la consommation</h3>
+<p>ConformÃ©ment aux articles L.611-1 et suivants du Code de la consommation et Ã  l'ordonnance nÂ°2015-1033 du 20 aoÃ»t 2015 relative au rÃ¨glement extrajudiciaire des litiges de consommation, Notitia Corp propose Ã  ses Utilisateurs consommateurs, en cas de litige nÃ© de l'application des prÃ©sentes CGU ou de l'utilisation du Service qui n'aurait pas pu Ãªtre rÃ©glÃ© amiablement, de recourir Ã  un mÃ©diateur de la consommation.</p>
+<p>Avant de saisir le mÃ©diateur, l'Utilisateur consommateur doit au prÃ©alable adresser une rÃ©clamation Ã©crite Ã  Notitia Corp Ã  l'adresse notitiacorp@gmail.com et attendre une rÃ©ponse pendant un dÃ©lai d'un (1) mois Ã  compter de la rÃ©ception de la rÃ©clamation.</p>
+<p>L'Utilisateur peut Ã©galement recourir Ã  la plateforme de RÃ¨glement en Ligne des Litiges (RLL) mise en place par la Commission europÃ©enne, accessible Ã  l'adresse : https://ec.europa.eu/consumers/odr.</p>
+<h3 class="legal-subtitle">15.3 Juridiction compÃ©tente</h3>
+<p>Ã dÃ©faut de rÃ©solution amiable ou par voie de mÃ©diation, tout litige relatif Ã  la formation, Ã  l'interprÃ©tation, Ã  l'exÃ©cution ou Ã  la rÃ©siliation des prÃ©sentes CGU sera soumis Ã  la compÃ©tence exclusive des tribunaux franÃ§ais.</p>
+<p>Pour les litiges avec des Utilisateurs consommateurs, la juridiction compÃ©tente est celle du domicile du dÃ©fendeur ou du lieu de livraison effective ou du lieu d'exÃ©cution de la prestation de service, conformÃ©ment aux articles L.141-5 et R.631-3 du Code de la consommation.</p>
+<p>Pour les litiges avec des Utilisateurs professionnels, les parties attribuent compÃ©tence exclusive aux tribunaux du ressort du siÃ¨ge social de Notitia Corp (Tribunal compÃ©tent de BÃ©ziers ou de Montpellier selon la nature du litige), nonobstant pluralitÃ© de dÃ©fendeurs ou appel en garantie.</p>
+<h3 class="legal-subtitle">15.4 RÃ©solution amiable prÃ©alable</h3>
+<p>PrÃ©alablement Ã  toute action en justice, les parties s'engagent Ã  tenter de rÃ©soudre amiablement tout diffÃ©rend relatif aux prÃ©sentes CGU. Ã cette fin, l'Utilisateur adressera une notification Ã©crite dÃ©taillÃ©e du litige Ã  Notitia Corp par email Ã  notitiacorp@gmail.com. Les parties disposent d'un dÃ©lai de trente (30) jours calendaires Ã  compter de la rÃ©ception de la notification pour parvenir Ã  un accord amiable.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 16 â CONTACT</h2>
+<p>Pour toute question relative aux prÃ©sentes CGU, au Service ou Ã  votre Compte, vous pouvez contacter Notitia Corp par les moyens suivants :</p>
+<p class="legal-version">Notitia Corp</p>
+<p>Service Utilisateurs VIVE</p>
+<p>15Bis Boulevard de Strasbourg</p>
+<p>34500 BÃ©ziers</p>
+<p>France</p>
+<p>Email : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p>(Disponible du lundi au vendredi, de 9h Ã  18h, heure franÃ§aise, hors jours fÃ©riÃ©s)</p>
+<p class="legal-version">Notitia Corp s'engage Ã  traiter les demandes des Utilisateurs dans les meilleurs dÃ©lais et, en tout Ã©tat de cause, dans un dÃ©lai maximum de dix (10) jours ouvrÃ©s Ã  compter de la rÃ©ception de la demande.</p>
+<hr class="legal-separator">
+<h2 class="legal-article-title">ARTICLE 17 â DISPOSITIONS DIVERSES</h2>
+<h3 class="legal-subtitle">17.1 IntÃ©gralitÃ© de l'accord</h3>
+<p>Les prÃ©sentes CGU, conjointement avec la Politique de ConfidentialitÃ© et, le cas Ã©chÃ©ant, les Conditions GÃ©nÃ©rales de Vente applicables aux Plans payants, constituent l'intÃ©gralitÃ© de l'accord entre Notitia Corp et l'Utilisateur concernant l'utilisation de l'Application VIVE. Elles remplacent et annulent tout accord, dÃ©claration ou engagement antÃ©rieur portant sur le mÃªme objet.</p>
+<h3 class="legal-subtitle">17.2 DivisibilitÃ©</h3>
+<p>Si l'une quelconque des stipulations des prÃ©sentes CGU est dÃ©clarÃ©e nulle, invalide ou inapplicable par une juridiction compÃ©tente, cette nullitÃ© n'affectera pas les autres stipulations qui demeureront en pleine vigueur et de plein effet entre les parties. Les parties s'engagent Ã  remplacer la stipulation nulle ou inapplicable par une stipulation valide se rapprochant le plus possible de l'intention initiale des parties.</p>
+<h3 class="legal-subtitle">17.3 Non-renonciation</h3>
+<p>Le fait pour Notitia Corp de ne pas se prÃ©valoir Ã  un moment donnÃ© d'une des stipulations des prÃ©sentes CGU ne peut Ãªtre interprÃ©tÃ© comme une renonciation Ã  se prÃ©valoir ultÃ©rieurement de ladite stipulation.</p>
+<h3 class="legal-subtitle">17.4 Cession</h3>
+<p class="legal-version">Notitia Corp se rÃ©serve le droit de cÃ©der ou de transfÃ©rer tout ou partie des droits et obligations nÃ©s des prÃ©sentes CGU Ã  tout tiers, notamment dans le cadre d'une fusion, acquisition, cession d'actifs ou restructuration de l'entreprise, aprÃ¨s en avoir informÃ© les Utilisateurs dans les conditions prÃ©vues Ã  l'article 13. L'Utilisateur ne peut cÃ©der ou transfÃ©rer les droits et obligations qui lui sont confÃ©rÃ©s par les prÃ©sentes CGU sans l'accord prÃ©alable et Ã©crit de Notitia Corp.</p>
+<h3 class="legal-subtitle">17.5 Langue</h3>
+<p>Les prÃ©sentes CGU sont rÃ©digÃ©es en langue franÃ§aise. En cas de traduction dans une autre langue Ã  des fins de commoditÃ©, la version franÃ§aise prÃ©vaudra en cas de contradiction ou d'ambiguÃ¯tÃ©.</p>
+<hr class="legal-separator">
+<h1 class="legal-title font-cormorant">MENTIONS LÃGALES DE L'ÃDITEUR</h1>
+<p>DÃ©nomination sociale : Notitia Corp</p>
+<p>NumÃ©ro SIRET : 99536720800015</p>
+<p>SiÃ¨ge social : 15Bis Boulevard de Strasbourg, 34500 BÃ©ziers, France</p>
+<p>Email de contact : notitiacorp@gmail.com</p>
+<p>TÃ©lÃ©phone : 06 71 90 25 13</p>
+<p>Directeur de la publication : [Nom du reprÃ©sentant lÃ©gal de Notitia Corp]</p>
+<p>HÃ©bergement de l'Application :</p>
+<ul>
+<li>Supabase Inc. (donnÃ©es et base de donnÃ©es) â Serveurs Union EuropÃ©enne, Irlande</li>
+<li>Vercel Inc. â Interface web</li>
+<li>GitHub Inc. (GitHub Pages) â Pages statiques</li>
+</ul>
+<hr class="legal-separator">
+<p class="legal-version">Date d'entrÃ©e en vigueur des prÃ©sentes Conditions GÃ©nÃ©rales d'Utilisation : 1er mars 2025.</p>
+<p>Â© 2025 Notitia Corp â Tous droits rÃ©servÃ©s. La marque VIVE et les Ã©lÃ©ments de l'Application sont protÃ©gÃ©s par le droit de la propriÃ©tÃ© intellectuelle applicable.</p>
+<hr class="legal-separator">
+<p>---</p>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo font-cormorant">VIVE</span>
+      <p class="footer-tagline">Concierge santÃ© personnel. PilotÃ© par l'intelligence.</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">Produit</h4>
+      <a href="index.html#how">Comment Ã§a marche</a><a href="index.html#box">La Box</a><a href="index.html#pricing">Tarifs</a><a href="index.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">CommunautÃ©</h4>
+      <a href="#">Blog</a><a href="#">Recherche</a><a href="#">Founders</a><a href="#">ÃvÃ©nements</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title font-mono">LÃ©gal</h4>
+      <a href="mentions-legales.html">Mentions lÃ©gales</a><a href="privacy.html">ConfidentialitÃ©</a><a href="cgv.html">CGV</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Â© 2025 VIVE. Tous droits rÃ©servÃ©s.</p>
+  </div>
+</footer>
+
+</body>
+</html>
